@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2011
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgendamentoConsulta", "AgendamentoConsulta\AgendamentoConsulta.csproj", "{C58411F7-67C5-4522-ABC9-E0AAF1D82380}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "ClassLibrary1\Model.csproj", "{2A9B3951-0B30-438C-88E6-5421C0ADDAE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{C58411F7-67C5-4522-ABC9-E0AAF1D82380}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C58411F7-67C5-4522-ABC9-E0AAF1D82380}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C58411F7-67C5-4522-ABC9-E0AAF1D82380}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A9B3951-0B30-438C-88E6-5421C0ADDAE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A9B3951-0B30-438C-88E6-5421C0ADDAE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A9B3951-0B30-438C-88E6-5421C0ADDAE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A9B3951-0B30-438C-88E6-5421C0ADDAE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99B49DB5-6616-41BE-8258-0B8FD83857DA}
 	EndGlobalSection
 EndGlobal
