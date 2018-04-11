@@ -9,8 +9,12 @@
                       Title="Agenda de Consultas"
                       Height="600"
                       Width="800">
-
     <!-- your content -->
+    <Grid>
         
+        
+        
+        
+    </Grid>        
 </Controls:MetroWindow>
 

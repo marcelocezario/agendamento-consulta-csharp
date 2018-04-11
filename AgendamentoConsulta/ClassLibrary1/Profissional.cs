@@ -7,6 +7,6 @@ namespace Model
     {
         public string ResgistroProfissional { get; set; }
         public int DiasConsulta { get; set; }
-        public DateTime HorarioAtendimento { get; set; }
+        public DateTime Periodo { get; set; }
     }
 }
