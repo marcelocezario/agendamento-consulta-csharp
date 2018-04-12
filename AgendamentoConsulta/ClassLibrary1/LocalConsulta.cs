@@ -8,7 +8,9 @@ namespace Model
     {
         public int IdLocal { get; set; }
         public int DiasConsulta { get; set; }
-        public DateTime HorarioFuncionamento { get; set; }
+        public string Periodo { get; set; }
+        public DateTime tmpConsulta { get; set; }
+
 
         public int EnderecoID { get; set; }
     }

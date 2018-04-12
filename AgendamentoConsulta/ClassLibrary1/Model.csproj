@@ -40,12 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dao\Contexto.cs" />
     <Compile Include="Endereco.cs" />
     <Compile Include="LocalConsulta.cs" />
     <Compile Include="Paciente.cs" />
     <Compile Include="Pessoa.cs" />
     <Compile Include="Profissional.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
