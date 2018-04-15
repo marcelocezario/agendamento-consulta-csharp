@@ -5,9 +5,9 @@
     {
         public int PessoaID { get; set; }
         public string Nome { get; set; }
-        public string Contado { get; set; }
+        public string Numero { get; set; }
         public string Email { get; set; }
 
-        public int EnderecoID { get; set; }
+        public int EnderecoID { get; set; } 
     }
 }

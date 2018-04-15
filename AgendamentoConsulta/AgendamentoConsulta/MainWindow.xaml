@@ -11,10 +11,21 @@
                       Width="800">
     <!-- your content -->
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="509*"/>
+        </Grid.RowDefinitions>
         
-        
-        
-        
-    </Grid>        
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Menu de Seleção" VerticalAlignment="Top" Height="40" Width="244" Grid.Column="1" FontWeight="Bold" FontFamily="Arial" FontSize="24" TextDecorations="{x:Null}" TextAlignment="Center" LineHeight="10"/>
+
+
+
+
+    </Grid>
 </Controls:MetroWindow>
 

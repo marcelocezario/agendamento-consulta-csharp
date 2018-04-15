@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Model
 {
-    class LocalConsulta
+    class Local
     {
         public int IdLocal { get; set; }
         public int DiasConsulta { get; set; }
