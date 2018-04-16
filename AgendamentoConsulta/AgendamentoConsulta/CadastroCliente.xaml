@@ -24,8 +24,8 @@
             <RowDefinition Height="25*"/>
             <RowDefinition Height="26*"/>
             <RowDefinition Height="23*"/>
-            <RowDefinition Height="41*"/>
-            <RowDefinition Height="196*"/>
+            <RowDefinition Height="16*"/>
+            <RowDefinition Height="221*"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -48,9 +48,14 @@
         <TextBlock x:Name="LabelCpfPaciente" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,5,0,0" FontFamily="Arial" TextAlignment="Right" ><Run Text=" "/><Run Text="CPF"/></TextBlock>
         <xctk:MaskedTextBox Mask="000,000,000-00" x:Name="BoxCpfPaciente" Height="21" Margin="5,5,178,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" TextChanged="BoxCpfPaciente_TextChanged" />
 
+
+        <!-- Data de nascimento -->
+        <TextBlock x:Name="LabelDtNascimentoPaciente" HorizontalAlignment="Left" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="20" RenderTransformOrigin="0.468,0.867" Margin="149,5,0,0" FontFamily="Arial" TextAlignment="Right" Grid.Column="1" ><Run Text=" "/><Run Text="Data de Nascimento"/></TextBlock>
+        <DatePicker x:Name="BoxDtNascimentoPaciente" Height="25" Margin="0,0,68,0" Grid.Row="4" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="0.5,0.227"  />
+
         <!-- Telefone -->
         <TextBlock x:Name="LabelContatoPaciente" HorizontalAlignment="Left" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Height="20" RenderTransformOrigin="0.468,0.867" Margin="41,5,0,0" FontFamily="Arial" TextAlignment="Right" Text="Celular" />
-        <xctk:MaskedTextBox Mask="(00) 0 0000-0000" x:Name="BoxContatoPaciente" Height="21" Margin="5,4,162,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Grid.Row="4" />
+        <xctk:MaskedTextBox Mask="(00) 0 0000-0000" x:Name="BoxContatoPaciente" Height="21" Margin="5,4,169,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Grid.Row="4" />
 
         <!-- RG -->
         <TextBlock x:Name="LabelRgPaciente" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" Height="20" RenderTransformOrigin="0.468,0.867" Margin="117,7,0,0" FontFamily="Arial" TextAlignment="Right" Grid.Column="1" Grid.RowSpan="2" ><Run Text=" "/><Run Text="RG"/></TextBlock>
