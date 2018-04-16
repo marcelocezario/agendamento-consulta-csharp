@@ -126,6 +126,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CadastroLocal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CadastroProfissional.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -144,6 +148,9 @@
     </Compile>
     <Compile Include="CadastroCliente.xaml.cs">
       <DependentUpon>CadastroCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroLocal.xaml.cs">
+      <DependentUpon>CadastroLocal.xaml</DependentUpon>
     </Compile>
     <Compile Include="CadastroProfissional.xaml.cs">
       <DependentUpon>CadastroProfissional.xaml</DependentUpon>
