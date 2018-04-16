@@ -7,6 +7,7 @@
         public string Nome { get; set; }
         public string Numero { get; set; }
         public string Email { get; set; }
+        public string Rg { get; set; }
 
         public int EnderecoID { get; set; } 
     }
