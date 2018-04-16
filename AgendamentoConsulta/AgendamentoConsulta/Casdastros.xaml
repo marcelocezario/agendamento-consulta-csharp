@@ -1,12 +1,24 @@
-﻿<Window x:Class="AgendamentoConsulta.Casdastros"
+﻿<Controls:MetroWindow x:Class="AgendamentoConsulta.Casdastros"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AgendamentoConsulta"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="Casdastros" Height="450" Width="800">
+        x:Name="TelaCadastro"
+        Title="Área de Casdastros" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Button x:Name="BtnCadastrosCliente"     FontWeight="Bold" Content="Cadastro de Pacientes"     Height="55" Margin="10,65,10,0"  VerticalAlignment="Top" FontFamily="Arial" FontSize="16" Grid.Column="1" Click="BtnCadastrosCliente_Click" TextOptions.TextHintingMode="Animated"/>
+        <Button x:Name="BtnCadastroProfissional" FontWeight="Bold" Content="Cadastro de Profissionais" Height="57" Margin="10,125,10,0"  VerticalAlignment="Top" FontFamily="Arial" FontSize="16"  Grid.Column="1" Click="BtnCadastroProfissional_Click" TextOptions.TextHintingMode="Animated"/>
+        <Button x:Name="BtnCadastroLocal"        FontWeight="Bold" Content="Cadastro de Salas"         Height="55" Margin="10,187,10,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16" Grid.Column="1" Click="BtnCadastroLocal_Click" TextOptions.TextHintingMode="Animated" RenderTransformOrigin="0.516,0.545" />
+
     </Grid>
-</Window>
+</Controls:MetroWindow>

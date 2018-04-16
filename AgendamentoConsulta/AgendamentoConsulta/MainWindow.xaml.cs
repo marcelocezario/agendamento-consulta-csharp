@@ -22,7 +22,28 @@ namespace AgendamentoConsulta
         {
             InitializeComponent();
         }
+        
+        private void BtnCadastros_Click(object sender, RoutedEventArgs e)
+        {
+            Casdastros cad = new Casdastros();
 
+            cad.ShowDialog();
+        }
+
+        private void BtnAlteracoes_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnPesquisa_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnAgendamento_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
 

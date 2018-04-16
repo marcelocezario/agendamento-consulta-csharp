@@ -11,17 +11,34 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 
 namespace AgendamentoConsulta
 {
     /// <summary>
     /// Lógica interna para Casdastros.xaml
     /// </summary>
-    public partial class Casdastros : Window
+    public partial class Casdastros : MetroWindow
     {
         public Casdastros()
         {
             InitializeComponent();
+        }
+
+        private void BtnCadastrosCliente_Click(object sender, RoutedEventArgs e)
+        {
+            CadastroCliente cadCli = new CadastroCliente();
+            cadCli.ShowDialog();
+        }
+
+        private void BtnCadastroProfissional_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnCadastroLocal_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
