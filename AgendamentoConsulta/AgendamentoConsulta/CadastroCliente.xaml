@@ -35,7 +35,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- Informaçoes -->
-        <TextBlock x:Name="LabelDadosCliente" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" Height="20" Margin="5,3,0,0" FontWeight="Bold" Grid.Column="1" FontFamily="Arial" FontSize="16" TextAlignment="Center"><Run Text="Dados do"/><Run Text=" "/><Run Text="Paciente "/></TextBlock>
+        <TextBlock x:Name="LabelDadosCliente" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="590" Height="20" Margin="2,0,0,0" FontWeight="Bold" FontFamily="Arial" FontSize="16" TextAlignment="Center" Grid.ColumnSpan="3"><Run Text="Dados do"/><Run Text=" "/><Run Text="Paciente "/></TextBlock>
 
         <!--Retangulo para separar-->
         <Rectangle Grid.ColumnSpan="3"  Fill="Black" HorizontalAlignment="Left" Height="3" Stroke="Black" VerticalAlignment="Top" Width="592" Margin="0,23,0,0" RenderTransformOrigin="0.5,0.5"/>
@@ -46,15 +46,15 @@
 
         <!-- Cpf -->
         <TextBlock x:Name="LabelCpfPaciente" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,5,0,0" FontFamily="Arial" TextAlignment="Right" ><Run Text=" "/><Run Text="CPF"/></TextBlock>
-        <xctk:MaskedTextBox Mask="000,000,000-00" x:Name="BoxCpfPaciente" Height="21" Margin="5,5,178,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" />
+        <xctk:MaskedTextBox Mask="000,000,000-00" x:Name="BoxCpfPaciente" Height="21" Margin="5,5,178,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" TextChanged="BoxCpfPaciente_TextChanged" />
 
         <!-- Telefone -->
-        <TextBlock x:Name="LabelContatoPaciente" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,5,0,0" FontFamily="Arial" TextAlignment="Right" Grid.Column="2" ><Run Text=" "/><Run Text="Telefone"/></TextBlock>
-        <xctk:MaskedTextBox Mask="(00) 0000-0000" x:Name="BoxContatoPaciente" Height="21" Margin="65,5,26,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" Grid.Row="2" />
+        <TextBlock x:Name="LabelContatoPaciente" HorizontalAlignment="Left" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Height="20" RenderTransformOrigin="0.468,0.867" Margin="41,5,0,0" FontFamily="Arial" TextAlignment="Right" Text="Celular" />
+        <xctk:MaskedTextBox Mask="(00) 0 0000-0000" x:Name="BoxContatoPaciente" Height="21" Margin="5,4,162,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Grid.Row="4" />
 
         <!-- RG -->
         <TextBlock x:Name="LabelRgPaciente" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" Height="20" RenderTransformOrigin="0.468,0.867" Margin="117,7,0,0" FontFamily="Arial" TextAlignment="Right" Grid.Column="1" Grid.RowSpan="2" ><Run Text=" "/><Run Text="RG"/></TextBlock>
-        <xctk:MaskedTextBox Mask="00,000,000-0" x:Name="BoxRgPaciente" Height="21" Margin="178,4,21,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.337,0.524"/>
+        <xctk:MaskedTextBox Mask="00,000,000-0" x:Name="BoxRgPaciente" Height="21" Margin="178,4,10,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.337,0.524"/>
 
         <!-- Email -->
         <TextBlock x:Name="LabelEmailPaciente" HorizontalAlignment="Left" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,6,0,0" FontFamily="Arial" TextAlignment="Right" Text="E-mail" />

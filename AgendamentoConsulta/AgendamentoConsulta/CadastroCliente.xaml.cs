@@ -34,5 +34,10 @@ namespace AgendamentoConsulta
         {
 
         }
+
+        private void BoxCpfPaciente_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
