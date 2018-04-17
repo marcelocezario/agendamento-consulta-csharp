@@ -28,7 +28,7 @@ namespace AgendamentoConsulta
 
         private void ButtonSalvarPaciente_Click(object sender, RoutedEventArgs e)
         {
-
+            //criando novo objeto de Paciente
             Paciente paciente = new Paciente();
 
             paciente.Nome = BoxNomePaciente.Text;
@@ -38,13 +38,19 @@ namespace AgendamentoConsulta
             paciente.Celular = BoxContatoPaciente.Text;
             paciente.DtNascimento = BoxDtNascimentoPaciente.SelectedDate.Value;
 
-            MessageBox.Show(paciente.Nome);
 
-
+            //criando novo objeto de Endereço
             Endereco endereco = new Endereco();
 
-            endereco.Cep
-            endereco.Complemento
+            endereco.Cep = BoxCepPaciente.Text;
+            endereco.Rua = BoxRuaPaciente.Text;
+            endereco.Complemento = BoxComplementoPaciente.Text;
+            endereco.Numero = int.Parse(BoxNumeroPaciente.Text);
+            endereco.Cidade = BoxCidadePaciente.Text;
+
+            //CRIAR CAMPO PARA PREENCHIMENTO DO UF
+            endereco.Uf = BoxUfPaciente.Text;
+
 
 
 
