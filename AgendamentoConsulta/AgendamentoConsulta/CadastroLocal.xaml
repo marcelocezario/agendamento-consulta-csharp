@@ -1,12 +1,11 @@
 ﻿<Controls:MetroWindow x:Class="AgendamentoConsulta.CadastroLocal"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                      xmlns:osb="clr-namespace:Xceed.Wpf.Toolkit.Obselete;assembly=WPFToolkit.Extended"
                       xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"     
                       x:Name="TelaCadastroLocal"
-                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       mc:Ignorable="d"
                       Title="Cadastro do Local"
                       Height="550"
@@ -60,7 +59,7 @@
         <TextBox x:Name="BoxNumeroPaciente"   Height="23" Grid.Row="10" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Margin="227,0,135,0" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5"/>
         
         
-<CheckBox x:Name="checkBoxDomingo" Content="Domingo" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkBoxDomingo" Content="Domingo" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top"/>
         <CheckBox x:Name="checkBoxSegunda" Content="Segunda-Feira" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top"/>
         <CheckBox x:Name="checkBoxTerca" Content="Terça-Feira" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top"/>
         <CheckBox x:Name="checkBoxQuarta" Content="Quarta-Feira" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top"/>
