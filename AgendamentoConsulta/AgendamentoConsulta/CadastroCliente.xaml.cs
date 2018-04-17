@@ -51,6 +51,8 @@ namespace AgendamentoConsulta
             //CRIAR CAMPO PARA PREENCHIMENTO DO UF
             endereco.Uf = BoxUfPaciente.Text;
 
+            endereco.Cep
+            endereco.Complemento
 
 
 
