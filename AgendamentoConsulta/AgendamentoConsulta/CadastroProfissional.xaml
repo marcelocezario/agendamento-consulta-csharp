@@ -42,7 +42,7 @@
 
         <!-- Nome -->
         <TextBlock x:Name="LabelNomeProfissional" HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,6,0,0" FontFamily="Arial" TextAlignment="Right"><Run Text=" "/><Run Text="Nome"/></TextBlock>
-        <TextBox  x:Name="BoxNomeProfissional"  Height="24" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="5,0,138,0" Grid.Column="1" TextChanged="BoxNomePaciente_TextChanged" TextAlignment="Justify" Grid.ColumnSpan="2"/>
+        <TextBox  x:Name="BoxNomeProfissional"  Height="24" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="5,0,138,0" Grid.Column="1"  TextAlignment="Justify" Grid.ColumnSpan="2"/>
 
         <!-- Registro Profissional -->
         <TextBlock x:Name="LabelRegisProfissional" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Height="20" RenderTransformOrigin="0.468,0.867" Margin="2,5,0,0" FontFamily="Arial" TextAlignment="Right" Grid.ColumnSpan="2" ><Run Text="Registro Profissicional"/></TextBlock>
@@ -58,7 +58,13 @@
 
         <!-- Email -->
         <TextBlock x:Name="LabelEmailProfissional" HorizontalAlignment="Left" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,6,0,0" FontFamily="Arial" TextAlignment="Right" Text="E-mail" />
-        <TextBox x:Name="BoxEmailProfissional"   Height="25" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="348" Margin="0,1,135,0" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="BoxEmailProfissional"   Height="25" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="348" Margin="0,0,135,0" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+        <CheckBox x:Name="checkBoxDomingo" Content="Domingo" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="242,10,0,0" Grid.RowSpan="2"/>
+        <CheckBox x:Name="checkBoxSegunda" Content="Segunda-Feira" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top" Margin="122,7,0,0"/>
+        <CheckBox x:Name="checkBoxTerca" Content="Terça-Feira" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top" Margin="2,8,0,0"/>
+        <CheckBox x:Name="checkBoxQuarta" Content="Quarta-Feira" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Margin="0,8,0,0"/>
+        <CheckBox x:Name="checkBoxQuinta" Content="Quinta-Feira" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Margin="122,10,0,0" Grid.RowSpan="2"/>
 
 
         <!-- Endereço -->

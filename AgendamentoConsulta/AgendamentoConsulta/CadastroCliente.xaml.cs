@@ -25,19 +25,6 @@ namespace AgendamentoConsulta
             InitializeComponent();
         }
 
-        private void BoxNomePaciente_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void _maskedTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void BoxCpfPaciente_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
+        
     }
 }

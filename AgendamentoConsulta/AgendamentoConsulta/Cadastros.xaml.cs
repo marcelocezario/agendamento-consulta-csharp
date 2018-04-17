@@ -33,13 +33,14 @@ namespace AgendamentoConsulta
 
         private void BtnCadastroProfissional_Click(object sender, RoutedEventArgs e)
         {
-            CadastroProfissional CadPro = new CadastroProfissional();
+            CadastroProfissional cadPro = new CadastroProfissional();
             cadPro.ShowDialog();
         }
 
         private void BtnCadastroLocal_Click(object sender, RoutedEventArgs e)
         {
-
+            CadastroLocal cadLocal = new CadastroLocal();
+            cadLocal.ShowDialog();
         }
     }
 }

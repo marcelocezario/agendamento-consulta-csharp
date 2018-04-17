@@ -11,13 +11,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 
 namespace AgendamentoConsulta
 {
     /// <summary>
     /// Interaction logic for CadastroLocal.xaml
     /// </summary>
-    public partial class CadastroLocal : Window
+    public partial class CadastroLocal : MetroWindow
     {
         public CadastroLocal()
         {
