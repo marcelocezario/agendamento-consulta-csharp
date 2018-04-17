@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
+using Model;
 
 namespace AgendamentoConsulta
 {
@@ -25,6 +26,20 @@ namespace AgendamentoConsulta
             InitializeComponent();
         }
 
-        
+        private void ButtonSalvarPaciente_Click(object sender, RoutedEventArgs e)
+        {
+
+            Paciente paciente = new Paciente();
+
+            paciente.Nome = BoxNomePaciente.Text;
+            paciente.Cpf = BoxCpfPaciente.Text;
+            paciente.Rg = BoxRgPaciente.Text;
+            paciente.Email = BoxEmailPaciente.Text;
+            paciente.Celular = BoxContatoPaciente.Text;
+            paciente.DtNascimento = BoxDtNascimentoPaciente.SelectedDate.Value;
+
+
+            
+        }
     }
 }
