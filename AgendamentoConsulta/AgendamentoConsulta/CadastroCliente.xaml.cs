@@ -38,8 +38,17 @@ namespace AgendamentoConsulta
             paciente.Celular = BoxContatoPaciente.Text;
             paciente.DtNascimento = BoxDtNascimentoPaciente.SelectedDate.Value;
 
+            MessageBox.Show(paciente.Nome);
 
-            
+
+            Endereco endereco = new Endereco();
+
+            endereco.Cep
+            endereco.Complemento
+
+
+
+
         }
     }
 }
