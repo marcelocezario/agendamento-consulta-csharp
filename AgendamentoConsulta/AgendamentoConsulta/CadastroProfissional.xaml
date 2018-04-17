@@ -91,6 +91,7 @@
         <TextBox x:Name="BoxNumeroProfissional"   Height="23" Grid.Row="10" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Margin="236,22,126,0" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2"/>
 
         <TextBlock x:Name="LabelUfProfissional_Copy1" FontFamily="Arial" Grid.Row="9" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="122,6,115,0" TextAlignment="Right" Grid.Column="1" ><Run Text="Estado "/></TextBlock>
+        <ComboBox x:Name="comboBox" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Margin="200,0,0,0" Grid.Row="9" VerticalAlignment="Top" Width="120" Height="20" SelectionChanged="comboBox_SelectionChanged"/>
 
 
     </Grid>
