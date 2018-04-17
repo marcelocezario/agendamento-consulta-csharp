@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Model
 {
-    public abstract class Endereco
+    public class Endereco
     {
         public int IdEndereco { get; set; }
 
@@ -12,6 +12,8 @@ namespace Model
         public string Rua { get; set; }
         public int Numero { get; set; }
         public string Complemento { get; set; }
-        
+        public string Cidade { get; set; }
+        public string Uf { get; set; }
+
     }
 }

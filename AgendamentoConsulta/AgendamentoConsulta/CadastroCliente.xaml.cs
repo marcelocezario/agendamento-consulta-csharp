@@ -43,8 +43,7 @@ namespace AgendamentoConsulta
 
             Endereco endereco = new Endereco();
 
-            endereco.Cep
-            endereco.Complemento
+            
 
 
 
