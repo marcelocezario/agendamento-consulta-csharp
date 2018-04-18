@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    public class ControllerEndereco
+    public class EnderecoController
     {
         public void SalvarEndereco (Endereco endereco)
         {

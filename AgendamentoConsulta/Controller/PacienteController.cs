@@ -7,7 +7,7 @@ using Model;
 
 namespace Controller
 {
-    public class ControllerPaciente
+    public class PacienteController
     {
         public void SalvarPaciente (Paciente paciente)
         {
