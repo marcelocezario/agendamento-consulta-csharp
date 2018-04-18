@@ -9,9 +9,11 @@ namespace Controller
 {
     public class EnderecoController
     {
-        public void SalvarEndereco (Endereco endereco)
+        public int SalvarEndereco (Endereco endereco)
         {
+            int enderecoId = 0;
 
+            return enderecoId;
         }
 
         public void EditarEndereco (int idEndereco, Endereco enderecoEditado)
@@ -28,7 +30,5 @@ namespace Controller
         {
             return null;
         }
-      
-
     }
 }

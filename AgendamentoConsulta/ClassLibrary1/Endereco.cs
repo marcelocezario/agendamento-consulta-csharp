@@ -6,7 +6,7 @@ namespace Model
 {
     public class Endereco
     {
-        public int IdEndereco { get; set; }
+        public int EnderecoID { get; set; }
 
         public string Cep { get; set; }
         public string Rua { get; set; }

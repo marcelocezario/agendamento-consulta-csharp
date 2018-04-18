@@ -6,7 +6,7 @@ namespace Model
 {
     public class Local
     {
-        public int IdLocal { get; set; }
+        public int LocalID { get; set; }
         //Dias da semana
         public bool Domingo { get; set; }
         public bool Segunda { get; set; }

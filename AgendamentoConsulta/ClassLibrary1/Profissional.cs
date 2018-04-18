@@ -14,6 +14,7 @@ namespace Model
         public bool Quinta { get; set; }
         public bool Sexta { get; set; }
         public bool Sabado { get; set; }
-        public DateTime Periodo { get; set; }
+        public DateTime HrInicio { get; set; }
+        public DateTime HrFim { get; set; }
     }
 }

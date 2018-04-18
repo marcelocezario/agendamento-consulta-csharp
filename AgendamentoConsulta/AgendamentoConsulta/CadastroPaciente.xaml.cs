@@ -20,14 +20,12 @@ namespace AgendamentoConsulta
     /// <summary>
     /// Lógica interna para CadastroCliente.xaml
     /// </summary>
-    public partial class CadastroCliente : MetroWindow
+    public partial class CadastroPaciente : MetroWindow
     {
-        public CadastroCliente()
+        public CadastroPaciente()
         {
             InitializeComponent();
         }
-
-        public static Cada
 
         private void ButtonSalvarPaciente_Click(object sender, RoutedEventArgs e)
         {
@@ -40,29 +38,36 @@ namespace AgendamentoConsulta
                         BoxCidadePaciente.Text != null || ComboBoxEstado.Text != null)
                     {
                         //criando novo objeto de Paciente
-                        Paciente paciente = new Paciente();
+                        Paciente p = new Paciente();
 
-                        paciente.Nome = BoxNomePaciente.Text;
-                        paciente.Cpf = BoxCpfPaciente.Text;
-                        paciente.Rg = BoxRgPaciente.Text;
+                        p.Nome = BoxNomePaciente.Text;
+                        p.Cpf = BoxCpfPaciente.Text;
+                        p.Rg = BoxRgPaciente.Text;
 
-                        paciente.Email = BoxEmailPaciente.Text;
-                        paciente.Celular = BoxContatoPaciente.Text;
-                        paciente.DtNascimento = BoxDtNascimentoPaciente.SelectedDate.Value;
+                        p.Email = BoxEmailPaciente.Text;
+                        p.Celular = BoxContatoPaciente.Text;
+                        p.DtNascimento = BoxDtNascimentoPaciente.SelectedDate.Value;
 
 
                         //criando novo objeto de Endereço
-                        Endereco endereco = new Endereco();
+                        Endereco end = new Endereco();
 
-                        endereco.Cep = BoxCepPaciente.Text;
-                        endereco.Rua = BoxRuaPaciente.Text;
-                        endereco.Complemento = BoxComplementoPaciente.Text;
-                        endereco.Numero = int.Parse(BoxNumeroPaciente.Text);
-                        endereco.Cidade = BoxCidadePaciente.Text;
-                        endereco.Uf = ComboBoxEstado.Text;
+                        end.Cep = BoxCepPaciente.Text;
+                        end.Rua = BoxRuaPaciente.Text;
+                        end.Complemento = BoxComplementoPaciente.Text;
+                        end.Numero = int.Parse(BoxNumeroPaciente.Text);
+                        end.Cidade = BoxCidadePaciente.Text;
+                        end.Uf = ComboBoxEstado.Text;
 
 
                         //passar dados para controller
+
+                        PacienteController pc = new PacienteController();
+                        EnderecoController ec = new EnderecoController();
+                        p.EnderecoID = ec.SalvarEndereco(end);
+                        pc.SalvarPaciente(p);
+
+
 
                     }
                     else
