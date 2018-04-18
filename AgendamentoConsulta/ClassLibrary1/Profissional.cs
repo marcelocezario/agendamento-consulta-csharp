@@ -3,7 +3,7 @@ using System;
 
 namespace Model
 {
-    class Profissional : Pessoa 
+    public class Profissional : Pessoa 
     {
         public string ResgistroProfissional { get; set; }
         //Dias da semana
