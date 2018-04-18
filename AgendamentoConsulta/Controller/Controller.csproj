@@ -70,7 +70,7 @@
   <ItemGroup>
     <Compile Include="AgendamentoController.cs" />
     <Compile Include="EnderecoController.cs" />
-    <Compile Include="LocalConsultaController.cs" />
+    <Compile Include="LocalController.cs" />
     <Compile Include="PacienteController.cs" />
     <Compile Include="ProfissionalController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

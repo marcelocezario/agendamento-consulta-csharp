@@ -7,19 +7,19 @@ using Model;
 
 namespace Controller
 {
-    class LocalConsultaController
+    class LocalController
     {
-        public void SalvarLocalConsulta(Local localConsulta)
+        public void SalvarLocal(Local local)
         {
 
         }
 
-        public void EditarLocalConsulta(int idLocal, Local localEditado)
+        public void EditarLocal(int idLocal, Local localEditado)
         {
 
         }
 
-        public void ExcluirLocalConsulta(int idLocalConsulta)
+        public void ExcluirLocal(int idLocal)
         {
 
         }
