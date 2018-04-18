@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    class Verificacoes
+    public class Verificacoes
     {
         //Função para validar Email
         public static bool ValidarEmail(string Email)
