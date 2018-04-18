@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Model
 {
@@ -21,5 +19,6 @@ namespace Model
 
 
         public int EnderecoID { get; set; }
+        public virtual Endereco _Endereco { get; set; }
     }
 }

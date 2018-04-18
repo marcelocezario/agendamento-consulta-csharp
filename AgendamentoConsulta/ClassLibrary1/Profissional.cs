@@ -1,5 +1,4 @@
-﻿using AgendamentoConsulta;
-using System;
+﻿using System;
 
 namespace Model
 {

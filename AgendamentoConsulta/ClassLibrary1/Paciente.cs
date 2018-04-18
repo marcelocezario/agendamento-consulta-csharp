@@ -1,6 +1,4 @@
-﻿using AgendamentoConsulta;
-
-namespace Model
+﻿namespace Model
 {
     public class Paciente : Pessoa
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AgendamentoConsulta
+namespace Model
 {
     //cria a classe que corresponde as caracteristicas que seram usados como base 
     public abstract class Pessoa
@@ -13,6 +13,7 @@ namespace AgendamentoConsulta
         public string Cpf { get; set; }
         public DateTime DtNascimento { get; set; } 
 
-        public int EnderecoID { get; set; } 
+        public int EnderecoID { get; set; }
+        public virtual Endereco _Endereco { get; set; }
     }
 }

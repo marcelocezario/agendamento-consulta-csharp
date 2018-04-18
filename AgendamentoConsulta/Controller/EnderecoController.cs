@@ -1,9 +1,5 @@
 ﻿using Model;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Controller
 {
@@ -11,9 +7,8 @@ namespace Controller
     {
         public int SalvarEndereco (Endereco endereco)
         {
-            int enderecoId = 0;
 
-            return enderecoId;
+            return endereco.EnderecoID;
         }
 
         public void EditarEndereco (int idEndereco, Endereco enderecoEditado)
