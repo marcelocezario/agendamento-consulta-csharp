@@ -11,6 +11,8 @@ namespace Controller
     {
         public void IncluirAgendamento (Agendamento agendamento)
         {
+            //verificar disponibilidade local (se funciona no dia e se não tem consulta marcada)
+            //verificar disponibilidade profissional (se atende no dia e se não tem consulta marcada)
 
         }
 

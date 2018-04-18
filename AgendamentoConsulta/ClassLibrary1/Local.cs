@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Model
 {
-    class Local
+    public class Local
     {
         public int IdLocal { get; set; }
         //Dias da semana
