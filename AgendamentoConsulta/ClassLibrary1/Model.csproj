@@ -85,7 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agendamento.cs" />
-    <Compile Include="dao\Contexto.cs" />
+    <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Endereco.cs" />
     <Compile Include="Local.cs" />
     <Compile Include="Paciente.cs" />
