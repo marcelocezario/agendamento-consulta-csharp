@@ -15,7 +15,7 @@ namespace AgendamentoConsulta
 
         private void BtnCadastrosCliente_Click(object sender, RoutedEventArgs e)
         {
-            CadastroCliente cadCli = new CadastroCliente();
+            CadastroPaciente cadCli = new CadastroPaciente();
             cadCli.ShowDialog();
         }
 

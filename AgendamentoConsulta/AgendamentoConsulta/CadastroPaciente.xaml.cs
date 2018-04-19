@@ -18,61 +18,78 @@ namespace AgendamentoConsulta
         private void ButtonSalvarPaciente_Click(object sender, RoutedEventArgs e)
         {
 
-            if (BoxNomePaciente.Text != null || BoxCpfPaciente != null || BoxDtNascimentoPaciente != null)
+            MessageBox.Show(BoxCpfPaciente.Text);
+            if (!BoxNomePaciente.Text.Equals(""))
             {
-                if (Verificacoes.ValidarEmail(BoxEmailPaciente.Text))
+                // Gabryel não esquecer de arrumar a máscara
+                if (!BoxCpfPaciente.Text.Equals("___.___.___-__"))
                 {
-                    if (BoxCepPaciente.Text != null || BoxRuaPaciente.Text != null || BoxNumeroPaciente.Text != null ||
-                        BoxCidadePaciente.Text != null || ComboBoxEstado.Text != null)
+                    if (BoxDtNascimentoPaciente.Text != null)
                     {
-                        //criando novo objeto de Paciente
-                        Paciente p = new Paciente();
 
-                        p.Nome = BoxNomePaciente.Text;
-                        p.Cpf = BoxCpfPaciente.Text;
-                        p.Rg = BoxRgPaciente.Text;
+                        if (Verificacoes.ValidarEmail(BoxEmailPaciente.Text))
+                        {
+                            if (BoxCepPaciente.Text != "" && BoxRuaPaciente.Text != "" && BoxNumeroPaciente.Text != "" &&
+                                BoxCidadePaciente.Text != "" && ComboBoxEstado.Text != "")
+                            {
+                                //criando novo objeto de Paciente
+                                Paciente p = new Paciente();
 
-                        p.Email = BoxEmailPaciente.Text;
-                        p.Celular = BoxContatoPaciente.Text;
-                        p.DtNascimento = BoxDtNascimentoPaciente.SelectedDate.Value;
+                                p.Nome = BoxNomePaciente.Text;
+                                p.Cpf = BoxCpfPaciente.Text;
+                                p.Rg = BoxRgPaciente.Text;
 
-
-                        //criando novo objeto de Endereço
-                        Endereco end = new Endereco();
-
-                        end.Cep = BoxCepPaciente.Text;
-                        end.Rua = BoxRuaPaciente.Text;
-                        end.Complemento = BoxComplementoPaciente.Text;
-                        end.Numero = int.Parse(BoxNumeroPaciente.Text);
-                        end.Cidade = BoxCidadePaciente.Text;
-                        end.Uf = ComboBoxEstado.Text;
+                                p.Email = BoxEmailPaciente.Text;
+                                p.Celular = BoxContatoPaciente.Text;
+                                p.DtNascimento = BoxDtNascimentoPaciente.SelectedDate.Value;
 
 
-                        //passar dados para controller
+                                //criando novo objeto de Endereço
+                                Endereco end = new Endereco();
 
-                        PacienteController pc = new PacienteController();
-                        EnderecoController ec = new EnderecoController();
-                        p.EnderecoID = ec.SalvarEndereco(end);
-                        pc.SalvarPaciente(p);
+                                end.Cep = BoxCepPaciente.Text;
+                                end.Rua = BoxRuaPaciente.Text;
+                                end.Complemento = BoxComplementoPaciente.Text;
+                                end.Numero = int.Parse(BoxNumeroPaciente.Text);
+                                end.Cidade = BoxCidadePaciente.Text;
+                                end.Uf = ComboBoxEstado.Text;
 
 
+                                //passar dados para controller
+
+                                PacienteController pc = new PacienteController();
+                                EnderecoController ec = new EnderecoController();
+                                p.EnderecoID = ec.SalvarEndereco(end);
+                                pc.SalvarPaciente(p);
+
+
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Dados obrigatórios do endereço do paciente não preenchidos");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Endereço de e-mail inválido");
+                        }
 
                     }
                     else
                     {
-                        MessageBox.Show("Dados obrigatórios do endereço do paciente não preenchidos");
+                        MessageBox.Show("Data de nascimento do paciente não preenchidos");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Endereço de e-mail inválido");
+                    MessageBox.Show("CPF inválido do paciente não preenchidos");
                 }
             }
             else
             {
-                MessageBox.Show("Dados obrigatórios do paciente não preenchidos");
+                MessageBox.Show("Nome inválido e/ou não preenchidos");
             }
         }
     }
-}
 }
