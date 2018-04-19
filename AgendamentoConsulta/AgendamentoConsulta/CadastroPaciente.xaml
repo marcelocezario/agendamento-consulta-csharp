@@ -59,7 +59,7 @@
 
         <!-- RG -->
         <TextBlock x:Name="LabelRgPaciente" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" Height="20" RenderTransformOrigin="0.468,0.867" Margin="117,7,0,0" FontFamily="Arial" TextAlignment="Right" Grid.Column="1" Grid.RowSpan="2" ><Run Text=" "/><Run Text="RG"/></TextBlock>
-        <xctk:MaskedTextBox Mask="00,000,000-0" x:Name="BoxRgPaciente" Height="21" Margin="178,4,10,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.337,0.524"/>
+        <xctk:MaskedTextBox  x:Name="BoxRgPaciente" Height="21" Margin="178,4,10,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.497,0.429"/>
 
         <!-- Email -->
         <TextBlock x:Name="LabelEmailPaciente" HorizontalAlignment="Left" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,6,0,0" FontFamily="Arial" TextAlignment="Right" Text="E-mail" />
@@ -78,7 +78,7 @@
 
         <!-- Estado -->
         <TextBlock x:Name="LabelUfPaciente" FontFamily="Arial" Grid.Row="9" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="164,6,73,0" TextAlignment="Right" Grid.Column="1" ><Run Text="Estado "/></TextBlock>
-        <ComboBox x:Name="ComboBoxEstado" Grid.ColumnSpan="2"   Grid.Column="1" HorizontalAlignment="Left" Margin="222,0,0,0" Grid.Row="9"  VerticalAlignment="Top" Width="120" Height="26">
+        <ComboBox x:Name="ComboBoxEstado" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Margin="222,0,0,0" Grid.Row="9"  VerticalAlignment="Top" Width="120" Height="26">
             <RadioButton Content="AC" />
             <RadioButton Content="AL"/>
             <RadioButton Content="AP"/>

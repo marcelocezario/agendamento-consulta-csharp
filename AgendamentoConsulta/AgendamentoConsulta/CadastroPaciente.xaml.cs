@@ -24,11 +24,12 @@ namespace AgendamentoConsulta
         // Gabryel não esquecer de arrumar a máscara
         private bool VerificarPreenchimentoCampos()
         {
+
             if (BoxNomePaciente.Text.Equals(""))
                 MessageBox.Show("O campo nome é obrigatório");
             else
             {
-                if (BoxCpfPaciente.Text.Equals("___.___.___-__"))
+                if (Verificacoes.ValidaCpf(BoxCpfPaciente.Text))
                     MessageBox.Show("O campo CPF é obrigatório");
                 else
                 {
@@ -48,19 +49,26 @@ namespace AgendamentoConsulta
                                     MessageBox.Show("O campo rua é obrigatório");
                                 else
                                 {
-                                    if (BoxNumeroPaciente.Text.Equals(""))
-                                        MessageBox.Show("O campo número em endereço é obrigatório");
+                                    string caracteresPermitidos = "1234567890";
+                                    if (!(caracteresPermitidos.Contains(BoxNumeroPaciente.Text.ToString())))
+                                        MessageBox.Show("O campo número de endereço esta preechido de forma incorreta");
                                     else
                                     {
-                                        if (BoxCidadePaciente.Text.Equals(""))
-                                            MessageBox.Show("O campo Cidade é obrigatório");
+                                        if (BoxNumeroPaciente.Text.Equals(""))
+
+                                            MessageBox.Show("O campo número em endereço é obrigatório");
                                         else
                                         {
-                                            if (ComboBoxEstado.Text.Equals(""))
-                                                MessageBox.Show("O campo UF é obrigatório");
+                                            if (BoxCidadePaciente.Text.Equals(""))
+                                                MessageBox.Show("O campo Cidade é obrigatório");
                                             else
                                             {
-                                                return true;
+                                                if (ComboBoxEstado.Text.Equals(""))
+                                                    MessageBox.Show("O campo UF é obrigatório");
+                                                else
+                                                {
+                                                    return true;
+                                                }
                                             }
                                         }
                                     }
@@ -69,42 +77,44 @@ namespace AgendamentoConsulta
                         }
                     }
                 }
+
             }
             return false;
         }
+    
 
-        private void SalvarCadastro()
-        {
-            //criando novo objeto de Paciente
-            Paciente p = new Paciente();
+            private void SalvarCadastro()
+            {
+                //criando novo objeto de Paciente
+                Paciente p = new Paciente();
 
-            p.Nome = BoxNomePaciente.Text;
-            p.Cpf = BoxCpfPaciente.Text;
-            p.Rg = BoxRgPaciente.Text;
+                p.Nome = BoxNomePaciente.Text;
+                p.Cpf = BoxCpfPaciente.Text;
+                p.Rg = BoxRgPaciente.Text;
 
-            p.Email = BoxEmailPaciente.Text;
-            p.Celular = BoxContatoPaciente.Text;
-            p.DtNascimento = BoxDtNascimentoPaciente.SelectedDate.Value;
+                p.Email = BoxEmailPaciente.Text;
+                p.Celular = BoxContatoPaciente.Text;
+                p.DtNascimento = BoxDtNascimentoPaciente.SelectedDate.Value;
 
-            //criando novo objeto de Endereço
-            Endereco end = new Endereco();
+                //criando novo objeto de Endereço
+                Endereco end = new Endereco();
 
-            end.Cep = BoxCepPaciente.Text;
-            end.Rua = BoxRuaPaciente.Text;
-            end.Complemento = BoxComplementoPaciente.Text;
-            end.Numero = int.Parse(BoxNumeroPaciente.Text);
-            end.Cidade = BoxCidadePaciente.Text;
-            end.Uf = ComboBoxEstado.Text;
+                end.Cep = BoxCepPaciente.Text;
+                end.Rua = BoxRuaPaciente.Text;
+                end.Complemento = BoxComplementoPaciente.Text;
+                end.Numero = int.Parse(BoxNumeroPaciente.Text);
+                end.Cidade = BoxCidadePaciente.Text;
+                end.Uf = ComboBoxEstado.Text;
+                MessageBox.Show("ComboBoxEstado.Text");
+                //passar dados para controller
+                PacienteController pc = new PacienteController();
+                EnderecoController ec = new EnderecoController();
+                p.EnderecoID = ec.SalvarEndereco(end);
+                p._Endereco = end;
+                pc.SalvarPaciente(p);
 
-            //passar dados para controller
-            PacienteController pc = new PacienteController();
-            EnderecoController ec = new EnderecoController();
-            p.EnderecoID = ec.SalvarEndereco(end);
-            p._Endereco = end;
-            pc.SalvarPaciente(p);
+                this.Close();
 
-            this.Close();
-
+            }
         }
     }
-}
