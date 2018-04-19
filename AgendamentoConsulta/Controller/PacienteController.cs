@@ -5,17 +5,17 @@ namespace Controller
 {
     public class PacienteController
     {
-        public void SalvarPaciente (Paciente paciente)
+        public void SalvarPaciente(Paciente paciente)
         {
 
         }
 
-        public void EditarPaciente (int idPaciente, Paciente pacienteEditado)
+        public void EditarPaciente(int idPaciente, Paciente pacienteEditado)
         {
 
         }
 
-        public void ExcluirPaciente (int idPaciente)
+        public void ExcluirPaciente(int idPaciente)
         {
 
         }
