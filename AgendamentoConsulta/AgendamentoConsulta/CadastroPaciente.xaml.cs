@@ -102,6 +102,9 @@ namespace AgendamentoConsulta
             p.EnderecoID = ec.SalvarEndereco(end);
             p._Endereco = end;
             pc.SalvarPaciente(p);
+
+            this.Close();
+
         }
     }
 }
