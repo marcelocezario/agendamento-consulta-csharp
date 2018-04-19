@@ -6,12 +6,19 @@ using System.Threading.Tasks;
 
 namespace Model.dao
 {
-    
+
 
     //erro aqui para não gerar o banco de dados
-    public class Contexto
-    { 
+    public class Contexto : DbContext
+    {
+        public Contexto() : base("strConn")
+        {
+        }
 
-
+        public DbSet<Paciente> Pacientes { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
+        public DbSet<Local> Locais { get; set; }
+        public DbSet<Profissional> Profissionais { get; set; }
+        public DbSet<Agendamento> Agendamentos { get; set; }
     }
 }

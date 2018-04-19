@@ -5,6 +5,7 @@ namespace Model
     public class Profissional : Pessoa 
     {
         public string ResgistroProfissional { get; set; }
+        public string Especialidade { get; set; }
         //Dias da semana
         public bool Domingo { get; set; }
         public bool Segunda { get; set; }
