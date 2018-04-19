@@ -14,5 +14,10 @@ namespace AgendamentoConsulta
         {
             InitializeComponent();
         }
+
+        private void ButtonSalvarLocal_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -9,22 +9,26 @@
                       Title="Cadastro de Profissionais"
                       x:Name="TelaCadastroProfisional"
                       Height="550"
-                      Width="600" FontFamily="Arial" FontSize="14" MaxWidth="600" MaxHeight="600">
+                      Width="600" FontFamily="Arial" FontSize="14" MaxWidth="600" MaxHeight="547" MinWidth="600" MinHeight="550">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" MinHeight="20"/>
-            <RowDefinition Height="26*"/>
-            <RowDefinition Height="26*"/>
-            <RowDefinition Height="26*"/>
             <RowDefinition Height="25*"/>
-            <RowDefinition Height="26*"/>
-            <RowDefinition Height="26*"/>
-            <RowDefinition Height="27*"/>
             <RowDefinition Height="25*"/>
-            <RowDefinition Height="26*"/>
-            <RowDefinition Height="23*"/>
-            <RowDefinition Height="22*"/>
-            <RowDefinition Height="215*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="127*"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -34,65 +38,111 @@
         </Grid.ColumnDefinitions>
 
         <!-- Informaçoes -->
-        <TextBlock x:Name="LabelDadosProfissional" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="590" Height="20" Margin="2,0,0,0" FontWeight="Bold" FontFamily="Arial" FontSize="16" TextAlignment="Center" Grid.ColumnSpan="3"><Run Text="Dados do"/><Run Text=" "/><Run Text="Profissional "/></TextBlock>
+        <TextBlock x:Name="LabelDadosCliente1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="590" Height="20" Margin="2,0,0,0" FontWeight="Bold" FontFamily="Arial" FontSize="16" TextAlignment="Center" Grid.ColumnSpan="3"><Run Text="Dados do"/><Run Text=" "/><Run Text="Paciente "/></TextBlock>
 
         <!--Retangulo para separar-->
         <Rectangle Grid.ColumnSpan="3"  Fill="Black" HorizontalAlignment="Left" Height="3" Stroke="Black" VerticalAlignment="Top" Width="592" Margin="0,23,0,0" RenderTransformOrigin="0.5,0.5"/>
 
         <!-- Nome -->
         <TextBlock x:Name="LabelNomeProfissional" HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,6,0,0" FontFamily="Arial" TextAlignment="Right"><Run Text=" "/><Run Text="Nome"/></TextBlock>
-        <TextBox  x:Name="BoxNomeProfissional"  Height="24" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="5,0,138,0" Grid.Column="1"  TextAlignment="Justify" Grid.ColumnSpan="2"/>
+        <TextBox  x:Name="BoxNomeProfissional"  Height="24" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="5,0,138,0" Grid.Column="1" TextAlignment="Justify" Grid.ColumnSpan="2"/>
 
-        <!-- Registro Profissional -->
-        <TextBlock x:Name="LabelRegisProfissional" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Height="20" RenderTransformOrigin="0.468,0.867" Margin="2,5,0,0" FontFamily="Arial" TextAlignment="Right" Grid.ColumnSpan="2" ><Run Text="Registro Profissicional"/></TextBlock>
-        <xctk:MaskedTextBox Mask="__________" x:Name="BoxRegisProfisional" Height="21" Margin="64,4,140,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" />
+        <!-- Cpf -->
+        <TextBlock x:Name="LabelCpfProfissional" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,5,0,0" FontFamily="Arial" TextAlignment="Right" ><Run Text=" "/><Run Text="CPF"/></TextBlock>
+        <xctk:MaskedTextBox Mask="000,000,000-00" x:Name="BoxCpfProfissional" Height="21" Margin="5,5,178,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" />
+
 
         <!-- Data de nascimento -->
-        <TextBlock x:Name="LabelDtNascimentoProfisional" HorizontalAlignment="Left" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="20" RenderTransformOrigin="0.468,0.867" Margin="131,4,0,0" FontFamily="Arial" TextAlignment="Right" Grid.Column="1" ><Run Text=" "/><Run Text="Data de Nascimento"/></TextBlock>
-        <DatePicker x:Name="BoxDtNascimentoProfissional" Height="25" Margin="272,0,86,0" Grid.Row="4" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.5,0.227" Grid.ColumnSpan="2"  />
+        <TextBlock x:Name="LabelDtNascimentoProfissional" HorizontalAlignment="Left" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="20" RenderTransformOrigin="0.468,0.867" Margin="149,5,0,0" FontFamily="Arial" TextAlignment="Right" Grid.Column="1" ><Run Text=" "/><Run Text="Data de Nascimento"/></TextBlock>
+        <DatePicker x:Name="BoxDtNascimentoProfissional" Height="25" Margin="0,0,68,0" Grid.Row="4" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="0.5,0.227"  />
 
         <!-- Telefone -->
         <TextBlock x:Name="LabelContatoProfissional" HorizontalAlignment="Left" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Height="20" RenderTransformOrigin="0.468,0.867" Margin="41,5,0,0" FontFamily="Arial" TextAlignment="Right" Text="Celular" />
         <xctk:MaskedTextBox Mask="(00) 0 0000-0000" x:Name="BoxContatoProfissional" Height="21" Margin="5,4,169,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Grid.Row="4" />
 
+        <!-- RG -->
+        <TextBlock x:Name="LabelRgProfissional" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" Height="20" RenderTransformOrigin="0.468,0.867" Margin="117,7,0,0" FontFamily="Arial" TextAlignment="Right" Grid.Column="1" Grid.RowSpan="2" ><Run Text=" "/><Run Text="RG"/></TextBlock>
+        <xctk:MaskedTextBox  x:Name="BoxRgProfissional" Height="21" Margin="178,4,10,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.497,0.429"/>
+
         <!-- Email -->
         <TextBlock x:Name="LabelEmailProfissional" HorizontalAlignment="Left" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,6,0,0" FontFamily="Arial" TextAlignment="Right" Text="E-mail" />
-        <TextBox x:Name="BoxEmailProfissional"   Height="25" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="348" Margin="0,0,135,0" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="BoxEmailProfissional"   Height="25" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="345" Margin="0,1,138,0" Grid.Column="1" Grid.ColumnSpan="2"/>
+      
+        <!-- Dias que o profissional trabalha -->
+        <Label x:Name="labelDiasAtendimento" Content="Dias para atendimento" FontFamily="Arial" HorizontalAlignment="Left" Margin="5,25,0,0" Grid.Row="4" VerticalAlignment="Top" Height="26" Width="154" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <CheckBox x:Name="CheckBoxDomingo" Content="Domingo" FontFamily="Arial" Grid.Column="2" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top" Margin="75,4,0,0" Height="22" Width="78" RenderTransformOrigin="0.35,0.5"/>
+        <CheckBox x:Name="CheckBoxSegunda" Content="Segunda-Feira" Grid.Column="1"  FontFamily="Arial" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Margin="66,4,0,0" Height="23" Width="115" Grid.RowSpan="2"/>
+        <CheckBox x:Name="CheckBoxTerca" Content="Terça-Feira" Grid.Column="1" FontFamily="Arial"  HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Margin="187,4,0,0" Height="22" Width="93"/>
+        <CheckBox x:Name="CheckBoxQuarta" Content="Quarta-Feira" Grid.Column="2" FontFamily="Arial" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Margin="0,4,0,0" Height="22" Width="101" RenderTransformOrigin="0.498,0.682"/>
+        <CheckBox x:Name="CheckBoxQuinta" Content="Quinta-Feira" FontFamily="Arial" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top" Margin="66,3,0,0" Height="22" Width="100" Grid.Column="1"/>
+        <CheckBox x:Name="CheckBoxSexta" Content="Sexta-Feira" Grid.Column="1" FontFamily="Arial"  HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top" Margin="178,3,0,0" Height="22" Width="93"/>
+        <CheckBox x:Name="CheckBoxSabado" Content="Sábado" Grid.Column="1" FontFamily="Arial" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top" Margin="284,3,0,0" Height="22" Width="76" Grid.ColumnSpan="2"/>
 
-        <CheckBox x:Name="checkBoxDomingo" Content="Domingo" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="242,10,0,0" Grid.RowSpan="2"/>
-        <CheckBox x:Name="checkBoxSegunda" Content="Segunda-Feira" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top" Margin="122,7,0,0"/>
-        <CheckBox x:Name="checkBoxTerca" Content="Terça-Feira" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top" Margin="2,8,0,0"/>
-        <CheckBox x:Name="checkBoxQuarta" Content="Quarta-Feira" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Margin="0,8,0,0"/>
-        <CheckBox x:Name="checkBoxQuinta" Content="Quinta-Feira" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Margin="122,10,0,0" Grid.RowSpan="2"/>
+        <!-- Especialidade do profissional-->
+        <TextBlock x:Name="LabelEspecialidadeProfissional" HorizontalAlignment="Left" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Height="20" RenderTransformOrigin="0.468,0.867" Margin="2,5,0,0" FontFamily="Arial" TextAlignment="Right"><Run Text=" "/><Run Text="Especialidade"/></TextBlock>
+        <TextBox  x:Name="BoxEspecialidadeProfissional"  Height="24" Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="42,0,85,0" Grid.Column="1" TextAlignment="Justify"/>
 
+        <!-- Resgistro Profissional-->
+        <TextBlock x:Name="LabelResgistroProfissional" HorizontalAlignment="Left" Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="141" Height="20" RenderTransformOrigin="0.468,0.867" FontFamily="Arial" TextAlignment="Right" Grid.ColumnSpan="2"><Run Text=" "/><Run Text="Resgistro Profissional"/></TextBlock>
+        <TextBox  x:Name="BoxResgistroProfissional"  Height="24" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="5,0,0,0" Grid.Column="1" TextAlignment="Justify"/>
 
-        <!-- Endereço -->
-        <TextBlock x:Name="LabelEnderecoProfissional" FontFamily="Arial"  HorizontalAlignment="Left" Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="20" Text="Endereço " FontWeight="Bold" Margin="21,8,0,0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <!-- Campo de Endereço -->
+        <TextBlock x:Name="LabelEnderecoProfissional" FontFamily="Arial"  HorizontalAlignment="Left" Grid.Row="10" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="20" Text="Endereço " FontWeight="Bold" Margin="41,6,0,0" Grid.ColumnSpan="2"/>
 
         <!-- cep -->
-        <TextBlock x:Name="LabelCepProfissional" FontFamily="Arial" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,4,5,0" TextAlignment="Right" ><Run Text=" "/><Run Text="Cep"/></TextBlock>
-        <xctk:MaskedTextBox Mask="00,000-000" x:Name="BoxCepProfissional"   Height="19" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Margin="5,4,201,0"/>
+        <TextBlock x:Name="LabelCepProfissional" FontFamily="Arial" Grid.Row="11" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,6,5,0" TextAlignment="Right" ><Run Text=" "/><Run Text="Cep"/></TextBlock>
+        <xctk:MaskedTextBox Mask="00,000-000" x:Name="BoxCepProfissional"   Height="19" Grid.Row="11" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Margin="5,7,201,0"/>
 
         <!-- Cidade -->
-        <TextBlock x:Name="LabelCidadeProfissional" FontFamily="Arial" Grid.Row="9" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="2,6,3,0" TextAlignment="Right" ><Run Text="Cidade "/></TextBlock>
-        <TextBox  x:Name="BoxCidadeProfissional"   Height="23" Grid.Row="9" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Margin="5,3,173,0"/>
+        <TextBlock x:Name="LabelCidadeProfissional" FontFamily="Arial" Grid.Row="12" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,5,5,0" TextAlignment="Right" ><Run Text="Cidade "/></TextBlock>
+        <TextBox  x:Name="BoxCidadeProfissional"   Height="23" Grid.Row="12" TextWrapping="Wrap" VerticalAlignment="Top" Margin="5,2,146,0" Grid.Column="1"/>
+
+        <!-- Estado -->
+        <TextBlock x:Name="LabelUfProfissional" FontFamily="Arial" Grid.Row="12" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="160,5,77,0" TextAlignment="Right" Grid.Column="1" ><Run Text="Estado "/></TextBlock>
+        <ComboBox x:Name="ComboBoxEstado1" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Margin="223,0,0,0" Grid.Row="12"  VerticalAlignment="Top" Width="120" Height="26" Grid.RowSpan="2">
+            <RadioButton Content="AC" />
+            <RadioButton Content="AL"/>
+            <RadioButton Content="AP"/>
+            <RadioButton Content="AM"/>
+            <RadioButton Content="BA"/>
+            <RadioButton Content="CE"/>
+            <RadioButton Content="DF"/>
+            <RadioButton Content="GO"/>
+            <RadioButton Content="ES"/>
+            <RadioButton Content="MA"/>
+            <RadioButton Content="MT"/>
+            <RadioButton Content="MS"/>
+            <RadioButton Content="MG"/>
+            <RadioButton Content="PA"/>
+            <RadioButton Content="PR"/>
+            <RadioButton Content="PE"/>
+            <RadioButton Content="PI"/>
+            <RadioButton Content="RJ"/>
+            <RadioButton Content="RN"/>
+            <RadioButton Content="RS"/>
+            <RadioButton Content="RO"/>
+            <RadioButton Content="RR"/>
+            <RadioButton Content="SC"/>
+            <RadioButton Content="SE"/>
+            <RadioButton Content="SP"/>
+            <RadioButton Content="TO"/>
+        </ComboBox>
 
         <!-- Rua -->
-        <TextBlock x:Name="LabelRuaProfissional" Grid.Row="10" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,3,5,0" TextAlignment="Right" FontFamily="Arial"><Run Text=" "/><Run Text="Rua"/></TextBlock>
-        <TextBox x:Name="BoxRuaProfissional"   Height="23" Margin="2,0,138,0" Grid.Row="10" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="LabelRuaProfissional" Grid.Row="13" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,6,5,0" TextAlignment="Right" FontFamily="Arial"><Run Text=" "/><Run Text="Rua"/></TextBlock>
+        <TextBox x:Name="BoxRuaProfissional"   Height="23" Margin="5,3,135,0" Grid.Row="13" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="2"/>
 
         <!-- Complemento -->
-        <TextBlock x:Name="LabelComplementoProfissional" FontFamily="Arial" HorizontalAlignment="Right" Grid.Row="11" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,2,5,0" TextAlignment="Right"><Run Text=" "/><Run Text=" "/><Run Text="Complemeto"/></TextBlock>
-        <TextBox x:Name="BoxComplementoProfissional"   Height="23" Grid.Row="10" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Margin="5,22,155,0" Grid.RowSpan="2"/>
+        <TextBlock x:Name="LabelComplementoProfissional" FontFamily="Arial" HorizontalAlignment="Right" Grid.Row="14" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,5,3,0" TextAlignment="Right"><Run Text=" "/><Run Text=" "/><Run Text="Complemeto"/></TextBlock>
+        <TextBox x:Name="BoxComplementoProfissional"   Height="23" Grid.Row="14" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Margin="0,2,160,0"/>
+
 
         <!-- Numero -->
-        <TextBlock x:Name="LabelNumeroProfissional" HorizontalAlignment="Left" Grid.Row="11" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" Height="20" RenderTransformOrigin="0.468,0.867" Margin="148,2,0,0" Grid.Column="1"  FontFamily="Arial" TextAlignment="Right"><Run Text=" "/><Run Text="Número"/></TextBlock>
-        <TextBox x:Name="BoxNumeroProfissional"   Height="23" Grid.Row="10" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Margin="236,22,126,0" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2"/>
+        <TextBlock x:Name="LabelNumeroProfissional" HorizontalAlignment="Left" Grid.Row="14" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" Height="20" RenderTransformOrigin="0.468,0.867" Margin="149,5,0,0" Grid.Column="1"  FontFamily="Arial" TextAlignment="Right"><Run Text=" "/><Run Text="Número"/></TextBlock>
+        <TextBox x:Name="BoxNumeroProfissional"   Height="23" Grid.Row="14" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Margin="242,2,128,0" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5"/>
 
-        <TextBlock x:Name="LabelUfProfissional_Copy1" FontFamily="Arial" Grid.Row="9" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="122,6,115,0" TextAlignment="Right" Grid.Column="1" ><Run Text="Estado "/></TextBlock>
-        <ComboBox x:Name="comboBox" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Margin="200,0,0,0" Grid.Row="9" VerticalAlignment="Top" Width="120" Height="20"/>
-
+        <!-- Botão Salvar -->
+        <Button x:Name="ButtonSalvarProfissional" Content="Salvar" Grid.Column="2" Margin="94,104,0,-1" Grid.Row="15" Height="Auto" />
 
     </Grid>
-
 </Controls:MetroWindow>
