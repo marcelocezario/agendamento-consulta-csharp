@@ -2,6 +2,8 @@
 using MahApps.Metro.Controls;
 using Model;
 using Controller;
+using System.Windows.Input;
+using System;
 
 namespace AgendamentoConsulta
 {
@@ -24,7 +26,6 @@ namespace AgendamentoConsulta
         // Gabryel não esquecer de arrumar a máscara
         private bool VerificarPreenchimentoCampos()
         {
-
             if (BoxNomePaciente.Text.Equals(""))
                 MessageBox.Show("O campo nome é obrigatório");
             else
@@ -33,7 +34,7 @@ namespace AgendamentoConsulta
                     MessageBox.Show("O campo CPF é obrigatório");
                 else
                 {
-                    if (BoxDtNascimentoPaciente.Text.Equals(""))
+                    if (DatePickerDtNascimentoPaciente.Text.Equals(""))
                         MessageBox.Show("O campo data de nascimento é obrigatório");
                     else
                     {
@@ -47,11 +48,6 @@ namespace AgendamentoConsulta
                             {
                                 if (BoxRuaPaciente.Text.Equals(""))
                                     MessageBox.Show("O campo rua é obrigatório");
-                                else
-                                {
-                                    string caracteresPermitidos = "1234567890";
-                                    if (!(caracteresPermitidos.Contains(BoxNumeroPaciente.Text.ToString())))
-                                        MessageBox.Show("O campo número de endereço esta preechido de forma incorreta");
                                     else
                                     {
                                         if (BoxNumeroPaciente.Text.Equals(""))
@@ -71,7 +67,7 @@ namespace AgendamentoConsulta
                                                 }
                                             }
                                         }
-                                    }
+                                    
                                 }
                             }
                         }
@@ -81,40 +77,77 @@ namespace AgendamentoConsulta
             }
             return false;
         }
-    
 
-            private void SalvarCadastro()
+
+        private void SalvarCadastro()
+        {
+            //criando novo objeto de Paciente
+            Paciente p = new Paciente
             {
-                //criando novo objeto de Paciente
-                Paciente p = new Paciente();
+                Nome = BoxNomePaciente.Text,
+                Cpf = BoxCpfPaciente.Text,
+                Rg = BoxRgPaciente.Text,
 
-                p.Nome = BoxNomePaciente.Text;
-                p.Cpf = BoxCpfPaciente.Text;
-                p.Rg = BoxRgPaciente.Text;
+                Email = BoxEmailPaciente.Text,
+                Celular = BoxContatoPaciente.Text,
+                DtNascimento = DatePickerDtNascimentoPaciente.SelectedDate.Value
+            };
 
-                p.Email = BoxEmailPaciente.Text;
-                p.Celular = BoxContatoPaciente.Text;
-                p.DtNascimento = BoxDtNascimentoPaciente.SelectedDate.Value;
+            //criando novo objeto de Endereço
+            Endereco end = new Endereco
+            {
+                Cep = BoxCepPaciente.Text,
+                Rua = BoxRuaPaciente.Text,
+                Complemento = BoxComplementoPaciente.Text,
+                Numero = int.Parse(BoxNumeroPaciente.Text),
+                Cidade = BoxCidadePaciente.Text,
+                Uf = ComboBoxEstado.Text
+            };
+            MessageBox.Show("ComboBoxEstado.Text");
+            //passar dados para controller
+            PacienteController pc = new PacienteController();
+            EnderecoController ec = new EnderecoController();
+            p.EnderecoID = ec.SalvarEndereco(end);
+            p._Endereco = end;
+            pc.SalvarPaciente(p);
 
-                //criando novo objeto de Endereço
-                Endereco end = new Endereco();
+            this.Close();
 
-                end.Cep = BoxCepPaciente.Text;
-                end.Rua = BoxRuaPaciente.Text;
-                end.Complemento = BoxComplementoPaciente.Text;
-                end.Numero = int.Parse(BoxNumeroPaciente.Text);
-                end.Cidade = BoxCidadePaciente.Text;
-                end.Uf = ComboBoxEstado.Text;
-                MessageBox.Show("ComboBoxEstado.Text");
-                //passar dados para controller
-                PacienteController pc = new PacienteController();
-                EnderecoController ec = new EnderecoController();
-                p.EnderecoID = ec.SalvarEndereco(end);
-                p._Endereco = end;
-                pc.SalvarPaciente(p);
+        }
 
-                this.Close();
+        private void BoxRgPaciente_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                KeyConverter key = new KeyConverter();
+                if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+                {
+                    e.Handled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ex.Text");
+
+            }
+        }
+
+        private void BoxNumeroPaciente_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                KeyConverter key = new KeyConverter();
+                if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+                {
+                    e.Handled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ex.Text");
 
             }
         }
     }
+} 
+  
