@@ -90,7 +90,6 @@
     <Compile Include="PacienteController.cs" />
     <Compile Include="ProfissionalController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Verificacoes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

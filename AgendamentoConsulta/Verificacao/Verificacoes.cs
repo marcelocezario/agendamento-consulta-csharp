@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Controller
+namespace Verificacao
 {
-    public class Verificacoes
+    public static class Verificacao
     {
         //Função para validar Email
         public static bool ValidarEmail(string Email)

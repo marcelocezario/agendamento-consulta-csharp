@@ -49,14 +49,9 @@
         <TextBlock x:Name="LabelCpfPaciente" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,5,0,0" FontFamily="Arial" TextAlignment="Right" ><Run Text=" "/><Run Text="CPF"/></TextBlock>
         <xctk:MaskedTextBox Mask="000,000,000-00" x:Name="BoxCpfPaciente" Height="21" Margin="5,5,178,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" />
 
-
         <!-- Data de nascimento -->
         <TextBlock x:Name="LabelDtNascimentoPaciente" HorizontalAlignment="Left" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="20" RenderTransformOrigin="0.468,0.867" Margin="154,5,0,0" FontFamily="Arial" TextAlignment="Right" Grid.Column="1" ><Run Text=" "/><Run Text="Data de Nascimento"/></TextBlock>
-        <DatePicker x:Name="DatePickerDtNascimentoPaciente" Height="25" Margin="0,0,68,0" Grid.Row="4" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="0.5,0.227"  />
-
-        <!-- Telefone -->
-        <TextBlock x:Name="LabelContatoPaciente" HorizontalAlignment="Left" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Height="20" RenderTransformOrigin="0.468,0.867" Margin="41,5,0,0" FontFamily="Arial" TextAlignment="Right" Text="Celular" />
-        <xctk:MaskedTextBox Mask="(00) 0 0000-0000" x:Name="BoxContatoPaciente" Height="21" Margin="5,4,169,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Grid.Row="4" />
+        <DatePicker x:Name="DatePickerDtNascimentoPaciente" Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='HH:mm:ss ', Mode=OneWay}" Height="25" Margin="5,1,97,0" Grid.Row="4" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="0.5,0.227" Grid.RowSpan="2"  />
 
         <!-- RG -->
         <TextBlock x:Name="LabelRgPaciente" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" Height="20" RenderTransformOrigin="0.468,0.867" Margin="117,7,0,0" FontFamily="Arial" TextAlignment="Right" Grid.Column="1" Grid.RowSpan="2" ><Run Text=" "/><Run Text="RG"/></TextBlock>
@@ -64,7 +59,12 @@
 
         <!-- Email -->
         <TextBlock x:Name="LabelEmailPaciente" HorizontalAlignment="Left" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,6,0,0" FontFamily="Arial" TextAlignment="Right" Text="E-mail" />
-        <TextBox x:Name="BoxEmailPaciente"   Height="25" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="348" Margin="0,1,135,0" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="BoxEmailPaciente"   Height="25" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="345" Margin="0,1,138,0" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+        <!-- Contato -->
+        <TextBlock x:Name="LabelContatoPaciente" HorizontalAlignment="Left" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Height="20" RenderTransformOrigin="0.468,0.867" Margin="41,5,0,0" FontFamily="Arial" TextAlignment="Right" Text="Celular" />
+        <xctk:MaskedTextBox Mask="(00) 0 0000-0000" x:Name="BoxContatoPaciente" Height="21" Margin="5,4,169,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Grid.Row="4" />
+
 
         <!-- Endereço -->
         <TextBlock x:Name="LabelEnderecoPaciente" FontFamily="Arial"  HorizontalAlignment="Left" Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="20" Text="Endereço " FontWeight="Bold" Margin="21,8,0,0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>

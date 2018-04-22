@@ -218,6 +218,10 @@
       <Project>{9f7b56ed-08c7-4469-9750-d8677c12a88b}</Project>
       <Name>Controller</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Verificacao\Verificacao.csproj">
+      <Project>{93510a58-7c09-4c7f-ba33-4c7d8cd33b1d}</Project>
+      <Name>Verificacao</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
@@ -230,6 +234,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
