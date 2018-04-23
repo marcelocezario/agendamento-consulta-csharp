@@ -9,14 +9,13 @@ namespace Controller
     {
         public bool IncluirAgendamento(Agendamento agendamento)
         {
-            if (ValidaHorarioAtendimento())
+            if (ValidacaoAgendamento(agendamento))
             {
-
+                ContextoSingleton.Instancia.Agendamentos.Add(agendamento);
+                ContextoSingleton.Instancia.SaveChanges();
+                return true;
             }
-
-            ContextoSingleton.Instancia.Agendamentos.Add(agendamento);
-            ContextoSingleton.Instancia.SaveChanges();
-            return true;
+            return false;
         }
 
         public void ExcluirAgendamento(int idAgendamento)
@@ -60,11 +59,27 @@ namespace Controller
 
         }
 
+        public bool ValidacaoAgendamento(Agendamento agendamento)
+        {
+            if (ValidaHoraAtendimento(agendamento))
+            {
+                if (ValidaDiaDaSemanaAtendimento(agendamento))
+                {
+                    if (ValidaHorarioLivreProfissional(agendamento))
+                    {
+                        if (ValidaHorarioLivreLocal(agendamento))
+                        {
+                            ContextoSingleton.Instancia.Agendamentos.Add(agendamento);
+                            ContextoSingleton.Instancia.SaveChanges();
+                            return true;
+                        }
+                    }
+                }
+            }
+            return false;
+        }
 
-
-
-
-        public bool ValidaHorarioAtendimento(Agendamento agendamento)
+        public bool ValidaHoraAtendimento(Agendamento agendamento)
         {
             //Validando horário em que o profissional atende e o horário que o local está aberto para atendimento (não valida dia da semana e horário com consulta já marcada)
             if (agendamento.DataHoraConsulta.TimeOfDay < agendamento._Profissional.HrInicio.TimeOfDay ||
@@ -173,6 +188,5 @@ namespace Controller
             else
                 return true;
         }
-
     }
 }

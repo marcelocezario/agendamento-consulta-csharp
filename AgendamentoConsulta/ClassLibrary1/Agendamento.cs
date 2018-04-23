@@ -20,7 +20,12 @@ namespace Model
         public DateTime DataHoraConsulta { get; set; }
         //tempo de cada consulta realizada
         //public DateTime TempoConsulta = DateTime.Now.AddMinutes(30);
-        public int TempoEmMinutosConsulta { get; set; }
-
+        public int TempoEmMinutosConsulta
+        {
+            get
+            {
+                return 30;
+            }
+        }
     }
 }
