@@ -38,6 +38,9 @@ namespace Controller
                 return null;
         }
 
+
+
+
         public Agendamento PesquisarAgendamentoPorId(int idAgendamento)
         {
             var a = from x in ContextoSingleton.Instancia.Agendamentos
@@ -134,13 +137,38 @@ namespace Controller
             return true;
         }
 
-        private bool ValidaHorarioLivre(Agendamento agendamento)
+        private bool ValidaHorarioLivreProfissional(Agendamento agendamento)
         {
+            DateTime inicioConsulta = agendamento.DataHoraConsulta;
+            DateTime terminoConsulta = agendamento.DataHoraConsulta.AddMinutes(agendamento.TempoEmMinutosConsulta);
 
+            var a = from x in ContextoSingleton.Instancia.Agendamentos
+                    where x._Profissional.Equals(agendamento._Profissional) &&
+                    (x.DataHoraConsulta >= inicioConsulta && x.DataHoraConsulta < terminoConsulta) ||
+                    (x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) > inicioConsulta && x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) <= terminoConsulta)
+                    select x;
 
+            if (a != null)
+                return false;
+            else
+                return true;
+        }
 
+        private bool ValidaHorarioLivreLocal(Agendamento agendamento)
+        {
+            DateTime inicioConsulta = agendamento.DataHoraConsulta;
+            DateTime terminoConsulta = agendamento.DataHoraConsulta.AddMinutes(agendamento.TempoEmMinutosConsulta);
 
-            return true;
+            var a = from x in ContextoSingleton.Instancia.Agendamentos
+                    where x._Local.Equals(agendamento._Local) &&
+                    (x.DataHoraConsulta >= inicioConsulta && x.DataHoraConsulta < terminoConsulta) ||
+                    (x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) > inicioConsulta && x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) <= terminoConsulta)
+                    select x;
+
+            if (a != null)
+                return false;
+            else
+                return true;
         }
 
     }
