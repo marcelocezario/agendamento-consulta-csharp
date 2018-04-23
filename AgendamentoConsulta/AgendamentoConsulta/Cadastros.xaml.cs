@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using MahApps.Metro.Controls;
 
+
 namespace AgendamentoConsulta
 {
     /// <summary>
