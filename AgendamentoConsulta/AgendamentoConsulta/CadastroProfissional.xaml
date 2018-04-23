@@ -81,11 +81,11 @@
         <!-- Hora inicial -->
         <TextBlock x:Name="LabelHorario" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="2,6,105,0" TextAlignment="Right" FontFamily="Arial" Grid.ColumnSpan="2"><Run Text=" "/><Run Text="Horario de inicio e fim do uso do consultorio"/></TextBlock>
         <TextBlock x:Name="LabelHInicioProfissional" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="190,6,0,0" TextAlignment="Right" FontFamily="Arial" Grid.Column="1" HorizontalAlignment="Left" Width="45"><Run Text=" "/><Run Text="Inicio"/></TextBlock>
-        <materialDesign:TimePicker x:Name="TimePickerHInicioProfissional" SelectedTime="{Binding ActionSelectedTime, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}" SelectedTimeFormat="Long" Grid.Column="1"  Margin="240,1,157,0" Grid.Row="8" Grid.ColumnSpan="2" />
+        <materialDesign:TimePicker x:Name="TimePickerHInicioProfissional" Is24Hours="True" SelectedTime="{Binding ActionSelectedTime, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}" SelectedTimeFormat="Long" Grid.Column="1"  Margin="240,1,157,0" Grid.Row="8" Grid.ColumnSpan="2" />
 
         <!-- Hora Final -->
         <TextBlock x:Name="LabelHFimLocalProfissional" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="46,6,114,0" TextAlignment="Right" FontFamily="Arial" Grid.Column="2"><Run Text=" "/><Run Text="Fim"/></TextBlock>
-        <materialDesign:TimePicker x:Name="TimePickerHFimProfissional" SelectedTime="{Binding ActionSelectedTime, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}" SelectedTimeFormat="Long" Grid.Column="2"  Margin="89,2,10,0" Grid.Row="8" Grid.RowSpan="2" />
+        <materialDesign:TimePicker x:Name="TimePickerHFimProfissional" Is24Hours="True" SelectedTime="{Binding ActionSelectedTime, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}" SelectedTimeFormat="Long" Grid.Column="2"  Margin="89,2,10,0" Grid.Row="8" Grid.RowSpan="2" />
 
         <!-- Especialidade do profissional-->
         <TextBlock x:Name="LabelEspecialidadeProfissional" HorizontalAlignment="Left" Grid.Row="9" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Height="20" RenderTransformOrigin="0.468,0.867" Margin="2,7,0,0" FontFamily="Arial" TextAlignment="Right" Grid.RowSpan="2"><Run Text=" "/><Run Text="Especialidade"/></TextBlock>

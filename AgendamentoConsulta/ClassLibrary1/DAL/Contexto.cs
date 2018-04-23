@@ -9,6 +9,9 @@ namespace Model.DAL
     {
         public Contexto() : base("strConn")
         {
+            Database.SetInitializer(
+               new DropCreateDatabaseIfModelChanges<Contexto>()
+               );
         }
 
         public DbSet<Paciente> Pacientes { get; set; }

@@ -2,17 +2,22 @@
 
 namespace Controller
 {
-    class AgendamentoController
+    public class AgendamentoController
     {
         public void IncluirAgendamento (Agendamento agendamento)
         {
-            //verificar disponibilidade local (se funciona no dia e se não tem consulta marcada)
-            //verificar disponibilidade profissional (se atende no dia e se não tem consulta marcada)
-
+            ContextoSingleton.Instancia.Agendamentos.Add(agendamento);
+            ContextoSingleton.Instancia.SaveChanges();
         }
 
         public void ExcluirAgendamento (int idAgendamento)
         {
+            Agendamento a = ContextoSingleton.Instancia.Agendamentos.Find(idAgendamento);
+
+            ContextoSingleton.Instancia.Entry(a).State =
+                System.Data.Entity.EntityState.Deleted;
+
+            ContextoSingleton.Instancia.SaveChanges();
 
         }
 
