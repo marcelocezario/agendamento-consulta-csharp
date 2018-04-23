@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Model.DAL;
 using Model;
+using System.Linq;
 
 namespace Controller
 {
@@ -15,6 +16,18 @@ namespace Controller
         public void EditarProfissional(int idProfissional, Profissional profissionalEditado)
         {
 
+        }
+
+        public Profissional PesquisarPorNome(string nome)
+        {
+            var pr = from x in ContextoSingleton.Instancia.Profissionais
+                    where x.Nome.ToLower().Contains(nome.Trim().ToLower())
+                    select x;
+
+            if (pr != null)
+                return pr.FirstOrDefault();
+            else
+                return null;
         }
 
         public Profissional PesquisarPorID(int idProfissional)
@@ -34,7 +47,7 @@ namespace Controller
 
         public List<Profissional> ListarProfissionais()
         {
-            return null;
+            return ContextoSingleton.Instancia.Profissionais.ToList();
         }
     }
 }

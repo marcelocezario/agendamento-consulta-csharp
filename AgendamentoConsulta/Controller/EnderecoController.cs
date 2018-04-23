@@ -1,6 +1,7 @@
 ﻿using Model;
 using Model.DAL;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Controller
 {
@@ -11,6 +12,18 @@ namespace Controller
             ContextoSingleton.Instancia.Enderecos.Add(endereco);
             ContextoSingleton.Instancia.SaveChanges();
             return endereco.EnderecoID;
+        }
+
+        public Endereco PesquisarPorNome(string cep)
+        {
+            var e = from x in ContextoSingleton.Instancia.Enderecos
+                    where x.Cep.ToLower().Contains(cep.Trim().ToLower())
+                    select x;
+
+            if (e != null)
+                return e.FirstOrDefault();
+            else
+                return null;
         }
 
         public void EditarEndereco (int idEndereco, Endereco enderecoEditado)

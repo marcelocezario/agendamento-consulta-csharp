@@ -1,7 +1,10 @@
 ﻿using System.Collections.Generic;
 using Model;
 using Model.DAL;
+using System.Linq;
+
 namespace Controller
+
 {
     public class LocalController
     {
@@ -16,11 +19,23 @@ namespace Controller
 
         }
 
+        public Local PesquisarPorNome(string nome)
+        {
+            var l = from x in ContextoSingleton.Instancia.Locais
+                    where x.NomeLocal.ToLower().Contains(nome.Trim().ToLower())
+                    select x;
+
+            if (l != null)
+                return l.FirstOrDefault();
+            else
+                return null;
+        }
+
         public void ExcluirLocal(int idLocal)
         {
-            Local p = ContextoSingleton.Instancia.Locais.Find(idLocal);
+            Local l = ContextoSingleton.Instancia.Locais.Find(idLocal);
 
-            ContextoSingleton.Instancia.Entry(p).State =
+            ContextoSingleton.Instancia.Entry(l).State =
                 System.Data.Entity.EntityState.Deleted;
 
             ContextoSingleton.Instancia.SaveChanges();
@@ -29,6 +44,11 @@ namespace Controller
         public Local PesquisarPorID(int idLocal)
         {
             return ContextoSingleton.Instancia.Locais.Find(idLocal);
+        }
+
+        public List<Local> ListarClientes()
+        {
+            return ContextoSingleton.Instancia.Locais.ToList();
         }
 
         public List<Local> ListarLocais()

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Model;
+using System.Linq;
 
 namespace Controller
 {
@@ -16,6 +17,23 @@ namespace Controller
 
         }
 
+        public Paciente PesquisarPorNome(string nome)
+        {
+            var c = from x in ContextoSingleton.Instancia.Pacientes
+                    where x.Nome.ToLower().Contains(nome.Trim().ToLower())
+                    select x;
+
+            if (c != null)
+                return c.FirstOrDefault();
+            else
+                return null;
+        }
+
+        public Paciente PesquisarPorID(int idPaciente)
+        {
+            return ContextoSingleton.Instancia.Pacientes.Find(idPaciente);
+        }
+
         public void ExcluirPaciente(int idPaciente)
         {
             Paciente p = ContextoSingleton.Instancia.Pacientes.Find(idPaciente);
@@ -26,14 +44,11 @@ namespace Controller
             ContextoSingleton.Instancia.SaveChanges();
         }
 
-        public Paciente PesquisarPorID(int idPaciente)
-        {
-            return ContextoSingleton.Instancia.Pacientes.Find(idPaciente);
-        }
+      
 
         public List<Paciente> ListarPacientes()
         {
-            return null;
+            return ContextoSingleton.Instancia.Pacientes.ToList();
         }
     }
 }

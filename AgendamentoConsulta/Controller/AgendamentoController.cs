@@ -1,4 +1,6 @@
 ﻿using Model;
+using System.Linq;
+using System.Data;
 
 namespace Controller
 {
@@ -19,6 +21,18 @@ namespace Controller
 
             ContextoSingleton.Instancia.SaveChanges();
 
+        }
+
+        public Agendamento ListarAgendamento(DataSetDateTime dia)
+        {
+            var pr = from x in ContextoSingleton.Instancia.Agendamentos
+                     where x.DiaMarcado.Equals(dia)
+                     select x;
+
+            if (pr != null)
+                return pr.FirstOrDefault();
+            else
+                return null;
         }
 
         public void EditarAgendamento (int idAgendamento, Agendamento novoAgendamento)
