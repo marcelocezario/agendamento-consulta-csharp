@@ -9,7 +9,10 @@ namespace Controller
     {
         public bool IncluirAgendamento(Agendamento agendamento)
         {
+            if (ValidaHorarioAtendimento())
+            {
 
+            }
 
             ContextoSingleton.Instancia.Agendamentos.Add(agendamento);
             ContextoSingleton.Instancia.SaveChanges();
@@ -61,7 +64,7 @@ namespace Controller
 
 
 
-        private bool ValidaHorarioAtendimento(Agendamento agendamento)
+        public bool ValidaHorarioAtendimento(Agendamento agendamento)
         {
             //Validando horário em que o profissional atende e o horário que o local está aberto para atendimento (não valida dia da semana e horário com consulta já marcada)
             if (agendamento.DataHoraConsulta.TimeOfDay < agendamento._Profissional.HrInicio.TimeOfDay ||
@@ -76,7 +79,7 @@ namespace Controller
             return true;
         }
 
-        private bool ValidaDiaDaSemanaAtendimento(Agendamento agendamento)
+        public bool ValidaDiaDaSemanaAtendimento(Agendamento agendamento)
         {
             //dia da semana em formato ddd para comparação (dom, seg, ter, qua, qui, sex, sab)
             //Validando dia da semana disponível para profissional e local
@@ -137,7 +140,7 @@ namespace Controller
             return true;
         }
 
-        private bool ValidaHorarioLivreProfissional(Agendamento agendamento)
+        public bool ValidaHorarioLivreProfissional(Agendamento agendamento)
         {
             DateTime inicioConsulta = agendamento.DataHoraConsulta;
             DateTime terminoConsulta = agendamento.DataHoraConsulta.AddMinutes(agendamento.TempoEmMinutosConsulta);
@@ -154,7 +157,7 @@ namespace Controller
                 return true;
         }
 
-        private bool ValidaHorarioLivreLocal(Agendamento agendamento)
+        public bool ValidaHorarioLivreLocal(Agendamento agendamento)
         {
             DateTime inicioConsulta = agendamento.DataHoraConsulta;
             DateTime terminoConsulta = agendamento.DataHoraConsulta.AddMinutes(agendamento.TempoEmMinutosConsulta);
