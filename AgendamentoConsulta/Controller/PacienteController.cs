@@ -44,7 +44,7 @@ namespace Controller
             ContextoSingleton.Instancia.SaveChanges();
         }
 
-      
+
 
         public List<Paciente> ListarPacientes()
         {

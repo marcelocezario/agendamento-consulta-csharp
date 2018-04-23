@@ -69,8 +69,6 @@ namespace Controller
                     {
                         if (ValidaHorarioLivreLocal(agendamento))
                         {
-                            ContextoSingleton.Instancia.Agendamentos.Add(agendamento);
-                            ContextoSingleton.Instancia.SaveChanges();
                             return true;
                         }
                     }

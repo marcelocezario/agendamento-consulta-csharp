@@ -30,10 +30,10 @@ namespace AgendamentoConsulta
                 MessageBox.Show("O campo nome é obrigatório");
             else
             {
-                if (Verificacao.Verificacao.ValidaCpf(BoxCpfPaciente.Text))
-                    MessageBox.Show("O campo CPF é obrigatório");
-                else
-                {
+                //if (Verificacao.Verificacao.ValidaCpf(BoxCpfPaciente.Text))
+                //    MessageBox.Show("O campo CPF é obrigatório");
+                //else
+                //{
                     if (DatePickerDtNascimentoPaciente.Text.Equals(""))
                         MessageBox.Show("O campo data de nascimento é obrigatório");
                     else
@@ -58,7 +58,7 @@ namespace AgendamentoConsulta
                                             MessageBox.Show("O campo Cidade é obrigatório");
                                         else
                                         {
-                                            if (ComboBoxEstado.Text.Equals(""))
+                                            if (BoxUFPaciente.Text.Equals(""))
                                                 MessageBox.Show("O campo UF é obrigatório");
                                             else
                                             {
@@ -69,7 +69,7 @@ namespace AgendamentoConsulta
                                 }
                             }
                         }
-                    }
+                   // }
                 }
             }        
             return false;
@@ -98,9 +98,8 @@ namespace AgendamentoConsulta
             Complemento = BoxComplementoPaciente.Text,
             Numero = int.Parse(BoxNumeroPaciente.Text),
             Cidade = BoxCidadePaciente.Text,
-            Uf = ComboBoxEstado.Text
+            Uf = BoxUFPaciente.Text
         };
-        MessageBox.Show("ComboBoxEstado.Text");
         //passar dados para controller
         PacienteController pc = new PacienteController();
         EnderecoController ec = new EnderecoController();

@@ -79,38 +79,12 @@
 
         <!-- Estado -->
         <TextBlock x:Name="LabelUfPaciente" FontFamily="Arial" Grid.Row="9" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="164,6,73,0" TextAlignment="Right" Grid.Column="1" ><Run Text="Estado "/></TextBlock>
-        <ComboBox x:Name="ComboBoxEstado" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Margin="222,0,0,0" Grid.Row="9"  VerticalAlignment="Top" Width="120" Height="26">
-            <RadioButton Content="AC" />
-            <RadioButton Content="AL"/>
-            <RadioButton Content="AP"/>
-            <RadioButton Content="AM"/>
-            <RadioButton Content="BA"/>
-            <RadioButton Content="CE"/>
-            <RadioButton Content="DF"/>
-            <RadioButton Content="GO"/>
-            <RadioButton Content="ES"/>
-            <RadioButton Content="MA"/>
-            <RadioButton Content="MT"/>
-            <RadioButton Content="MS"/>
-            <RadioButton Content="MG"/>
-            <RadioButton Content="PA"/>
-            <RadioButton Content="PR"/>
-            <RadioButton Content="PE"/>
-            <RadioButton Content="PI"/>
-            <RadioButton Content="RJ"/>
-            <RadioButton Content="RN"/>
-            <RadioButton Content="RS"/>
-            <RadioButton Content="RO"/>
-            <RadioButton Content="RR"/>
-            <RadioButton Content="SC"/>
-            <RadioButton Content="SE"/>
-            <RadioButton Content="SP"/>
-            <RadioButton Content="TO"/>
-        </ComboBox>
+        <TextBox x:Name="BoxUFPaciente"   Height="23" Margin="222.2,2.6,96.6,0" Grid.Row="9" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="2"/>
+
 
         <!-- Rua -->
         <TextBlock x:Name="LabelRuaPaciente" Grid.Row="10" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,3,5,0" TextAlignment="Right" FontFamily="Arial"><Run Text=" "/><Run Text="Rua"/></TextBlock>
-        <TextBox x:Name="BoxRuaPaciente"   Height="23" Margin="5,0,135,0" Grid.Row="10" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="BoxRuaPaciente"   Height="23" Margin="6,0,96.6,0" Grid.Row="10" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="2"/>
 
         <!-- Complemento -->
         <TextBlock x:Name="LabelComplementoPaciente" FontFamily="Arial" HorizontalAlignment="Right" Grid.Row="11" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,5,3,0" TextAlignment="Right"><Run Text=" "/><Run Text=" "/><Run Text="Complemeto"/></TextBlock>
@@ -118,7 +92,7 @@
 
         <!-- Numero -->
         <TextBlock x:Name="LabelNumeroPaciente" HorizontalAlignment="Left" Grid.Row="11" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" Height="20" RenderTransformOrigin="0.468,0.867" Margin="148,2,0,0" Grid.Column="1"  FontFamily="Arial" TextAlignment="Right"><Run Text=" "/><Run Text="Número"/></TextBlock>
-        <TextBox x:Name="BoxNumeroPaciente" KeyDown="BoxNumeroPaciente_KeyDown"  Height="23" Grid.Row="10" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Margin="236,22,126,0" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2"/>
+        <TextBox x:Name="BoxNumeroPaciente" KeyDown="BoxNumeroPaciente_KeyDown"  Height="23" Grid.Row="10" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Margin="236,22,156.6,0" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2"/>
 
         <!-- Botão Salvar -->
         <Button x:Name="ButtonSalvarPaciente" Content="Salvar" Grid.Column="2" Margin="94,189,0,-1" Grid.Row="12" Height="Auto" Click="ButtonSalvarPaciente_Click" />
