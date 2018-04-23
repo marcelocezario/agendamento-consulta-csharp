@@ -17,9 +17,10 @@ namespace Model
         public int ProfissionalID { get; set; }
         public virtual Profissional _Profissional { get; set; }
 
+        public DateTime DataHoraConsulta { get; set; }
         //tempo de cada consulta realizada
-        public DateTime TempoConsunta = DateTime.Now.AddMinutes(30);
-        public DateTime DiaMarcado { get; set; }
-        public DateTime HoraMarcada { get; set; }
-}
+        //public DateTime TempoConsulta = DateTime.Now.AddMinutes(30);
+        public int TempoEmMinutosConsulta { get; set; }
+
+    }
 }
