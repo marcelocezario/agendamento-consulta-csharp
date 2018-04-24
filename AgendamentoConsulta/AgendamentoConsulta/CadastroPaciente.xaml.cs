@@ -106,9 +106,9 @@ namespace AgendamentoConsulta
             //passar dados para controller
             PacienteController pc = new PacienteController();
             EnderecoController ec = new EnderecoController();
-            ec.SalvarEndereco(end);
-            p.EnderecoID = end.EnderecoID;
-            p._Endereco = end;
+            //ec.SalvarEndereco(end);
+            //p.EnderecoID = end.EnderecoID;
+            //p._Endereco = end;
             pc.SalvarPaciente(p);
 
             this.Close();

@@ -13,7 +13,7 @@ namespace Model
         public string Cpf { get; set; }
         public DateTime DtNascimento { get; set; } 
 
-        public int? EnderecoID { get; set; }
-        public virtual Endereco  _Endereco { get; set; }
+        //public int? EnderecoID { get; set; }
+        //public virtual Endereco  _Endereco { get; set; }
     }
 }
