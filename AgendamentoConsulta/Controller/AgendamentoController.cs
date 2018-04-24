@@ -2,6 +2,8 @@
 using System.Linq;
 using System.Data;
 using System;
+using Model.DAL;
+using System.Collections.Generic;
 
 namespace Controller
 {
@@ -57,6 +59,11 @@ namespace Controller
         public void EditarAgendamento(int idAgendamento, Agendamento novoAgendamento)
         {
 
+        }
+
+        public List<Agendamento> ListarAgendamentos()
+        {
+            return ContextoSingleton.Instancia.Agendamentos.ToList();
         }
 
         public bool ValidacaoAgendamento(Agendamento agendamento)
@@ -164,10 +171,10 @@ namespace Controller
                     (x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) > inicioConsulta && x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) <= terminoConsulta)
                     select x;
 
-            if (a != null)
-                return false;
-            else
+            if (a == null)
                 return true;
+            else
+                return false;
         }
 
         public bool ValidaHorarioLivreLocal(Agendamento agendamento)
@@ -181,10 +188,10 @@ namespace Controller
                     (x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) > inicioConsulta && x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) <= terminoConsulta)
                     select x;
 
-            if (a != null)
-                return false;
-            else
+            if (a == null)
                 return true;
+            else
+                return false;
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Controller
             ContextoSingleton.Instancia.SaveChanges();
         }
 
-        public Endereco PesquisarPorNome(string cep)
+        public Endereco PesquisarPorCep(string cep)
         {
             var e = from x in ContextoSingleton.Instancia.Enderecos
                     where x.Cep.ToLower().Contains(cep.Trim().ToLower())
@@ -45,5 +45,9 @@ namespace Controller
             ContextoSingleton.Instancia.SaveChanges();
         }
 
+        public List<Endereco> ListarEnderecos()
+        {
+            return ContextoSingleton.Instancia.Enderecos.ToList();
+        }
     }
 }

@@ -46,14 +46,9 @@ namespace Controller
             return ContextoSingleton.Instancia.Locais.Find(idLocal);
         }
 
-        public List<Local> ListarClientes()
-        {
-            return ContextoSingleton.Instancia.Locais.ToList();
-        }
-
         public List<Local> ListarLocais()
         {
-            return null;
+            return ContextoSingleton.Instancia.Locais.ToList();
         }
     }
 }

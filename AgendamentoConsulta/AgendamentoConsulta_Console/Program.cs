@@ -17,11 +17,15 @@ namespace AgendamentoConsulta_Console
             CadastrarProfissional = 2,
             CadastrarLocal = 3,
 
+            CadastrarAgendamento = 5,
+
             ListarPacientes = 6,
             ListarProfissionais = 7,
             ListarLocais = 8,
+            ListarEnderecos = 9,
+            ListarAgendamentos = 10,
 
-            Sair = 10
+            Sair = 99
         }
 
         private static OpcoesMenuPrincipal Menu()
@@ -30,12 +34,16 @@ namespace AgendamentoConsulta_Console
             Console.WriteLine("2 - Cadastrar Profissional");
             Console.WriteLine("3 - Cadastrar Local");
 
+            Console.WriteLine("5 - Cadastrar Agendamento");
+
             Console.WriteLine("6 - Listar Pacientes");
             Console.WriteLine("7 - Listar Profissionais");
             Console.WriteLine("8 - Listar Locais");
+            Console.WriteLine("9 - Listar Endereços");
+            Console.WriteLine("10 - Listar Agendamentos");
 
             Console.WriteLine("");
-            Console.WriteLine("10 - Sair");
+            Console.WriteLine("99 - Sair");
             Console.WriteLine("");
             Console.WriteLine("Escolha sua opcao e tecle enter: ");
             string opcao = Console.ReadLine();
@@ -65,6 +73,10 @@ namespace AgendamentoConsulta_Console
                         IncluirLocal();
                         break;
 
+                    case OpcoesMenuPrincipal.CadastrarAgendamento:
+                        IncluirAgendamento();
+                        break;
+
                     case OpcoesMenuPrincipal.ListarPacientes:
                         ListarPacientes();
                         break;
@@ -74,9 +86,16 @@ namespace AgendamentoConsulta_Console
                         break;
 
                     case OpcoesMenuPrincipal.ListarLocais:
-
+                        ListarLocais();
                         break;
 
+                    case OpcoesMenuPrincipal.ListarEnderecos:
+                        ListarEnderecos();
+                        break;
+
+                    case OpcoesMenuPrincipal.ListarAgendamentos:
+                        ListarAgendamentos();
+                        break;
 
                     default:
                         break;
@@ -116,36 +135,6 @@ namespace AgendamentoConsulta_Console
             pc.SalvarPaciente(paciente);
         }
 
-        private static void IncluirLocal()
-        {
-            LocalController lc = new LocalController();
-            EnderecoController ec = new EnderecoController();
-
-            Local local = new Local();
-            local.NomeLocal = "Teste";
-            local.Domingo = true;
-            local.Segunda = true;
-            local.Terca = true;
-            local.Quarta = true;
-            local.Quinta = true;
-            local.Sexta = true;
-            local.Sabado = true;
-            local.HrInicio = new DateTime(2018, 04, 23, 16, 00, 00);
-            local.HrFim = new DateTime(2018, 04, 23, 16, 30, 00);
-
-            Endereco endereco = new Endereco();
-            endereco.Cep = "81820000";
-            endereco.Rua = "Cid Marcondes";
-            endereco.Numero = 222;
-            endereco.Complemento = "casa";
-            endereco.Cidade = "Curitiba";
-            endereco.Uf = "Pr";
-
-            ec.SalvarEndereco(endereco);
-            local._Endereco = endereco;
-            local.EnderecoID = endereco.EnderecoID;
-        }
-
         private static void IncluirProfissional()
         {
             ProfissionalController pc = new ProfissionalController();
@@ -167,10 +156,72 @@ namespace AgendamentoConsulta_Console
             profissional.Quinta = true;
             profissional.Sexta = true;
             profissional.Sabado = true;
-            profissional.HrInicio = new DateTime(2018, 04, 23, 16, 00, 00);
-            profissional.HrFim = new DateTime(2018, 04, 23, 16, 30, 00);
+            profissional.HrInicio = new DateTime(2018, 04, 23, 08, 00, 00);
+            profissional.HrFim = new DateTime(2018, 04, 23, 19, 30, 00);
 
             pc.SalvarProfissional(profissional);
+        }
+
+        private static void IncluirLocal()
+        {
+            LocalController lc = new LocalController();
+            EnderecoController ec = new EnderecoController();
+
+            Local local = new Local();
+            local.NomeLocal = "Teste";
+            local.Domingo = true;
+            local.Segunda = true;
+            local.Terca = true;
+            local.Quarta = true;
+            local.Quinta = true;
+            local.Sexta = true;
+            local.Sabado = true;
+            local.HrInicio = new DateTime(2018, 04, 23, 08, 00, 00);
+            local.HrFim = new DateTime(2018, 04, 23, 19, 00, 00);
+
+            Endereco endereco = new Endereco();
+            endereco.Cep = "81820000";
+            endereco.Rua = "Cid Marcondes";
+            endereco.Numero = 222;
+            endereco.Complemento = "casa";
+            endereco.Cidade = "Curitiba";
+            endereco.Uf = "Pr";
+
+            ec.SalvarEndereco(endereco);
+            local._Endereco = endereco;
+            local.EnderecoID = endereco.EnderecoID;
+            lc.SalvarLocal(local);
+        }
+
+        private static void IncluirAgendamento()
+        {
+            AgendamentoController ac = new AgendamentoController();
+            LocalController lc = new LocalController();
+            PacienteController pacienteController = new PacienteController();
+            ProfissionalController profissionalController = new ProfissionalController();
+
+            Agendamento agendamento = new Agendamento();
+
+            agendamento.LocalID = 3;
+            agendamento._Local = lc.PesquisarPorID(agendamento.LocalID);
+            agendamento.PacienteID = 2;
+            agendamento._Paciente = pacienteController.PesquisarPorID(agendamento.PacienteID);
+            agendamento.ProfissionalID = 3;
+            agendamento._Profissional = profissionalController.PesquisarPorID(agendamento.ProfissionalID);
+
+            agendamento.DataHoraConsulta = new DateTime(2018, 04, 23, 10, 00, 00);
+
+            if (ac.IncluirAgendamento(agendamento))
+                Console.WriteLine("Agendamento efetuado com sucesso");
+            else
+                Console.WriteLine("Agendamento não efetuado, data e horários não disponíveis para médico e local");
+
+            Console.WriteLine("");
+            Console.WriteLine("Validar dia da semana: " + ac.ValidaDiaDaSemanaAtendimento(agendamento));
+            Console.WriteLine("Validar hora do dia  : " + ac.ValidaHoraAtendimento(agendamento));
+            Console.WriteLine("Validar disp local   : " + ac.ValidaHorarioLivreLocal(agendamento));
+            Console.WriteLine("Validar disp profiss : " + ac.ValidaHorarioLivreProfissional(agendamento));
+            Console.WriteLine("");
         }
 
         private static void ListarPacientes()
@@ -233,6 +284,42 @@ namespace AgendamentoConsulta_Console
                 Console.WriteLine("Sábado.........:" + local.Sabado);
                 Console.WriteLine("Horário inicio.:" + local.HrInicio.TimeOfDay);
                 Console.WriteLine("Horário final..:" + local.HrFim.TimeOfDay);
+                Console.WriteLine("ID Endereco....:" + local.EnderecoID);
+                Console.WriteLine("");
+            }
+        }
+
+        private static void ListarEnderecos()
+        {
+            EnderecoController ec = new EnderecoController();
+
+            foreach (Endereco endereco in ec.ListarEnderecos())
+            {
+                Console.WriteLine("ID.............:" + endereco.EnderecoID);
+                Console.WriteLine("Rua............:" + endereco.Rua);
+                Console.WriteLine("Número.........:" + endereco.Numero);
+                Console.WriteLine("Complemento....:" + endereco.Complemento);
+                Console.WriteLine("Cidade.........:" + endereco.Cidade);
+                Console.WriteLine("Uf.............:" + endereco.Uf);
+                Console.WriteLine("Cep............:" + endereco.Cep);
+                Console.WriteLine("");
+            }
+        }
+
+        private static void ListarAgendamentos()
+        {
+            AgendamentoController ac = new AgendamentoController();
+
+            foreach (Agendamento agendamento in ac.ListarAgendamentos())
+            {
+                Console.WriteLine("Id agendamento.:" + agendamento.AgendamentoID);
+                Console.WriteLine("Paciente.......:" + agendamento._Paciente.Nome);
+                Console.WriteLine("Profissional...:" + agendamento._Profissional.Nome);
+                Console.WriteLine("Especialidade..:" + agendamento._Profissional.Especialidade);
+                Console.WriteLine("Local..........:" + agendamento._Local.NomeLocal);
+                Console.WriteLine("Data e hora....:" + agendamento.DataHoraConsulta.ToString("DD/MM/YYYY hh:mm"));
+                Console.WriteLine("");
+
             }
         }
     }
