@@ -167,14 +167,14 @@ namespace Controller
             DateTime inicioConsulta = agendamento.DataHoraConsulta;
             DateTime terminoConsulta = agendamento.DataHoraConsulta.AddMinutes(agendamento.TempoEmMinutosConsulta);
 
-            var horarioIndisponivel = from x in ListarAgendamentos()
+            var a = from x in ListarAgendamentos()
                     where x.ProfissionalID.Equals(agendamento.ProfissionalID) &&
                     (x.DataHoraConsulta >= inicioConsulta && x.DataHoraConsulta < terminoConsulta) ||
                     (x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) > inicioConsulta &&
                     x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) <= terminoConsulta)
                     select x;
 
-            if (horarioIndisponivel != null)
+            if (a != null)
                 return false;
             else
                 return true;
