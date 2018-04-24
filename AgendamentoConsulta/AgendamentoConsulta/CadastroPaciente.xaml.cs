@@ -30,10 +30,11 @@ namespace AgendamentoConsulta
                 MessageBox.Show("O campo nome é obrigatório");
             else
             {
-                //if (Verificacao.Verificacao.ValidaCpf(BoxCpfPaciente.Text))
-                //    MessageBox.Show("O campo CPF é obrigatório");
-                //else
-                //{
+                if (BoxCpfPaciente.Text.Equals("___.___.___-__"))
+                    /////////////////////////////////////////////////////////////////////////////if (Verificacao.Verificacao.ValidaCpf(BoxCpfPaciente.Text))
+                    MessageBox.Show("O campo CPF é obrigatório");
+                else
+                {
                     if (DatePickerDtNascimentoPaciente.Text.Equals(""))
                         MessageBox.Show("O campo data de nascimento é obrigatório");
                     else
@@ -69,81 +70,84 @@ namespace AgendamentoConsulta
                                 }
                             }
                         }
-                   // }
+                    }
                 }
-            }        
+            }
             return false;
         }
 
 
-    private void SalvarCadastro()
-    {
-        //criando novo objeto de Paciente
-        Paciente p = new Paciente
+        private void SalvarCadastro()
         {
-            Nome = BoxNomePaciente.Text,
-            Cpf = BoxCpfPaciente.Text,
-            Rg = BoxRgPaciente.Text,
+            //criando novo objeto de Paciente
 
-            Email = BoxEmailPaciente.Text,
-            Celular = BoxContatoPaciente.Text,
-            DtNascimento = DatePickerDtNascimentoPaciente.SelectedDate.Value
-        };
-
-        //criando novo objeto de Endereço
-        Endereco end = new Endereco
-        {
-            Cep = BoxCepPaciente.Text,
-            Rua = BoxRuaPaciente.Text,
-            Complemento = BoxComplementoPaciente.Text,
-            Numero = int.Parse(BoxNumeroPaciente.Text),
-            Cidade = BoxCidadePaciente.Text,
-            Uf = BoxUFPaciente.Text
-        };
-        //passar dados para controller
-        PacienteController pc = new PacienteController();
-        EnderecoController ec = new EnderecoController();
-        p.EnderecoID = ec.SalvarEndereco(end);
-        p._Endereco = end;
-        pc.SalvarPaciente(p);
-
-        this.Close();
-
-    }
-
-    //valida para o textbox aceitar somente numeros
-    private void BoxRgPaciente_KeyDown(object sender, KeyEventArgs e)
-    {
-        try
-        {
-            KeyConverter key = new KeyConverter();
-            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            Paciente p = new Paciente
             {
-                e.Handled = true;
+                Nome = BoxNomePaciente.Text,
+                Cpf = BoxCpfPaciente.Text,
+                Rg = BoxRgPaciente.Text,
+
+                Email = BoxEmailPaciente.Text,
+                Celular = BoxContatoPaciente.Text,
+                DtNascimento = DatePickerDtNascimentoPaciente.SelectedDate.Value
+            };
+
+            //criando novo objeto de Endereço
+            Endereco end = new Endereco
+            {
+                Cep = BoxCepPaciente.Text,
+                Rua = BoxRuaPaciente.Text,
+                Complemento = BoxComplementoPaciente.Text,
+                Numero = int.Parse(BoxNumeroPaciente.Text),
+                Cidade = BoxCidadePaciente.Text,
+                Uf = BoxUFPaciente.Text
+            };
+
+            //passar dados para controller
+            PacienteController pc = new PacienteController();
+            EnderecoController ec = new EnderecoController();
+            ec.SalvarEndereco(end);
+            p.EnderecoID = end.EnderecoID;
+            p._Endereco = end;
+            pc.SalvarPaciente(p);
+
+            this.Close();
+
+        }
+
+        //valida para o textbox aceitar somente numeros
+        private void BoxRgPaciente_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                KeyConverter key = new KeyConverter();
+                if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+                {
+                    e.Handled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex);
             }
         }
-        catch (Exception ex)
-        {
-            MessageBox.Show("Erro: " + ex);
-        }
-    }
 
-    //valida para o textbox aceitar somente numeros
-    private void BoxNumeroPaciente_KeyDown(object sender, KeyEventArgs e)
-    {
-        try
+        //valida para o textbox aceitar somente numeros
+        private void BoxNumeroPaciente_KeyDown(object sender, KeyEventArgs e)
         {
-            KeyConverter key = new KeyConverter();
-            if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+            try
             {
-                e.Handled = true;
+                KeyConverter key = new KeyConverter();
+                if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
+                {
+                    e.Handled = true;
+                }
             }
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("Erro: " + ex);
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex);
+            }
         }
     }
 }
-} 
-  
+

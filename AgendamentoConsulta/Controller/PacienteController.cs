@@ -10,6 +10,7 @@ namespace Controller
         {
             ContextoSingleton.Instancia.Pacientes.Add(paciente);
             ContextoSingleton.Instancia.SaveChanges();
+            
         }
 
         public void EditarPaciente(int idPaciente, Paciente pacienteEditado)

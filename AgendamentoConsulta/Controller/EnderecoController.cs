@@ -7,11 +7,10 @@ namespace Controller
 {
     public class EnderecoController
     {
-        public int SalvarEndereco (Endereco endereco)
+        public void SalvarEndereco (Endereco endereco)
         {
             ContextoSingleton.Instancia.Enderecos.Add(endereco);
             ContextoSingleton.Instancia.SaveChanges();
-            return endereco.EnderecoID;
         }
 
         public Endereco PesquisarPorNome(string cep)
@@ -36,7 +35,7 @@ namespace Controller
             return ContextoSingleton.Instancia.Enderecos.Find(idEndereco);
         }
 
-        public void ExluirEndereco (int idEndereco)
+        public void ExcluirEndereco (int idEndereco)
         {
             Endereco e = ContextoSingleton.Instancia.Enderecos.Find(idEndereco);
 
