@@ -216,7 +216,7 @@ namespace AgendamentoConsulta_Console
             agendamento.ProfissionalID = 1;
             agendamento._Profissional = profissionalController.PesquisarPorID(agendamento.ProfissionalID);
 
-            agendamento.DataHoraConsulta = new DateTime(2018, 04, 23, 12, 59, 00);
+            agendamento.DataHoraConsulta = new DateTime(2018, 04, 23, 14, 00, 00);
 
             if (ac.IncluirAgendamento(agendamento))
                 Console.WriteLine("Agendamento efetuado com sucesso");
