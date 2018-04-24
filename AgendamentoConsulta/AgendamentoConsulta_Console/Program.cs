@@ -202,14 +202,14 @@ namespace AgendamentoConsulta_Console
 
             Agendamento agendamento = new Agendamento();
 
-            agendamento.LocalID = 3;
+            agendamento.LocalID = 1;
             agendamento._Local = lc.PesquisarPorID(agendamento.LocalID);
-            agendamento.PacienteID = 2;
+            agendamento.PacienteID = 1;
             agendamento._Paciente = pacienteController.PesquisarPorID(agendamento.PacienteID);
-            agendamento.ProfissionalID = 3;
+            agendamento.ProfissionalID = 1;
             agendamento._Profissional = profissionalController.PesquisarPorID(agendamento.ProfissionalID);
 
-            agendamento.DataHoraConsulta = new DateTime(2018, 04, 23, 10, 00, 00);
+            agendamento.DataHoraConsulta = new DateTime(2018, 04, 23, 11, 00, 00);
 
             if (ac.IncluirAgendamento(agendamento))
                 Console.WriteLine("Agendamento efetuado com sucesso");
@@ -222,6 +222,8 @@ namespace AgendamentoConsulta_Console
             Console.WriteLine("Validar disp local   : " + ac.ValidaHorarioLivreLocal(agendamento));
             Console.WriteLine("Validar disp profiss : " + ac.ValidaHorarioLivreProfissional(agendamento));
             Console.WriteLine("");
+            Console.WriteLine(ac.ValidaHorarioLivreProfissional(agendamento));
+
         }
 
         private static void ListarPacientes()
@@ -317,8 +319,9 @@ namespace AgendamentoConsulta_Console
                 Console.WriteLine("Profissional...:" + agendamento._Profissional.Nome);
                 Console.WriteLine("Especialidade..:" + agendamento._Profissional.Especialidade);
                 Console.WriteLine("Local..........:" + agendamento._Local.NomeLocal);
-                Console.WriteLine("Data e hora....:" + agendamento.DataHoraConsulta.ToString("DD/MM/YYYY hh:mm"));
+                Console.WriteLine("Data e hora....:" + agendamento.DataHoraConsulta.ToString("dd/MM/yyyy hh:mm"));
                 Console.WriteLine("");
+                Console.WriteLine(agendamento);
 
             }
         }

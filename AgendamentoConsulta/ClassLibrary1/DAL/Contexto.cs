@@ -20,24 +20,24 @@ namespace Model.DAL
         public DbSet<Profissional> Profissionais { get; set; }
         public DbSet<Agendamento> Agendamentos { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            //modelBuilder.Entity<Pessoa>()
-            //    .HasOptional<Endereco>(p => p._Endereco)
-            //    .WithMany()
-            //    .WillCascadeOnDelete(false);
-            //
-            //modelBuilder.Entity<Local>()
-            //    .HasOptional<Endereco>(l => l._Endereco)
-            //    .WithMany()
-            //    .WillCascadeOnDelete(false);
-            //
-            //modelBuilder.Entity<Pessoa>()
-            //    .HasOptional<Endereco>(p => p._Endereco)
-            //    .WithMany()
-            //    .WillCascadeOnDelete(false);
-            //base.OnModelCreating(modelBuilder);
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //modelBuilder.Entity<Pessoa>()
+        //    .HasOptional<Endereco>(p => p._Endereco)
+        //    .WithMany()
+        //    .WillCascadeOnDelete(false);
+        //
+        //modelBuilder.Entity<Local>()
+        //    .HasOptional<Endereco>(l => l._Endereco)
+        //    .WithMany()
+        //    .WillCascadeOnDelete(false);
+        //
+        //modelBuilder.Entity<Pessoa>()
+        //    .HasOptional<Endereco>(p => p._Endereco)
+        //    .WithMany()
+        //    .WillCascadeOnDelete(false);
+        //base.OnModelCreating(modelBuilder);
 
-        }
+        //}
     }
 }

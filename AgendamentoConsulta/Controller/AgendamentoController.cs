@@ -168,13 +168,14 @@ namespace Controller
             var a = from x in ContextoSingleton.Instancia.Agendamentos
                     where x._Profissional.Equals(agendamento._Profissional) &&
                     (x.DataHoraConsulta >= inicioConsulta && x.DataHoraConsulta < terminoConsulta) ||
-                    (x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) > inicioConsulta && x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) <= terminoConsulta)
+                    (x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) > inicioConsulta &&
+                    x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) <= terminoConsulta)
                     select x;
 
-            if (a == null)
-                return true;
-            else
+            if (a != null)
                 return false;
+            else
+                return true;
         }
 
         public bool ValidaHorarioLivreLocal(Agendamento agendamento)
@@ -188,10 +189,10 @@ namespace Controller
                     (x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) > inicioConsulta && x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) <= terminoConsulta)
                     select x;
 
-            if (a == null)
-                return true;
-            else
+            if (a != null)
                 return false;
+            else
+                return true;
         }
     }
 }
