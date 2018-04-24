@@ -25,6 +25,9 @@ namespace AgendamentoConsulta_Console
             ListarEnderecos = 9,
             ListarAgendamentos = 10,
 
+
+            OpcaoTeste = 15,
+
             Sair = 99
         }
 
@@ -41,7 +44,8 @@ namespace AgendamentoConsulta_Console
             Console.WriteLine("8 - Listar Locais");
             Console.WriteLine("9 - Listar Endereços");
             Console.WriteLine("10 - Listar Agendamentos");
-
+            Console.WriteLine("");
+            Console.WriteLine("15 - Opção Teste");
             Console.WriteLine("");
             Console.WriteLine("99 - Sair");
             Console.WriteLine("");
@@ -95,6 +99,9 @@ namespace AgendamentoConsulta_Console
 
                     case OpcoesMenuPrincipal.ListarAgendamentos:
                         ListarAgendamentos();
+                        break;
+
+                    case OpcoesMenuPrincipal.OpcaoTeste:
                         break;
 
                     default:
@@ -209,7 +216,7 @@ namespace AgendamentoConsulta_Console
             agendamento.ProfissionalID = 1;
             agendamento._Profissional = profissionalController.PesquisarPorID(agendamento.ProfissionalID);
 
-            agendamento.DataHoraConsulta = new DateTime(2018, 04, 23, 11, 00, 00);
+            agendamento.DataHoraConsulta = new DateTime(2018, 04, 23, 12, 59, 00);
 
             if (ac.IncluirAgendamento(agendamento))
                 Console.WriteLine("Agendamento efetuado com sucesso");
@@ -319,7 +326,7 @@ namespace AgendamentoConsulta_Console
                 Console.WriteLine("Profissional...:" + agendamento._Profissional.Nome);
                 Console.WriteLine("Especialidade..:" + agendamento._Profissional.Especialidade);
                 Console.WriteLine("Local..........:" + agendamento._Local.NomeLocal);
-                Console.WriteLine("Data e hora....:" + agendamento.DataHoraConsulta.ToString("dd/MM/yyyy hh:mm"));
+                Console.WriteLine("Data e hora....:" + agendamento.DataHoraConsulta.ToString("dd/MM/yyyy HH:mm"));
                 Console.WriteLine("");
                 Console.WriteLine(agendamento);
 

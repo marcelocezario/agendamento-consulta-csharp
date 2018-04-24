@@ -63,6 +63,8 @@ namespace Controller
 
         public List<Agendamento> ListarAgendamentos()
         {
+            var a = ContextoSingleton.Instancia.Agendamentos.ToList();
+
             return ContextoSingleton.Instancia.Agendamentos.ToList();
         }
 
@@ -72,13 +74,13 @@ namespace Controller
             {
                 if (ValidaDiaDaSemanaAtendimento(agendamento))
                 {
-                    if (ValidaHorarioLivreProfissional(agendamento))
-                    {
-                        if (ValidaHorarioLivreLocal(agendamento))
-                        {
-                            return true;
-                        }
-                    }
+                       if (ValidaHorarioLivreProfissional(agendamento))
+                       {
+                           if (ValidaHorarioLivreLocal(agendamento))
+                           {
+                    return true;
+                           }
+                       }
                 }
             }
             return false;
@@ -165,14 +167,14 @@ namespace Controller
             DateTime inicioConsulta = agendamento.DataHoraConsulta;
             DateTime terminoConsulta = agendamento.DataHoraConsulta.AddMinutes(agendamento.TempoEmMinutosConsulta);
 
-            var a = from x in ContextoSingleton.Instancia.Agendamentos
-                    where x._Profissional.Equals(agendamento._Profissional) &&
+            var horarioIndisponivel = from x in ListarAgendamentos()
+                    where x.ProfissionalID.Equals(agendamento.ProfissionalID) &&
                     (x.DataHoraConsulta >= inicioConsulta && x.DataHoraConsulta < terminoConsulta) ||
                     (x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) > inicioConsulta &&
                     x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) <= terminoConsulta)
                     select x;
 
-            if (a != null)
+            if (horarioIndisponivel != null)
                 return false;
             else
                 return true;
@@ -183,8 +185,8 @@ namespace Controller
             DateTime inicioConsulta = agendamento.DataHoraConsulta;
             DateTime terminoConsulta = agendamento.DataHoraConsulta.AddMinutes(agendamento.TempoEmMinutosConsulta);
 
-            var a = from x in ContextoSingleton.Instancia.Agendamentos
-                    where x._Local.Equals(agendamento._Local) &&
+            var a = from x in ContextoSingleton.Instancia.Agendamentos.ToList()
+                    where x.LocalID.Equals(agendamento.LocalID) &&
                     (x.DataHoraConsulta >= inicioConsulta && x.DataHoraConsulta < terminoConsulta) ||
                     (x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) > inicioConsulta &&
                     x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) <= terminoConsulta)
