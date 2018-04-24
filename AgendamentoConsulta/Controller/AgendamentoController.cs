@@ -186,7 +186,8 @@ namespace Controller
             var a = from x in ContextoSingleton.Instancia.Agendamentos
                     where x._Local.Equals(agendamento._Local) &&
                     (x.DataHoraConsulta >= inicioConsulta && x.DataHoraConsulta < terminoConsulta) ||
-                    (x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) > inicioConsulta && x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) <= terminoConsulta)
+                    (x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) > inicioConsulta &&
+                    x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) <= terminoConsulta)
                     select x;
 
             if (a != null)
