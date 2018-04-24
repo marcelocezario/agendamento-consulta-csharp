@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Model
 {
@@ -8,12 +10,15 @@ namespace Model
 
         public int AgendamentoID { get; set; }
 
+        [ForeignKey("_Local")]
         public int LocalID { get; set; }
         public virtual Local _Local { get; set; }
 
+        [ForeignKey("_Paciente")]
         public int PacienteID { get; set; }
         public virtual Paciente _Paciente { get; set; }
 
+        [ForeignKey("_Profissional")]
         public int ProfissionalID { get; set; }
         public virtual Profissional _Profissional { get; set; }
 

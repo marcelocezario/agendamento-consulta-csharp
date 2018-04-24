@@ -15,6 +15,8 @@ namespace AgendamentoConsulta_Console
         {
             ListarPacientes = 1,
             ListarProfissionais = 2,
+
+            cadastrarLocal = 3,
             Sair = 0
         }
 
@@ -47,6 +49,38 @@ namespace AgendamentoConsulta_Console
                             Console.WriteLine("");
                         }
                         break;
+                    case OpcoesMenuPrincipal.cadastrarLocal:
+                        LocalController lc = new LocalController();
+                        Local local = new Local();
+
+                        local.NomeLocal = "Teste";
+                        local.Domingo = true;
+                        local.Segunda = true;
+                        local.Terca = true;
+                        local.Quarta = true;
+                        local.Quinta = true;
+                        local.Sexta = true;
+                        local.Sabado = true;
+                        local.HrInicio = new DateTime(2018, 04, 23, 16, 00, 00);
+                        local.HrFim = new DateTime(2018, 04, 23, 16, 30, 00);
+
+                        EnderecoController ec = new EnderecoController();
+                        Endereco endereco = new Endereco();
+                        endereco.Cep = "81820000";
+                        endereco.Rua = "Cid Marcondes";
+                        endereco.Numero = 222;
+                        endereco.Complemento = "casa";
+                        endereco.Cidade = "Curitiba";
+                        endereco.Uf = "Pr";
+
+                        ec.SalvarEndereco(endereco);
+                        local._Endereco = endereco;
+                        local.EnderecoID = endereco.EnderecoID;
+
+
+                        break;
+
+                       
                     default:
                         break;
                 }

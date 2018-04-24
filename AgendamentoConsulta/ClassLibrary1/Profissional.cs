@@ -16,5 +16,6 @@ namespace Model
         public bool Sabado { get; set; }
         public DateTime HrInicio { get; set; }
         public DateTime HrFim { get; set; }
+        
     }
 }

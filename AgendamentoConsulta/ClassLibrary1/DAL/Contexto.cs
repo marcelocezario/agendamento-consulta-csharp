@@ -26,7 +26,18 @@ namespace Model.DAL
                 .HasOptional<Endereco>(p => p._Endereco)
                 .WithMany()
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Local>()
+                .HasOptional<Endereco>(l => l._Endereco)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<Pessoa>()
+            //    .HasOptional<Endereco>(p => p._Endereco)
+            //    .WithMany()
+            //    .WillCascadeOnDelete(false);
             base.OnModelCreating(modelBuilder);
+
         }
     }
 }
