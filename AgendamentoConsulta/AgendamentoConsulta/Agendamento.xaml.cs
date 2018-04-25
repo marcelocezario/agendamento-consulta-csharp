@@ -39,7 +39,7 @@ namespace AgendamentoConsulta
 
         }
 
-        private Profissional ButtonBuscarProfissional_Click(object sender, RoutedEventArgs e)
+        private void ButtonBuscarProfissional_Click(object sender, RoutedEventArgs e)
         {
             ProfissionalController pc = new ProfissionalController();
             Profissional profissional;
@@ -57,8 +57,6 @@ namespace AgendamentoConsulta
                 {
                     BoxBuscarProfissional.Text = profissional.Nome;
                     MessageBox.Show(profissional.Nome + " adicionado com sucesso!");
-
-                    return profissional;
                 }
                 else
                     MessageBox.Show("Nenhum profissional selecionado");
@@ -66,11 +64,9 @@ namespace AgendamentoConsulta
             else
                 MessageBox.Show("Nenhum profissional encontrado");
 
-            return null;
-
         }
 
-        private Paciente ButtonBuscarPaciente_Click(object sender, RoutedEventArgs e)
+        private void ButtonBuscarPaciente_Click(object sender, RoutedEventArgs e)
         {
             PacienteController pc = new PacienteController();
             Paciente paciente;
@@ -88,16 +84,38 @@ namespace AgendamentoConsulta
                 {
                     BoxBuscasrPaciente.Text = paciente.Nome;
                     MessageBox.Show(paciente.Nome + " adicionado com sucesso!");
-
-                    return paciente;
                 }
                 else
                     MessageBox.Show("Nenhum paciente selecionado");
             }
             else
                 MessageBox.Show("Nenhum paciente encontrado");
+        }
 
-            return null;
+        private void ButtonBuscarLocal_Click(object sender, RoutedEventArgs e)
+        {
+            LocalController lc = new LocalController();
+            Local local;
+
+            local = lc.PesquisarPorNome(BoxBuscarLocal.Text);
+
+            if (local != null)
+            {
+                string localBusca = "Id: " + local.LocalID +
+                    "\nNome: " + local.NomeLocal +
+                    "\nEndereço: " + local._Endereco.Rua + local._Endereco.Numero + local._Endereco.Complemento +
+                    "\nCidade: " + local._Endereco.Cidade + local._Endereco.Uf;
+
+                if (MessageBox.Show(localBusca, "Confirma o local?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    BoxBuscarLocal.Text = local.NomeLocal;
+                    MessageBox.Show(local.NomeLocal + " adicionado com sucesso!");
+                }
+                else
+                    MessageBox.Show("Nenhum local selecionado");
+            }
+            else
+                MessageBox.Show("Nenhum local encontrado");
         }
     }
 }
