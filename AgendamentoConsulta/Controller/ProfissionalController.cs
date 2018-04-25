@@ -15,7 +15,32 @@ namespace Controller
 
         public void EditarProfissional(int idProfissional, Profissional profissionalEditado)
         {
+            Profissional profissionalEditar = PesquisarPorID(idProfissional);
 
+            if (profissionalEditar != null)
+            {
+                profissionalEditar.Nome = profissionalEditado.Nome;
+                profissionalEditar.Celular = profissionalEditado.Celular;
+                profissionalEditar.Email = profissionalEditado.Email;
+                profissionalEditar.Rg = profissionalEditado.Rg;
+                profissionalEditar.Cpf = profissionalEditado.Cpf;
+                profissionalEditar.DtNascimento = profissionalEditado.DtNascimento;
+                profissionalEditar.ResgistroProfissional = profissionalEditado.ResgistroProfissional;
+                profissionalEditar.Domingo = profissionalEditado.Domingo;
+                profissionalEditar.Segunda = profissionalEditado.Segunda;
+                profissionalEditar.Terca = profissionalEditado.Terca;
+                profissionalEditar.Quarta = profissionalEditado.Quarta;
+                profissionalEditar.Quinta = profissionalEditado.Quinta;
+                profissionalEditar.Sexta = profissionalEditado.Sexta;
+                profissionalEditar.Sabado = profissionalEditado.Sabado;
+                profissionalEditar.HrInicio = profissionalEditado.HrInicio;
+                profissionalEditar.HrFim = profissionalEditado.HrFim;
+
+                ContextoSingleton.Instancia.Entry(profissionalEditar).State =
+                    System.Data.Entity.EntityState.Modified;
+
+                ContextoSingleton.Instancia.SaveChanges();
+            }
         }
 
         public Profissional PesquisarPorNome(string nome)
