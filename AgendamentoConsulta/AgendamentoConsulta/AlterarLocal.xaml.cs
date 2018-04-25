@@ -33,14 +33,14 @@ namespace AgendamentoConsulta
         //
         private void EditarLocal()
         {
-            EnderecoController endControl = new EnderecoController();
+            EnderecoController endControl = new EnderecoController();            
+            Endereco end = ContextoSingleton.Instancia.Enderecos.Find(Convert.ToInt32(TxtEnderecoID.Text));
             LocalController lcControl = new LocalController();
-            Endereco end = ContextoSingleton.Instancia.Enderecos.Find(Convert.ToInt32(TxtEndereçoID.Text));
             Local lc = ContextoSingleton.Instancia.Locais.Find(Convert.ToInt32(TxtLocalID.Text));
 
 
             int idlocal = Convert.ToInt32(TxtLocalID.Text);
-            int idEndereco = Convert.ToInt32(TxtEndereçoID.Text);
+            int idEndereco = Convert.ToInt32(TxtEnderecoID.Text);
 
 
             if (end != null)
@@ -50,6 +50,8 @@ namespace AgendamentoConsulta
                 {
                     if (lcControl.EditarLocal(idlocal, lc))
                     {
+                        endControl.EditarEndereco(idEndereco, end);
+
                         ContextoSingleton.Instancia.SaveChanges();
                         this.ListagemLocal();
                     }
@@ -72,14 +74,20 @@ namespace AgendamentoConsulta
         private void ExcluirLocal()
         {
             // Metódo para excluir o insumo no banco
+            
             LocalController lcControl = new LocalController();
             Local lc = ContextoSingleton.Instancia.Locais.Find(Convert.ToInt32(TxtLocalID.Text));
+            EnderecoController endControl = new EnderecoController();
+            Endereco end = ContextoSingleton.Instancia.Enderecos.Find(lc.EnderecoID);
+
             int idlocal = Convert.ToInt32(TxtLocalID.Text);
+            
 
             if (lc != null)
             {
                 if (lcControl.ExcluirLocal(idlocal))
                 {
+                    endControl.ExcluirEndereco(end.EnderecoID);
                     this.ListagemLocal(); // Lista os Local atualizados
                     this.LimpaCampos(); //  Limpa campos antigos
                 }
@@ -158,10 +166,9 @@ namespace AgendamentoConsulta
             if (DgDados.SelectedIndex >= 0)
             {
                 Local lc = (Local)DgDados.SelectedItem;
-                Endereco end = 
+                Endereco end = ContextoSingleton.Instancia.Enderecos.Find(lc.EnderecoID);
 
-                BoxNomeLocal.Text = lc.NomeLocal;
-               
+                BoxNomeLocal.Text = lc.NomeLocal;               
                 CheckBoxDomingo.IsChecked = lc.Domingo;
                 CheckBoxSegunda.IsChecked = lc.Segunda;
                 CheckBoxTerca.IsChecked = lc.Terca;
@@ -170,13 +177,13 @@ namespace AgendamentoConsulta
                 CheckBoxSexta.IsChecked = lc.Sexta;
                 CheckBoxSabado.IsChecked = lc.Sabado;
 
-                Cep = BoxCepLocal.Text,
-                Rua = BoxRuaLocal.Text,
-                Numero = int.Parse(BoxNumeroLocal.Text),
-                Complemento = BoxComplementoLocal.Text,
-                Cidade = BoxCidadeLocal.Text,
-                Uf = ComboBoxEstado.Text,
-            };
+                BoxCepLocal.Text = end.Cep;
+                BoxRuaLocal.Text = end.Rua;
+                BoxNumeroLocal.Text = end.Numero.ToString();
+                BoxComplementoLocal.Text = end.Complemento;
+                BoxCidadeLocal.Text = end.Cidade;
+                ComboBoxEstado.Text = end.Uf;
+            
 
             TimePickerHInicioLocal.SelectedTime = lc.HrInicio;
                 TimePickerHFimLocal.SelectedTime = lc.HrFim;
