@@ -27,14 +27,14 @@ namespace AgendamentoConsulta
             InitializeComponent();
             PacienteController proControl = new PacienteController();
             // Inicializa a listagem de Paciente
-            DgDados.ItemsSource = proControl.ListarProfissionais();
+            DgDados.ItemsSource = proControl.ListarPacientes();
         }
 
         //
-        private void EditarPaciente()
+        private void  EditarPaciente()
         {
             PacienteController prControl = new PacienteController();
-            Paciente pc = ContextoSingleton.Instancia.Profissionais.Find(Convert.ToInt32(TxtPacienteID.Text));
+            Paciente pc = ContextoSingleton.Instancia.Pacientes.Find(Convert.ToInt32(TxtPacienteID.Text));
 
             if (pc != null)
             {

@@ -13,7 +13,7 @@ namespace Controller
             
         }
 
-        public void EditarPaciente(int idPaciente, Paciente pacienteEditado)
+        public bool EditarPaciente(int idPaciente, Paciente pacienteEditado)
         {
             Paciente pacienteEditar = PesquisarPorID(idPaciente);
 
@@ -30,6 +30,7 @@ namespace Controller
 
                 ContextoSingleton.Instancia.SaveChanges();
             }
+            return true;
         }
 
         public Paciente PesquisarPorNome(string nome)
