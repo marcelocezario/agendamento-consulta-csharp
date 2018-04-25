@@ -7,7 +7,7 @@ namespace Controller
 {
     public class EnderecoController
     {
-        public void SalvarEndereco (Endereco endereco)
+        public void SalvarEndereco(Endereco endereco)
         {
             ContextoSingleton.Instancia.Enderecos.Add(endereco);
             ContextoSingleton.Instancia.SaveChanges();
@@ -25,18 +25,32 @@ namespace Controller
                 return null;
         }
 
-        public void EditarEndereco (int idEndereco, Endereco enderecoEditado)
+        public void EditarEndereco(int idEndereco, Endereco enderecoEditado)
         {
+            Endereco enderecoEditar = PesquisarPorID(idEndereco);
 
-          
-            
+            if (enderecoEditar != null)
+            {
+                enderecoEditar.Cep = enderecoEditado.Cep;
+                enderecoEditar.Rua = enderecoEditado.Rua;
+                enderecoEditar.Numero = enderecoEditado.Numero;
+                enderecoEditar.Complemento = enderecoEditado.Complemento;
+                enderecoEditar.Cidade = enderecoEditado.Cidade;
+                enderecoEditar.Uf = enderecoEditado.Uf;
+                
+                ContextoSingleton.Instancia.Entry(enderecoEditar).State =
+                    System.Data.Entity.EntityState.Modified;
+
+                ContextoSingleton.Instancia.SaveChanges();
+            }
         }
+
         public Endereco PesquisarPorID(int idEndereco)
         {
             return ContextoSingleton.Instancia.Enderecos.Find(idEndereco);
         }
 
-        public void ExcluirEndereco (int idEndereco)
+        public void ExcluirEndereco(int idEndereco)
         {
             Endereco e = ContextoSingleton.Instancia.Enderecos.Find(idEndereco);
 
