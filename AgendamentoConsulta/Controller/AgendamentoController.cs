@@ -55,7 +55,23 @@ namespace Controller
 
         public void EditarAgendamento(int idAgendamento, Agendamento novoAgendamento)
         {
+            Agendamento agendamentoEditar = PesquisarAgendamentoPorId(idAgendamento);
 
+            if (agendamentoEditar != null)
+            {
+                agendamentoEditar.LocalID = novoAgendamento.LocalID;
+                agendamentoEditar._Local = novoAgendamento._Local;
+                agendamentoEditar.PacienteID = novoAgendamento.PacienteID;
+                agendamentoEditar._Paciente = novoAgendamento._Paciente;
+                agendamentoEditar.ProfissionalID = novoAgendamento.ProfissionalID;
+                agendamentoEditar._Profissional = novoAgendamento._Profissional;
+                agendamentoEditar.DataHoraConsulta = novoAgendamento.DataHoraConsulta;
+
+                ContextoSingleton.Instancia.Entry(agendamentoEditar).State =
+                    System.Data.Entity.EntityState.Modified;
+
+                ContextoSingleton.Instancia.SaveChanges();
+            }
         }
 
         public List<Agendamento> ListarAgendamentos()
@@ -179,8 +195,8 @@ namespace Controller
             DateTime terminoConsulta = agendamento.DataHoraConsulta.AddMinutes(agendamento.TempoEmMinutosConsulta);
 
             var a = (from x in ContextoSingleton.Instancia.Agendamentos
-                    where x.LocalID.Equals(agendamento.LocalID) &&
-                    (x.DataHoraConsulta > inicioConsulta && x.DataHoraConsulta < terminoConsulta)
+                     where x.LocalID.Equals(agendamento.LocalID) &&
+                     (x.DataHoraConsulta > inicioConsulta && x.DataHoraConsulta < terminoConsulta)
                      select x).ToList();
 
             if (a.Any())
