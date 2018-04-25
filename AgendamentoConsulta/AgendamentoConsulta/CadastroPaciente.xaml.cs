@@ -85,69 +85,17 @@ namespace AgendamentoConsulta
             {
                 Nome = BoxNomePaciente.Text,
                 Cpf = BoxCpfPaciente.Text,
-                Rg = BoxRgPaciente.Text,
 
                 Email = BoxEmailPaciente.Text,
                 Celular = BoxContatoPaciente.Text,
                 DtNascimento = DatePickerDtNascimentoPaciente.SelectedDate.Value
             };
 
-            //criando novo objeto de Endereço
-            Endereco end = new Endereco
-            {
-                Cep = BoxCepPaciente.Text,
-                Rua = BoxRuaPaciente.Text,
-                Complemento = BoxComplementoPaciente.Text,
-                Numero = int.Parse(BoxNumeroPaciente.Text),
-                Cidade = BoxCidadePaciente.Text,
-                Uf = BoxUFPaciente.Text
-            };
-
-            //passar dados para controller
-            PacienteController pc = new PacienteController();
-            EnderecoController ec = new EnderecoController();
-            //ec.SalvarEndereco(end);
-            //p.EnderecoID = end.EnderecoID;
-            //p._Endereco = end;
-            pc.SalvarPaciente(p);
+            ContextoSingleton.Instancia.Pacientes.Add(p);
 
             this.Close();
 
-        }
-
-        //valida para o textbox aceitar somente numeros
-        private void BoxRgPaciente_KeyDown(object sender, KeyEventArgs e)
-        {
-            try
-            {
-                KeyConverter key = new KeyConverter();
-                if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
-                {
-                    e.Handled = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex);
-            }
-        }
-
-        //valida para o textbox aceitar somente numeros
-        private void BoxNumeroPaciente_KeyDown(object sender, KeyEventArgs e)
-        {
-            try
-            {
-                KeyConverter key = new KeyConverter();
-                if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
-                {
-                    e.Handled = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex);
-            }
-        }
+        }     
     }
 }
 

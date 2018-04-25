@@ -51,7 +51,8 @@ namespace Verificacao
             int resto;
             ////Verifica se esta vazio
             if (cpf.Equals("___.___.___-__"))          
-                return false;      
+                return false;  
+            else
             cpf = cpf.Trim();
             cpf = cpf.Replace(".", "").Replace("-", "");
 

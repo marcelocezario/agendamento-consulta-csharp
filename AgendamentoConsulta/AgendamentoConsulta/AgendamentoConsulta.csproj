@@ -136,7 +136,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="BuscarDados.xaml">
+    <Page Include="AlterarPaciente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -160,12 +160,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AlterarPaciente.xaml.cs">
+      <DependentUpon>AlterarPaciente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BuscarDados.xaml.cs">
-      <DependentUpon>BuscarDados.xaml</DependentUpon>
     </Compile>
     <Compile Include="CadastroPaciente.xaml.cs">
       <DependentUpon>CadastroPaciente.xaml</DependentUpon>
