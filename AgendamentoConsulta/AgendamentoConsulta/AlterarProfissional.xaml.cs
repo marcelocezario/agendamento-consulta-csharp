@@ -104,6 +104,7 @@ namespace AgendamentoConsulta
             DgDados.ItemsSource = prControl.ListarProfissionais();
 
         }
+        //limpar campos 
         private void LimpaCampos()
         {
             BoxNomeProfissional.Clear();
@@ -113,6 +114,12 @@ namespace AgendamentoConsulta
             BoxEmailProfissional.Clear();
             BoxResgistroProfissional.Clear();
         }
+
+        /// <summary>
+        /// botoes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void Editar_Profissional_Click(object sender, RoutedEventArgs e)
         {
@@ -128,12 +135,13 @@ namespace AgendamentoConsulta
         {
             PesquisarProfissionalPorNome();
         }
-
+        //carega a lista
         private void DgDados_Loaded(object sended, RoutedEventArgs e)
         {
             this.ListagemProfissional();
         }
 
+        //carrega objeto selecionado para os textbox
         private void DgDados_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             if (DgDados.SelectedIndex >= 0)

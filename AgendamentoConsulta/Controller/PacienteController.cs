@@ -49,7 +49,7 @@ namespace Controller
             return ContextoSingleton.Instancia.Pacientes.Find(idPaciente);
         }
 
-        public void ExcluirPaciente(int idPaciente)
+        public bool ExcluirPaciente(int idPaciente)
         {
             Paciente p = ContextoSingleton.Instancia.Pacientes.Find(idPaciente);
 
@@ -57,6 +57,8 @@ namespace Controller
                 System.Data.Entity.EntityState.Deleted;
 
             ContextoSingleton.Instancia.SaveChanges();
+
+            return true;
         }
 
 
