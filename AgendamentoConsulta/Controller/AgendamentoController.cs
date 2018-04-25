@@ -57,7 +57,7 @@ namespace Controller
         {
             Agendamento agendamentoEditar = PesquisarAgendamentoPorId(idAgendamento);
 
-            if (agendamentoEditar != null)
+            if (agendamentoEditar != null  && ValidacaoAgendamento(novoAgendamento))
             {
                 agendamentoEditar.LocalID = novoAgendamento.LocalID;
                 agendamentoEditar._Local = novoAgendamento._Local;
