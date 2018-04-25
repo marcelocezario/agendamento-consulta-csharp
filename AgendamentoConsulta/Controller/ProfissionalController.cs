@@ -13,7 +13,7 @@ namespace Controller
             ContextoSingleton.Instancia.SaveChanges();
         }
 
-        public void EditarProfissional(int idProfissional, Profissional profissionalEditado)
+        public bool EditarProfissional(int idProfissional, Profissional profissionalEditado)
         {
             Profissional profissionalEditar = PesquisarPorID(idProfissional);
 
@@ -40,6 +40,7 @@ namespace Controller
 
                 ContextoSingleton.Instancia.SaveChanges();
             }
+            return true;
         }
 
         public Profissional PesquisarPorNome(string nome)
@@ -59,7 +60,7 @@ namespace Controller
             return ContextoSingleton.Instancia.Profissionais.Find(idProfissional);
         }
 
-        public void ExcluirProfissional(int idProfissional)
+        public bool ExcluirProfissional(int idProfissional)
         {
             Profissional p = ContextoSingleton.Instancia.Profissionais.Find(idProfissional);
 
@@ -67,6 +68,8 @@ namespace Controller
                 System.Data.Entity.EntityState.Deleted;
 
             ContextoSingleton.Instancia.SaveChanges();
+
+            return true;
         }
 
         public List<Profissional> ListarProfissionais()
