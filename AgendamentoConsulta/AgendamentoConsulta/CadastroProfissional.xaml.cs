@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using MahApps.Metro.Controls;
 using Model;
+using Verificacao;
 using Controller;
 using System.Windows.Input;
 using System;
