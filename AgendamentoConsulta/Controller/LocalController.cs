@@ -16,7 +16,29 @@ namespace Controller
 
         public void EditarLocal(int idLocal, Local localEditado)
         {
+            Local localEditar = PesquisarPorID(idLocal);
 
+            if (localEditar != null)
+            {
+                localEditar.NomeLocal = localEditado.NomeLocal;
+                localEditar.Domingo = localEditado.Domingo;
+                localEditar.Segunda = localEditado.Segunda;
+                localEditar.Terca = localEditado.Terca;
+                localEditar.Quarta = localEditado.Quarta;
+                localEditar.Quinta = localEditado.Quinta;
+                localEditar.Sexta = localEditado.Sexta;
+                localEditar.Sabado = localEditado.Sabado;
+                localEditar.HrInicio = localEditado.HrInicio;
+                localEditar.HrFim = localEditado.HrFim;
+                localEditar.EnderecoID = localEditado.EnderecoID;
+                localEditar._Endereco = localEditado._Endereco;
+
+
+                ContextoSingleton.Instancia.Entry(localEditar).State =
+                    System.Data.Entity.EntityState.Modified;
+
+                ContextoSingleton.Instancia.SaveChanges();
+            }
         }
 
         public Local PesquisarPorNome(string nome)
