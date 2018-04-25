@@ -66,10 +66,13 @@
         <TextBox x:Name="BoxBuscarLocal" Grid.Column="1" HorizontalAlignment="Left" Height="28" Margin="0.2,0.4,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="290"/>
         <Button x:Name="ButtonBuscarLocal" Content="Pesquisar" Grid.Column="1" HorizontalAlignment="Left" Margin="290.2,0.4,0,0" Grid.Row="6" VerticalAlignment="Top" Width="109" Grid.ColumnSpan="2" Height="28" Click="ButtonBuscarLocal_Click"/>
 
+        <!-- Data agendamento -->
+        <Label x:Name="LabelData" Content="Data" HorizontalAlignment="Left" Margin="2,28.6,0,0" Grid.Row="7" VerticalAlignment="Top" Grid.RowSpan="3" Grid.ColumnSpan="2" Height="30" Width="103"/>
+        <DatePicker x:Name="DatePickerDataConsulta" Grid.Column="1" HorizontalAlignment="Left" Margin="0.2,28.6,0,0" Grid.Row="7" VerticalAlignment="Top" Height="30" Grid.RowSpan="3" Width="97"/>
+
         <!-- Horário agendamento -->
-        <Label x:Name="LabelHorario" Content="Horário" HorizontalAlignment="Left" Margin="0,0.8,0,0" Grid.Row="8" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="29" Grid.RowSpan="2" Width="105"/>
-        <materialDesign:TimePicker x:Name="TimePickerHorarioAgendamento" Is24Hours="True" SelectedTime="{Binding ActionSelectedTime, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}" SelectedTimeFormat="Long" Grid.Column="1"  Margin="0.2,0.8,198.2,0" Grid.Row="8" Height="29" Grid.RowSpan="2" />
-
-
+        <Label x:Name="LabelHorario" Content="Horário" HorizontalAlignment="Left" Margin="0,0.4,0,0" Grid.Row="10" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="29" Width="105"/>
+        <materialDesign:TimePicker x:Name="TimePickerHorarioAgendamento" Is24Hours="True" SelectedTime="{Binding ActionSelectedTime, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}" SelectedTimeFormat="Long" Grid.Column="1"  Margin="5.2,0.4,193.2,0" Grid.Row="10" Height="29" />
+               
     </Grid>
 </Controls:MetroWindow>
