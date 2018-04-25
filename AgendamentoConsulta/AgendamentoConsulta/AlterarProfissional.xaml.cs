@@ -23,7 +23,7 @@ namespace AgendamentoConsulta
     /// <summary>
     /// Interaction logic for Produto.xaml
     /// </summary>
-    public partial class AlterarProfissional : Window
+    public partial class AlterarProfissional : MetroWindow
     {
         public AlterarProfissional()
         {

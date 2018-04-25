@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Windows;
 using MahApps.Metro.Controls;
 
 namespace AgendamentoConsulta
@@ -26,7 +25,8 @@ namespace AgendamentoConsulta
             InitializeComponent();
 
         }
-        private void BtnAlterarsCliente_Click(object sender, RoutedEventArgs e)
+
+        private void BtnAlterarCliente_Click(object sender, RoutedEventArgs e)
         {
             AlterarPaciente cadCli = new AlterarPaciente();
             cadCli.ShowDialog();
@@ -34,6 +34,7 @@ namespace AgendamentoConsulta
 
         private void BtnAlterarProfissional_Click(object sender, RoutedEventArgs e)
         {
+
             AlterarProfissional cadPro = new AlterarProfissional();
             cadPro.ShowDialog();
         }

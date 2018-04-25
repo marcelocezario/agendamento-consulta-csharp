@@ -20,7 +20,7 @@ namespace AgendamentoConsulta
     /// <summary>
     /// Lógica interna para AlterarPaciente.xaml
     /// </summary>
-    public partial class AlterarPaciente : Window
+    public partial class AlterarPaciente : MetroWindow
     {
         public AlterarPaciente()
         {

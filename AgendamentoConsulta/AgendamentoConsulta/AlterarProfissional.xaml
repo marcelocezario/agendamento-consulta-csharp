@@ -1,4 +1,4 @@
-﻿<Window x:Class="AgendamentoConsulta.AlterarProfissional"
+﻿<Controls:MetroWindow x:Class="AgendamentoConsulta.AlterarProfissional"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -10,7 +10,7 @@
         Title="Alterearçaõ de Profissionais"
         x:Name="TelaAlteraçãoProfisional"                     
         Height="552.5" Width="1084" WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Grid Margin="0,0,0,-31">
 
         <Grid Background="white" HorizontalAlignment="Center" Height="426" VerticalAlignment="Center" Width="992" Margin="0,10,0,33" Opacity="0.75" >
             <Border Background="#DFE3EE" BorderBrush="Black" BorderThickness="1,1,1,1" CornerRadius="30,30,30,30" Margin="-30,10,-21,-38" RenderTransformOrigin="0.5,0.5">
@@ -38,7 +38,7 @@
 
                     <!-- Cpf -->
                     <TextBlock x:Name="LabelCpfProfissional" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="18" RenderTransformOrigin="0.468,0.867" Margin="29,123,0,0" FontFamily="Arial" TextAlignment="Right" ><Run Text=" "/><Run Text="CPF"/></TextBlock>
-                    <xctk:MaskedTextBox Mask="000,000,000-00" x:Name="BoxCpfProfissional" Height="21" Margin="76,120,837,0" TextWrapping="Wrap" VerticalAlignment="Top" />
+                    <xctk:MaskedTextBox Mask="000,000,000-00" x:Name="BoxCpfProfissional" Height="21" Margin="76,120,862,0" TextWrapping="Wrap" VerticalAlignment="Top" />
 
                     <!-- Data de nascimento -->
                     <TextBlock x:Name="LabelDtNascimentoProfissional" HorizontalAlignment="Left" TextWrapping="Wrap" Width="114" RenderTransformOrigin="0.468,0.867" Margin="2,148,0,258" FontFamily="Arial" TextAlignment="Right" ><Run Text=" "/><Run Text="Data de Nascimento"/></TextBlock>
@@ -46,7 +46,7 @@
 
                     <!-- Contato -->
                     <TextBlock x:Name="LabelContatoProfissional" HorizontalAlignment="Left" TextWrapping="Wrap" Width="60" RenderTransformOrigin="0.468,0.867" Margin="224,120,0,291" FontFamily="Arial" TextAlignment="Right" Text="Celular" />
-                    <xctk:MaskedTextBox Mask="(00) 0 0000-0000" x:Name="BoxContatoProfissional" Height="21" Margin="289,120,607,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.793,0.381" />
+                    <xctk:MaskedTextBox Mask="(00) 0 0000-0000" x:Name="BoxContatoProfissional" Height="21" Margin="289,120,647,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.534,0.443" />
 
                     <!-- Email -->
                     <TextBlock x:Name="LabelEmailProfissional" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" RenderTransformOrigin="0.468,0.867" Margin="2,283,949,0" FontFamily="Arial" TextAlignment="Right" Text="E-mail" />
@@ -68,8 +68,8 @@
                     <materialDesign:TimePicker x:Name="TimePickerHInicioProfissional" Is24Hours="True" SelectedTime="{Binding ActionSelectedTime, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}" SelectedTimeFormat="Long"  Margin="52,253,862,0" Height="25" />
 
                     <!-- Hora Final -->
-                    <TextBlock x:Name="LabelHFimLocalProfissional" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="148,253,798,0" TextAlignment="Right" FontFamily="Arial"><Run Text=" "/><Run Text="Fim"/></TextBlock>
-                    <materialDesign:TimePicker x:Name="TimePickerHFimProfissional" Is24Hours="True" SelectedTime="{Binding ActionSelectedTime, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}" SelectedTimeFormat="Long"  Margin="207,253,709,0" Height="25" />
+                    <TextBlock x:Name="LabelHFimLocalProfissional" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="172,259,795,0" TextAlignment="Right" FontFamily="Arial"><Run Text=" "/><Run Text="Fim"/></TextBlock>
+                    <materialDesign:TimePicker x:Name="TimePickerHFimProfissional" Is24Hours="True" SelectedTime="{Binding ActionSelectedTime, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}" SelectedTimeFormat="Long"  Margin="229,253,687,0" Height="25" />
 
                     <!-- Especialidade do profissional-->
                     <TextBlock x:Name="LabelEspecialidadeProfissional" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Height="24" RenderTransformOrigin="0.468,0.867" Margin="2,206,0,0" FontFamily="Arial" TextAlignment="Right"><Run Text=" "/><Run Text="Especialidade"/></TextBlock>
@@ -90,4 +90,4 @@
         </Grid>
 
     </Grid>
-</Window>
+</Controls:MetroWindow>

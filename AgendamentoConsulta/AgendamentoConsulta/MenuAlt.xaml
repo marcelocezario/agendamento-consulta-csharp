@@ -18,9 +18,9 @@
         </Grid.ColumnDefinitions>
 
 
-        <Button x:Name="BtnAlterarCliente"     FontWeight="Bold" Content="Alterar de Pacientes"     Height="55" Margin="10,65,10,0"  VerticalAlignment="Top" FontFamily="Arial" FontSize="16" Grid.Column="1" Click="BtnAlterarCliente_Click" TextOptions.TextHintingMode="Animated"/>
-        <Button x:Name="BtnAlterarProfissional" FontWeight="Bold" Content="Alterar de Profissionais" Height="57" Margin="10,125,10,0"  VerticalAlignment="Top" FontFamily="Arial" FontSize="16"  Grid.Column="1" Click="BtnAlterarProfissional_Click" TextOptions.TextHintingMode="Animated"/>
-        <Button x:Name="BtnAlterarLocal"        FontWeight="Bold" Content="Alterar de Salas"         Height="55" Margin="10,187,10,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16" Grid.Column="1" Click="BtnAlterarLocal_Click" TextOptions.TextHintingMode="Animated" RenderTransformOrigin="0.516,0.545" />
+        <Button x:Name="BtnAlterarCliente"     FontWeight="Bold" Content="Alterar de Pacientes"     Height="55" Margin="10,65,10,0"  VerticalAlignment="Top" FontFamily="Arial" FontSize="16" Grid.Column="1"  TextOptions.TextHintingMode="Animated" Click="BtnAlterarCliente_Click"/>
+        <Button x:Name="BtnAlterarProfissional" FontWeight="Bold" Content="Alterar de Profissionais" Height="57" Margin="10,125,10,0"  VerticalAlignment="Top" FontFamily="Arial" FontSize="16"  Grid.Column="1" TextOptions.TextHintingMode="Animated" Click="BtnAlterarProfissional_Click"/>
+        <Button x:Name="BtnAlterarLocal"        FontWeight="Bold" Content="Alterar de Salas"         Height="55" Margin="10,187,10,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16" Grid.Column="1" TextOptions.TextHintingMode="Animated" Click="BtnAlterarLocal_Click" />
 
     </Grid>
     </Controls:MetroWindow>
