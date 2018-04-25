@@ -25,7 +25,7 @@ namespace AgendamentoConsulta
         
         private void BtnCadastros_Click(object sender, RoutedEventArgs e)
         {
-            Casdastros cad = new Casdastros();
+            Cadastros cad = new Cadastros();
 
             cad.ShowDialog();
         }
@@ -43,7 +43,8 @@ namespace AgendamentoConsulta
 
         private void BtnAgendamento_Click(object sender, RoutedEventArgs e)
         {
-
+            Agendamento ag = new Agendamento();
+            ag.ShowDialog();
         }
     }
 }

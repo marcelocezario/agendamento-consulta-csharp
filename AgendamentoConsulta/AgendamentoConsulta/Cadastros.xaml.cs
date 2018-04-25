@@ -7,9 +7,9 @@ namespace AgendamentoConsulta
     /// <summary>
     /// Lógica interna para Casdastros.xaml
     /// </summary>
-    public partial class Casdastros : MetroWindow
+    public partial class Cadastros : MetroWindow
     {
-        public Casdastros()
+        public Cadastros()
         {
             InitializeComponent();
         }
