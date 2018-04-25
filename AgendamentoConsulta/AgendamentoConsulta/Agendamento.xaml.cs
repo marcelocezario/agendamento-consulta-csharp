@@ -1,20 +1,9 @@
-﻿using Controller;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using MahApps.Metro.Controls;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Model;
+using Controller;
+using System.Windows.Input;
+using System;
 
 namespace AgendamentoConsulta
 {
@@ -22,21 +11,15 @@ namespace AgendamentoConsulta
     /// Interação lógica para CadastroAgendamento.xam
     /// </summary>
     public partial class Agendamento : MetroWindow
-
     {
         public Agendamento()
         {
             InitializeComponent();
         }
 
-        private void ComboBoxNomeProfissional_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void ButtonSalvarAgendamento_Click(object sender, RoutedEventArgs e)
         {
-
+            SalvarAgendamento();
         }
 
         private void ButtonBuscarProfissional_Click(object sender, RoutedEventArgs e)
@@ -48,18 +31,40 @@ namespace AgendamentoConsulta
 
             if (profissional != null)
             {
+                string diasAtendimento = "";
+
+                if (profissional.Domingo == true)
+                    diasAtendimento = diasAtendimento + "Domingo / ";
+                if (profissional.Segunda == true)
+                    diasAtendimento = diasAtendimento + "Segunda-Feira / ";
+                if (profissional.Terca == true)
+                    diasAtendimento = diasAtendimento + "Terça-Feira / ";
+                if (profissional.Quarta == true)
+                    diasAtendimento = diasAtendimento + "Quarta-Feira / ";
+                if (profissional.Quinta == true)
+                    diasAtendimento = diasAtendimento + "Quinta-Feira / ";
+                if (profissional.Sexta == true)
+                    diasAtendimento = diasAtendimento + "Sexta-Feira / ";
+                if (profissional.Sabado == true)
+                    diasAtendimento = diasAtendimento + "Sábado";
+
                 string profissionalBusca = "Id: " + profissional.ID +
                     "\nNome: " + profissional.Nome +
                     "\nEspecialidade: " + profissional.Especialidade +
-                    "\nRegistro Profissional: " + profissional.ResgistroProfissional;
+                    "\nRegistro Profissional: " + profissional.ResgistroProfissional +
+                    "\n\nDias atendimento: " + diasAtendimento +
+                    "\nHorário atendimento: " + profissional.HrInicio.ToString("HH:mm") + " até " + profissional.HrFim.ToString("HH:mm");
+
 
                 if (MessageBox.Show(profissionalBusca, "Confirma o profissional?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-                {
-                    BoxBuscarProfissional.Text = profissional.Nome;
-                    MessageBox.Show(profissional.Nome + " adicionado com sucesso!");
-                }
-                else
-                    MessageBox.Show("Nenhum profissional selecionado");
+                    {
+                        BoxBuscarProfissional.Text = profissional.Nome;
+                        BoxBuscarProfissional.IsEnabled = false;
+                        ButtonBuscarProfissional.IsEnabled = false;
+                        MessageBox.Show(profissional.Nome + " adicionado com sucesso!");
+                    }
+                    else
+                        MessageBox.Show("Nenhum profissional selecionado");
             }
             else
                 MessageBox.Show("Nenhum profissional encontrado");
@@ -71,7 +76,7 @@ namespace AgendamentoConsulta
             PacienteController pc = new PacienteController();
             Paciente paciente;
 
-            paciente = pc.PesquisarPorNome(BoxBuscasrPaciente.Text);
+            paciente = pc.PesquisarPorNome(BoxBuscarPaciente.Text);
 
             if (paciente != null)
             {
@@ -82,7 +87,9 @@ namespace AgendamentoConsulta
 
                 if (MessageBox.Show(pacienteBusca, "Confirma o paciente?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
-                    BoxBuscasrPaciente.Text = paciente.Nome;
+                    BoxBuscarPaciente.Text = paciente.Nome;
+                    BoxBuscarPaciente.IsEnabled = false;
+                    ButtonBuscarPaciente.IsEnabled = false;
                     MessageBox.Show(paciente.Nome + " adicionado com sucesso!");
                 }
                 else
@@ -101,14 +108,35 @@ namespace AgendamentoConsulta
 
             if (local != null)
             {
+                string diasAtendimento = "";
+
+                if (local.Domingo == true)
+                    diasAtendimento = diasAtendimento + "Domingo / ";
+                if (local.Segunda == true)
+                    diasAtendimento = diasAtendimento + "Segunda-Feira / ";
+                if (local.Terca == true)
+                    diasAtendimento = diasAtendimento + "Terça-Feira / ";
+                if (local.Quarta == true)
+                    diasAtendimento = diasAtendimento + "Quarta-Feira / ";
+                if (local.Quinta == true)
+                    diasAtendimento = diasAtendimento + "Quinta-Feira / ";
+                if (local.Sexta == true)
+                    diasAtendimento = diasAtendimento + "Sexta-Feira / ";
+                if (local.Sabado == true)
+                    diasAtendimento = diasAtendimento + "Sábado";
+
                 string localBusca = "Id: " + local.LocalID +
                     "\nNome: " + local.NomeLocal +
                     "\nEndereço: " + local._Endereco.Rua + local._Endereco.Numero + local._Endereco.Complemento +
-                    "\nCidade: " + local._Endereco.Cidade + local._Endereco.Uf;
+                    "\nCidade: " + local._Endereco.Cidade + local._Endereco.Uf +
+                    "\n\nDias atendimento: " + diasAtendimento +
+                    "\nHorário atendimento: " + local.HrInicio.ToString("HH:mm") + " até " + local.HrFim.ToString("HH:mm");
 
                 if (MessageBox.Show(localBusca, "Confirma o local?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
                     BoxBuscarLocal.Text = local.NomeLocal;
+                    BoxBuscarLocal.IsEnabled = false;
+                    ButtonBuscarLocal.IsEnabled = false;
                     MessageBox.Show(local.NomeLocal + " adicionado com sucesso!");
                 }
                 else
@@ -116,6 +144,13 @@ namespace AgendamentoConsulta
             }
             else
                 MessageBox.Show("Nenhum local encontrado");
+        }
+
+        private void SalvarAgendamento()
+        {
+            Agendamento ag;
+
+
         }
     }
 }

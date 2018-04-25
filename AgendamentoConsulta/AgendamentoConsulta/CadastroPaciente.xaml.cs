@@ -60,7 +60,7 @@ namespace AgendamentoConsulta
             {
                 Nome = BoxNomePaciente.Text,
                 Cpf = BoxCpfPaciente.Text,
-
+                
                 Email = BoxEmailPaciente.Text,
                 Celular = BoxContatoPaciente.Text,
                 DtNascimento = DatePickerDtNascimentoPaciente.SelectedDate.Value
