@@ -29,8 +29,7 @@
         <TextBlock Margin="15,21,5,5" TextWrapping="Wrap" Text="Menu de Seleção" Width="244" Grid.Column="1" FontWeight="Bold" FontFamily="Arial" FontSize="24" TextDecorations="{x:Null}" TextAlignment="Center" LineHeight="10"/>
 
         <Button x:Name="BtnCadastros"   FontWeight="Bold" Content="Novos Cadastros"         Height="55" Margin="10,53,10,0"  Grid.Row="1" VerticalAlignment="Top" Grid.Column="1" FontFamily="Arial" FontSize="16" Click="BtnCadastros_Click"/>
-        <Button x:Name="BtnAlteracoes"  FontWeight="Bold" Content="Alterações de Cadastros" Height="55" Margin="10,130,10,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1" FontFamily="Arial" FontSize="16" Click="BtnAlteracoes_Click"/>
-        <Button x:Name="BtnPesquisa"    FontWeight="Bold" Content="Pesquisar"               Height="55" Margin="10,208,10,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1" FontFamily="Arial" FontSize="16" Click="BtnPesquisa_Click"/>
+        <Button x:Name="BtnPesquisaAlterar"    FontWeight="Bold" Content="Pesquisar e Alterar"               Height="55" Margin="10,208,10,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1" FontFamily="Arial" FontSize="16" Click="BtnPesquisa_Click"/>
         <Button x:Name="BtnAgendamento" FontWeight="Bold" Content="Agendamentos"            Height="55" Margin="10,284,10,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1" FontFamily="Arial" FontSize="16" Click="BtnAgendamento_Click"/>
 
 

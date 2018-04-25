@@ -30,15 +30,10 @@ namespace AgendamentoConsulta
             cad.ShowDialog();
         }
 
-        private void BtnAlteracoes_Click(object sender, RoutedEventArgs e)
-        {
-            AlterarPaciente nAlt = new AlterarPaciente();
-            nAlt.ShowDialog();
-        }
-
         private void BtnPesquisa_Click(object sender, RoutedEventArgs e)
         {
-           
+            MenuAlt alt = new MenuAlt();
+            alt.ShowDialog();
         }
 
         private void BtnAgendamento_Click(object sender, RoutedEventArgs e)

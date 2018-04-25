@@ -1,0 +1,26 @@
+﻿<Controls:MetroWindow x:Class="AgendamentoConsulta.MenuAlt"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AgendamentoConsulta"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        x:Name="TelaAlterar"
+        Title="Área de Casdastros" Height="450" Width="800"         
+        GlowBrush="Black"
+        ResizeMode="CanResizeWithGrip">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Button x:Name="BtnAlterarCliente"     FontWeight="Bold" Content="Alterar de Pacientes"     Height="55" Margin="10,65,10,0"  VerticalAlignment="Top" FontFamily="Arial" FontSize="16" Grid.Column="1" Click="BtnAlterarCliente_Click" TextOptions.TextHintingMode="Animated"/>
+        <Button x:Name="BtnAlterarProfissional" FontWeight="Bold" Content="Alterar de Profissionais" Height="57" Margin="10,125,10,0"  VerticalAlignment="Top" FontFamily="Arial" FontSize="16"  Grid.Column="1" Click="BtnAlterarProfissional_Click" TextOptions.TextHintingMode="Animated"/>
+        <Button x:Name="BtnAlterarLocal"        FontWeight="Bold" Content="Alterar de Salas"         Height="55" Margin="10,187,10,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16" Grid.Column="1" Click="BtnAlterarLocal_Click" TextOptions.TextHintingMode="Animated" RenderTransformOrigin="0.516,0.545" />
+
+    </Grid>
+    </Controls:MetroWindow>
