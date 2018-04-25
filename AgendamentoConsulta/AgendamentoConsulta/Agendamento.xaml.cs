@@ -148,9 +148,7 @@ namespace AgendamentoConsulta
 
         private void SalvarAgendamento()
         {
-            Agendamento ag;
-
-            Profissional profissional;
+            
         }
     }
 }
