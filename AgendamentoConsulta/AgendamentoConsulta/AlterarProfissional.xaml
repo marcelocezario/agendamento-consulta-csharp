@@ -8,7 +8,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"    
         Title="Alterearçaõ de Profissionais"
-        x:Name="TelaAlteraçãoProfisional"                     
+        x:Name="TelaAlteracaoProfisional"                     
         Height="552.5" Width="1084" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,0,-31">
 
