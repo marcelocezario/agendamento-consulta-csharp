@@ -31,6 +31,7 @@ namespace Controller
 
                 ContextoSingleton.Instancia.SaveChanges();
             }
+        }
 
         public Paciente PesquisarPorNome(string nome)
         {
