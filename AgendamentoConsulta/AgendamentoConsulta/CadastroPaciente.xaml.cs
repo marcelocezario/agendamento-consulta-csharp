@@ -69,6 +69,7 @@ namespace AgendamentoConsulta
 
             pa.SalvarPaciente(p);
 
+            MessageBox.Show("Paciente cadastrado com sucesso!");
             this.Close();
         }     
     }

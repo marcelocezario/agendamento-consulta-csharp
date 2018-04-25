@@ -96,6 +96,9 @@ namespace AgendamentoConsulta
             ProfissionalController prControl = new ProfissionalController();
 
             prControl.SalvarProfissional(pr);
+
+            MessageBox.Show("Profissional cadastrado com sucesso!");
+            this.Close();
         }
     }
 }

@@ -126,7 +126,7 @@
         <TextBox x:Name="BoxNumeroLocal"    Height="23" Grid.Row="12" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Margin="236,6,134,0" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5"/>
 
         <!-- Botão Salvar -->
-        <Button x:Name="ButtonSalvarLocal" Content="Salvar" Grid.Column="2" Margin="94,104,0,-1" Grid.Row="15" Height="Auto" />
+        <Button x:Name="ButtonSalvarLocal" Content="Salvar" Grid.Column="2" Margin="94,104,0,-1" Grid.Row="15" Height="Auto" Click="ButtonSalvarLocal_Click" />
 
     </Grid>
 </Controls:MetroWindow>
