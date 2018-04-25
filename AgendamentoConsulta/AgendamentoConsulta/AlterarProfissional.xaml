@@ -84,7 +84,7 @@
                     <Button x:Name="Excluir_Profissional" Content="Excluir" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="131,399,0,0" VerticalAlignment="Top" Width="83" Height="30" Click="Excluir_Profissional_Click"/>
                     <Button x:Name="Pesquisar_Profissional" Content="Pesquisar" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="251,398,0,0" VerticalAlignment="Top" Width="93" Height="30" Click="Pesquisar_Profissional_Click"/>
 
-                    <DataGrid x:Name="DgDados" IsReadOnly="true" HorizontalAlignment="Left" Height="359" Margin="494,47,0,0" VerticalAlignment="Top" Width="515" Loaded="DgDados_Loaded" MouseDoubleClick="DgDados_MouseDoubleClick" SelectionMode="Single" SelectionChanged="DgDados_SelectionChanged"/>
+                    <DataGrid x:Name="DgDados" IsReadOnly="true" HorizontalAlignment="Left" Height="359" Margin="494,47,0,0" VerticalAlignment="Top" Width="515" Loaded="DgDados_Loaded" MouseDoubleClick="DgDados_MouseDoubleClick" SelectionMode="Single" />
                 </Grid>
             </Border>
         </Grid>
