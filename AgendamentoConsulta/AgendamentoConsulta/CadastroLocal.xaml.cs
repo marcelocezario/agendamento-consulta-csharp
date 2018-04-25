@@ -80,7 +80,7 @@ namespace AgendamentoConsulta
                 Numero = int.Parse(BoxNumeroLocal.Text),
                 Complemento = BoxComplementoLocal.Text,
                 Cidade = BoxCidadeLocal.Text,
-                Uf = ComboBoxEstado.SelectionBoxItem.ToString(),
+                Uf = ComboBoxEstado.Text,
             };
             EnderecoController ec = new EnderecoController();
             ec.SalvarEndereco(end);

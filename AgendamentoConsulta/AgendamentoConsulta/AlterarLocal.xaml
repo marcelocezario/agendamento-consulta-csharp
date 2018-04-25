@@ -22,41 +22,41 @@
                         <TranslateTransform/>
                     </TransformGroup>
                 </Border.RenderTransform>
-                <Grid  Background="#DFE3EE" HorizontalAlignment="Right" Height="532" VerticalAlignment="Center" Width="1077" Margin="0,9,9,9" RenderTransformOrigin="0.745,0.492">
+                <Grid  Background="#DFE3EE" HorizontalAlignment="Right" Height="523" VerticalAlignment="Center" Width="1077" Margin="0,9,9,18" RenderTransformOrigin="0.745,0.492">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="112*"/>
-                        <RowDefinition Height="22*"/>
+                        <RowDefinition Height="110*"/>
+                        <RowDefinition Height="23*"/>
                         <RowDefinition Height="26*"/>
                         <RowDefinition Height="25*"/>
                         <RowDefinition Height="24*"/>
-                        <RowDefinition Height="317*"/>
+                        <RowDefinition Height="315*"/>
                     </Grid.RowDefinitions>
 
                     <!-- Inicio -->
-                    <Label Content="Editar Local" HorizontalAlignment="Center" Margin="140,4,751,78" VerticalAlignment="Center" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" Width="204" Height="30"/>
-                    <Label Content="Listagem de Local" HorizontalAlignment="Center" Margin="644,4,185,70" VerticalAlignment="Center" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" Width="266" Height="38"/>
+                    <Label Content="Editar Local" HorizontalAlignment="Center" Margin="118,2,742,78" VerticalAlignment="Center" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" Width="217" Height="30"/>
+                    <Label Content="Listagem de Local" HorizontalAlignment="Center" Margin="622,2,176,70" VerticalAlignment="Center" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" Width="279" Height="38"/>
 
                     <!-- ID -->
-                    <TextBlock HorizontalAlignment="Left" Margin="35,71,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Height="16" Width="12" RenderTransformOrigin="0.47,-0.002"/>
-                    <TextBox x:Name="TxtLocalID" HorizontalAlignment="Left" Height="20" Margin="59,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" IsEnabled="False" RenderTransformOrigin="0.333,0.5"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="37,65,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Height="16" Width="12" RenderTransformOrigin="0.47,-0.002"/>
+                    <TextBox x:Name="TxtLocalID" HorizontalAlignment="Left" Height="20" Margin="59,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" IsEnabled="False" RenderTransformOrigin="0.333,0.5"/>
 
                     <!-- Nome -->
-                    <TextBlock x:Name="LabelNomeLocal" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="20" RenderTransformOrigin="0.468,0.867" Margin="2,96,0,0" FontFamily="Arial" TextAlignment="Right" Grid.RowSpan="2"><Run Text=" "/><Run Text="Nome"/></TextBlock>
-                    <TextBox  x:Name="BoxNomeLocal"  Height="24" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="59,0,84,0" TextAlignment="Justify"/>
+                    <TextBlock x:Name="LabelNomeLocal" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="20" RenderTransformOrigin="0.468,0.867" Margin="2,90,0,0" FontFamily="Arial" TextAlignment="Right"><Run Text=" "/><Run Text="Nome"/></TextBlock>
+                    <TextBox  x:Name="BoxNomeLocal"  Height="24" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="59,0,648,0" TextAlignment="Justify" TextChanged="BoxNomeLocal_TextChanged"/>
 
 
                     <!-- Dias que o Local funciona -->
                     <TextBlock x:Name="labelDiasAtendimento" Text="Dias de atendimento" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" Height="20" RenderTransformOrigin="0.468,0.867" Margin="2,3,0,0" FontFamily="Arial" TextAlignment="Right" Grid.Row="3"/>
-                    <CheckBox x:Name="CheckBoxDomingo" Content="Domingo" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="317,3,0,0" Height="22" Width="78" RenderTransformOrigin="0.35,0.5" IsEnabled="True" Grid.Row="4"/>
-                    <CheckBox x:Name="CheckBoxSegunda" Content="Segunda-Feira"  FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="118,0,0,0" Height="23" Width="115" Grid.Row="3"/>
-                    <CheckBox x:Name="CheckBoxTerca" Content="Terça-Feira" FontFamily="Arial"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="223,3,0,0" Height="22" Width="84" RenderTransformOrigin="0.509,0.47" Grid.Row="3"/>
-                    <CheckBox x:Name="CheckBoxQuarta" Content="Quarta-Feira" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="317,3,0,0" Height="22" Width="101" RenderTransformOrigin="0.498,0.682" Grid.Row="3"/>
+                    <CheckBox x:Name="CheckBoxDomingo" Content="Domingo" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="328,2,0,0" Height="22" Width="78" RenderTransformOrigin="0.35,0.5" IsEnabled="True" Grid.Row="4"/>
+                    <CheckBox x:Name="CheckBoxSegunda" Content="Segunda-Feira"  FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="118,0,0,0" Height="23" Width="112" Grid.Row="3"/>
+                    <CheckBox x:Name="CheckBoxTerca" Content="Terça-Feira" FontFamily="Arial"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="235,3,0,0" Height="22" Width="84" RenderTransformOrigin="0.509,0.47" Grid.Row="3"/>
+                    <CheckBox x:Name="CheckBoxQuarta" Content="Quarta-Feira" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="328,3,0,0" Height="22" Width="101" RenderTransformOrigin="0.498,0.682" Grid.Row="3"/>
                     <CheckBox x:Name="CheckBoxQuinta" Content="Quinta-Feira" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,0,0,0" Height="22" Width="91" RenderTransformOrigin="0.52,0.591" Grid.Row="4"/>
                     <CheckBox x:Name="CheckBoxSexta" Content="Sexta-Feira" FontFamily="Arial"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="118,0,0,0" Height="22" Width="89" Grid.Row="4"/>
-                    <CheckBox x:Name="CheckBoxSabado" Content="Sábado" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="223,0,0,0" Height="22" Width="66" Grid.Row="4"/>
+                    <CheckBox x:Name="CheckBoxSabado" Content="Sábado" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="235,0,0,0" Height="22" Width="66" Grid.Row="4"/>
 
                     <!-- Hora inicial -->
-                    <TextBlock x:Name="LabelHorario" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="2,3,828,0" TextAlignment="Right" FontFamily="Arial" Grid.Row="1" Grid.RowSpan="2"><Run Text=" "/><Run Text="Horario de inicio e fim do uso do consultorio"/></TextBlock>
+                    <TextBlock x:Name="LabelHorario" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="2,3,828,0" TextAlignment="Right" FontFamily="Arial" Grid.Row="1"><Run Text=" "/><Run Text="Horario de inicio e fim do uso do consultorio"/></TextBlock>
                     <TextBlock x:Name="LabelHInicioLocal" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="11,8,0,0" TextAlignment="Right" FontFamily="Arial" HorizontalAlignment="Left" Width="38" Grid.Row="2" Grid.RowSpan="2"><Run Text=" "/><Run Text="Inicio"/></TextBlock>
                     <materialDesign:TimePicker x:Name="TimePickerHInicioLocal" Is24Hours="True" SelectedTime="{Binding ActionSelectedTime, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}" SelectedTimeFormat="Long"  Margin="59,1,927,0" Height="25" Grid.Row="2" />
 
@@ -64,12 +64,44 @@
                     <TextBlock x:Name="LabelHFimLocalLocal" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="168,5,870,0" TextAlignment="Right" FontFamily="Arial" Grid.Row="2"><Run Text=" "/><Run Text="Fim"/></TextBlock>
                     <materialDesign:TimePicker x:Name="TimePickerHFimLocal" Is24Hours="True" SelectedTime="{Binding ActionSelectedTime, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}" SelectedTimeFormat="Long"  Margin="223,0,770,0" Height="25" Grid.Row="2" />
 
-                    <!-- Botoes-->
-                    <Button x:Name="Editar_Local" Content="Editar" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="31,289,0,0" VerticalAlignment="Top" Width="82" Height="30" Click="Editar_Local_Click" Grid.Row="5"/>
-                    <Button x:Name="Excluir_Local" Content="Excluir" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="125,289,0,0" VerticalAlignment="Top" Width="83" Height="30" Click="Excluir_Local_Click" Grid.Row="5"/>
-                    <Button x:Name="Pesquisar_Local" Content="Pesquisar" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="223,289,0,0" VerticalAlignment="Top" Width="93" Height="30" Click="Pesquisar_Local_Click" Grid.Row="5"/>
 
-                    <DataGrid x:Name="DgDados" IsReadOnly="true" HorizontalAlignment="Left" Height="460" Margin="526,63,0,0" VerticalAlignment="Top" Width="559" Loaded="DgDados_Loaded" MouseDoubleClick="DgDados_MouseDoubleClick" SelectionMode="Single" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="6" >
+                    <!-- Campo de Endereço -->
+                    <TextBlock x:Name="LabelEnderecoLocal" FontFamily="Arial"  HorizontalAlignment="Left" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="20" Text="Endereço " FontWeight="Bold" Margin="20,20,0,0"/>
+
+                    <!-- ID -->
+                    <TextBlock HorizontalAlignment="Left" Margin="72,54,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Height="16" Width="12" RenderTransformOrigin="0.47,-0.002" Grid.Row="5"/>
+                    <TextBox x:Name="TxtEnderecoID" HorizontalAlignment="Left" Height="20" Margin="105,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" IsEnabled="False" RenderTransformOrigin="0.333,0.5" Grid.Row="5"/>
+
+                    <!-- cep -->
+                    <TextBlock x:Name="LabelCepLocal" FontFamily="Arial" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="38,79,993,0" TextAlignment="Right" ><Run Text=" "/><Run Text="Cep"/></TextBlock>
+                    <xctk:MaskedTextBox Mask="00,000-000" x:Name="BoxCepLocal"   Height="19" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Margin="98,80,917,0"/>
+
+                    <!-- Cidade -->
+                    <TextBlock x:Name="LabelCidadeLocal" FontFamily="Arial" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="226,107,807,0" TextAlignment="Right" ><Run Text="Cidade "/></TextBlock>
+                    <TextBox  x:Name="BoxCidadeLocal"   Height="23" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Margin="275,104,678,0"/>
+
+                    <!-- Estado -->
+                    <TextBlock x:Name="LabelUfLocal" FontFamily="Arial" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="22,107,993,0" TextAlignment="Right" ><Run Text="Estado "/></TextBlock>
+                    <TextBox x:Name="ComboBoxEstado"   Height="23" Margin="98,104,856,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+                    <!-- Rua -->
+                    <TextBlock x:Name="LabelRuaLocal" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.52,0.444" Margin="10,137,993,0" TextAlignment="Right" FontFamily="Arial"><Run Text=" "/><Run Text="Rua"/></TextBlock>
+                    <TextBox x:Name="BoxRuaLocal"   Height="23" Margin="98,134,678,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+                    <!-- Complemento -->
+                    <TextBlock x:Name="LabelComplementoLocal" FontFamily="Arial" HorizontalAlignment="Right" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,165,984,0" TextAlignment="Right"><Run Text=" "/><Run Text=" "/><Run Text="Complemeto"/></TextBlock>
+                    <TextBox x:Name="BoxComplementoLocal"   Height="23" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Margin="98,162,868,0" TextChanged="BoxComplementoLocal_TextChanged"/>
+
+                    <!-- Numero -->
+                    <TextBlock x:Name="LabelNumeroLocal" HorizontalAlignment="Left" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" Height="20" RenderTransformOrigin="0.468,0.867" Margin="214,165,0,0"  FontFamily="Arial" TextAlignment="Right"><Run Text=" "/><Run Text="Número"/></TextBlock>
+                    <TextBox x:Name="BoxNumeroLocal"    Height="23" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Margin="275,162,678,0" RenderTransformOrigin="0.5,0.5"/>
+
+                    <!-- Botoes-->
+                    <Button x:Name="Editar_Local" Content="Editar" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="38,268,0,0" VerticalAlignment="Top" Width="82" Height="30" Click="Editar_Local_Click" Grid.Row="5"/>
+                    <Button x:Name="Excluir_Local" Content="Excluir" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="131,268,0,0" VerticalAlignment="Top" Width="83" Height="30" Click="Excluir_Local_Click" Grid.Row="5"/>
+                    <Button x:Name="Pesquisar_Local" Content="Pesquisar" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="226,268,0,0" VerticalAlignment="Top" Width="93" Height="30" Click="Pesquisar_Local_Click" Grid.Row="5"/>
+
+                    <DataGrid x:Name="DgDados" IsReadOnly="true" HorizontalAlignment="Left" Height="443" Margin="526,63,0,0" VerticalAlignment="Top" Width="541" Loaded="DgDados_Loaded" MouseDoubleClick="DgDados_MouseDoubleClick" SelectionMode="Single" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="6" SelectionChanged="DgDados_SelectionChanged" >
                         <DataGrid.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
