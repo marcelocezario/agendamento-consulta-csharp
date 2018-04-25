@@ -13,7 +13,7 @@
     <Grid>
 
         <Grid Background="white" HorizontalAlignment="Center" Height="426" VerticalAlignment="Center" Width="992" Margin="0,10,0,33" Opacity="0.75" >
-            <Border Background="#DFE3EE" BorderBrush="Black" BorderThickness="1,1,1,1" CornerRadius="30,30,30,30" Margin="-21,10,-21,-38" RenderTransformOrigin="0.5,0.5">
+            <Border Background="#DFE3EE" BorderBrush="Black" BorderThickness="1,1,1,1" CornerRadius="30,30,30,30" Margin="-30,10,-21,-38" RenderTransformOrigin="0.5,0.5">
                 <Border.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -22,7 +22,7 @@
                         <TranslateTransform/>
                     </TransformGroup>
                 </Border.RenderTransform>
-                <Grid  Background="#DFE3EE" HorizontalAlignment="Center" Height="431" VerticalAlignment="Center" Width="988" Margin="9,12,35,9">
+                <Grid  Background="#DFE3EE" HorizontalAlignment="Right" Height="431" VerticalAlignment="Center" Width="1019" Margin="0,12,9,9">
 
                     <!-- Inicio -->
                     <Label Content="Editar Profissicional" HorizontalAlignment="Center" Margin="169,6,615,395" VerticalAlignment="Center" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" Width="204" Height="30"/>
@@ -84,7 +84,7 @@
                     <Button x:Name="Excluir_Profissional" Content="Excluir" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="131,399,0,0" VerticalAlignment="Top" Width="83" Height="30" Click="Excluir_Profissional_Click"/>
                     <Button x:Name="Pesquisar_Profissional" Content="Pesquisar" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="251,398,0,0" VerticalAlignment="Top" Width="93" Height="30" Click="Pesquisar_Profissional_Click"/>
 
-                    <DataGrid x:Name="DgDados" IsReadOnly="true" HorizontalAlignment="Left" Height="359" Margin="494,47,0,0" VerticalAlignment="Top" Width="494" Loaded="DgDados_Loaded" MouseDoubleClick="DgDados_MouseDoubleClick" SelectionMode="Single" SelectionChanged="DgDados_SelectionChanged"/>
+                    <DataGrid x:Name="DgDados" IsReadOnly="true" HorizontalAlignment="Left" Height="359" Margin="494,47,0,0" VerticalAlignment="Top" Width="515" Loaded="DgDados_Loaded" MouseDoubleClick="DgDados_MouseDoubleClick" SelectionMode="Single" SelectionChanged="DgDados_SelectionChanged"/>
                 </Grid>
             </Border>
         </Grid>

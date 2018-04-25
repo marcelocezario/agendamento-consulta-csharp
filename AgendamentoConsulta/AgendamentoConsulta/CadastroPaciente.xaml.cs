@@ -2,7 +2,7 @@
 using MahApps.Metro.Controls;
 using Model;
 using Controller;
-using Veri
+using Verificacao;
 using System.Windows.Input;
 using System;
 
