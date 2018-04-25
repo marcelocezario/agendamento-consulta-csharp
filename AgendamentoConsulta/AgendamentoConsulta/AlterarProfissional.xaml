@@ -25,7 +25,7 @@
                 <Grid  Background="#DFE3EE" HorizontalAlignment="Center" Height="431" VerticalAlignment="Center" Width="988" Margin="9,12,35,9">
 
                     <!-- Inicio -->
-                    <Label Content="Editar Profissicional" HorizontalAlignment="Center" Margin="136,5,611,394" VerticalAlignment="Center" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" Width="175" Height="30"/>
+                    <Label Content="Editar Profissicional" HorizontalAlignment="Center" Margin="169,6,615,395" VerticalAlignment="Center" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" Width="204" Height="30"/>
                     <Label Content="Listagem de Profissional" HorizontalAlignment="Center" Margin="608,10,130,389" VerticalAlignment="Center" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" Width="250" Height="32"/>
 
                     <!-- ID -->
@@ -49,8 +49,8 @@
                     <xctk:MaskedTextBox Mask="(00) 0 0000-0000" x:Name="BoxContatoProfissional" Height="21" Margin="289,120,607,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.793,0.381" />
 
                     <!-- Email -->
-                    <TextBlock x:Name="LabelEmailProfissional" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" RenderTransformOrigin="0.468,0.867" Margin="2,283,965,0" FontFamily="Arial" TextAlignment="Right" Text="E-mail" />
-                    <TextBox x:Name="BoxEmailProfissional"   Height="25" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="338" Margin="0,283,622,0" RenderTransformOrigin="0.5,0.5"/>
+                    <TextBlock x:Name="LabelEmailProfissional" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" RenderTransformOrigin="0.468,0.867" Margin="2,283,949,0" FontFamily="Arial" TextAlignment="Right" Text="E-mail" />
+                    <TextBox x:Name="BoxEmailProfissional"   Height="25" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="338" Margin="0,283,598,0" RenderTransformOrigin="0.5,0.5"/>
 
                     <!-- Dias que o profissional trabalha -->
                     <TextBlock x:Name="labelDiasAtendimento" Text="Dias de atendimento" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" Height="20" RenderTransformOrigin="0.468,0.867" Margin="5,313,0,0" FontFamily="Arial" TextAlignment="Right"/>

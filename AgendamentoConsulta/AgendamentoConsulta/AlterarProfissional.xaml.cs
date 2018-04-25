@@ -48,7 +48,8 @@ namespace AgendamentoConsulta
                 }
 
             }
-            else {
+            else
+            {
                 MessageBox.Show("Profissional vazio");
 
             }
@@ -57,8 +58,8 @@ namespace AgendamentoConsulta
         private void ExcluirProfissional()
         {
             // Metódo para excluir o insumo no banco
-            ProfissionalController  prControl = new ProfissionalController();
-           
+            ProfissionalController prControl = new ProfissionalController();
+
             Profissional pr = ContextoSingleton.Instancia.Profissionais.Find(Convert.ToInt32(TxtProfissionalID.Text));
 
             if (pr != null)
@@ -71,7 +72,7 @@ namespace AgendamentoConsulta
             }
             else
             {
-                MessageBox.Show("Profissional vazio");
+                MessageBox.Show("Profissional não selecionado");
             }
         }
 
@@ -88,7 +89,9 @@ namespace AgendamentoConsulta
 
                 DgDados.ItemsSource = consulta.ToList();
             }
-            catch { }
+            catch {
+                MessageBox.Show("Profissional não encontrado");
+            }
 
 
         }
@@ -98,17 +101,17 @@ namespace AgendamentoConsulta
             //Metodo para listar os Profissional no DataGrid
             ProfissionalController prControl = new ProfissionalController();
 
-           DgDados.ItemsSource = prControl.ListarProfissionais();
+            DgDados.ItemsSource = prControl.ListarProfissionais();
 
         }
         private void LimpaCampos()
         {
-            txtNome.Clear();
-            txtCategoria.Clear();
-            txtPrecoCusto.Clear();
-            txtMedida.Clear();
-            txtEstoque.Clear();
-
+            BoxNomeProfissional.Clear();
+            BoxCpfProfissional.Clear();
+            BoxContatoProfissional.Clear();
+            BoxEspecialidadeProfissional.Clear();
+            BoxEmailProfissional.Clear();
+            BoxResgistroProfissional.Clear();
         }
 
         private void Editar_Profissional_Click(object sender, RoutedEventArgs e)
@@ -118,91 +121,52 @@ namespace AgendamentoConsulta
 
         private void Excluir_Profissional_Click(object sender, RoutedEventArgs e)
         {
-
+            EditarProfissional();
         }
 
         private void Pesquisar_Profissional_Click(object sender, RoutedEventArgs e)
         {
-
+            PesquisarProfissionalPorNome();
         }
 
         private void DgDados_Loaded(object sended, RoutedEventArgs e)
         {
-
-        }
-    }
-          
-        
-        
-      
-        
-
-        
-
-       
-
-        private void ListagemProfissional_Loaded(object sender; RoutedEventArgs e)
-        {
-            // Faz o refresh da listagem do Datagrid
             this.ListagemProfissional();
         }
 
-        p
-
-        //--------
-        // FUNCÕES
-        //--------
-
-
-        //---------------------------
-        // BOTOES CHAMANDO AS FUNÇÕES
-        //---------------------------
-
-        private void btnCadastrarInsumo(object sender; RoutedEventArgs e)
+        private void DgDados_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            // Recebe os dados do insumo e grava definito no banco
-            SalvarInsumo();
-            this.ListagemProfissional();
-            this.LimpaCampos(); // Limpa os campos das textbox
-            MessageBox.Show("Insumo cadastrado !");
-
-        }
-
-        public void btnEditarInsumo(object sender; RoutedEventArgs e)
-        {
-            EditarInsumo();
-        }
-
-        private void btnExcluirInsumo(object sender; RoutedEventArgs e)
-        {
-            ExcluirProfissional();
-        }
-
-        private void btnPesquisarInsumo(object sender; RoutedEventArgs e)
-        {
-            PesquisarInsumoPorNome();
-        }
-
-        //Atualiza a textbox com a linha clicada na listagem
-        private void dgDados_MouseDoubleClick(object sender; MouseButtonEventArgs e)
-        {
-            if (dgDados.SelectedIndex >= 0)
+            if (DgDados.SelectedIndex >= 0)
             {
-                insumo pr = (insumo)dgDados.SelectedItem;
+                Profissional pr = (Profissional)DgDados.SelectedItem;
 
-                txtInsumoID.Text = pr.InsumoID.ToString();
-                txtNome.Text = pr.Nome;
-                txtCategoria.Text = pr.Categoria;
-                txtPrecoCusto.Text = pr.PrecoCusto.ToString();
-                txtMedida.Text = pr.Medida;
-                txtEstoque.Text = pr.Estoque.ToString();
+                BoxNomeProfissional.Text = pr.Nome;
+                BoxCpfProfissional.Text = pr.Cpf;
+                BoxContatoProfissional.Text = pr.Celular;
+                DatePickerDtNascimentoProfissional.SelectedDate = pr.DtNascimento;
+                BoxEspecialidadeProfissional.Text = pr.Especialidade;
+                BoxEmailProfissional.Text = pr.Email;
+                BoxResgistroProfissional.Text = pr.ResgistroProfissional;
+
+                CheckBoxDomingo.IsChecked = pr.Domingo;
+                CheckBoxSegunda.IsChecked = pr.Segunda;
+                CheckBoxTerca.IsChecked = pr.Terca;
+                CheckBoxQuarta.IsChecked = pr.Quarta;
+                CheckBoxQuinta.IsChecked = pr.Quinta;
+                CheckBoxSexta.IsChecked = pr.Sexta;
+                CheckBoxSabado.IsChecked = pr.Sabado;
+
+                TimePickerHInicioProfissional.SelectedTime = pr.HrInicio;
+                TimePickerHFimProfissional.SelectedTime = pr.HrFim;
+            }
+            else
+            {
+                MessageBox.Show("Profissional vazio");
             }
         }
-
-        //---------------------------
-        // BOTOES CHAMANDO AS FUNÇÕES
-        //---------------------------
     }
-}
 
 }
+
+
+
