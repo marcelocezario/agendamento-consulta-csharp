@@ -11,28 +11,30 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using MahApps.Metro.Controls;
-using Model;
-using Controller;
 
 namespace AgendamentoConsulta
 {
     /// <summary>
-    /// Lógica interna para AlterarPaciente.xaml
+    /// Lógica interna para AlterarProfissional.xaml
     /// </summary>
-    public partial class AlterarPaciente : Window
+    public partial class AlterarProfissional : Window
     {
-        public AlterarPaciente()
+        public AlterarProfissional()
         {
             InitializeComponent();
         }
 
-        private void DgDados_Loaded(object sender, RoutedEventArgs e)
+        private void Editar_Profissional_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Editar_Paciente_Click(object sender, RoutedEventArgs e)
+        private void Excluir_Profissional_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Pesquisar_Profissional_Click(object sender, RoutedEventArgs e)
         {
 
         }

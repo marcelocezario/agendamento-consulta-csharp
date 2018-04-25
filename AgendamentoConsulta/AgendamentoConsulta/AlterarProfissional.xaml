@@ -1,0 +1,94 @@
+﻿<Window x:Class="AgendamentoConsulta.AlterarProfissional"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"     
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"    
+        Title="Alterearçaõ de Profissionais"
+        x:Name="TelaAlteraçãoProfisional"                     
+        Height="552.5" Width="1084" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Grid Background="white" HorizontalAlignment="Center" Height="426" VerticalAlignment="Center" Width="992" Margin="0,10,0,33" Opacity="0.75" >
+            <Border Background="#DFE3EE" BorderBrush="Black" BorderThickness="1,1,1,1" CornerRadius="30,30,30,30" Margin="-21,10,-21,-38">
+                <Grid  Background="#DFE3EE" HorizontalAlignment="Center" Height="431" VerticalAlignment="Center" Width="1014" Margin="9,12,9,9">
+
+                    <!-- Inicio -->
+                    <Label Content="Editar Profissicional" HorizontalAlignment="Center" Margin="136,5,611,394" VerticalAlignment="Center" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" Width="175" Height="30"/>
+                    <Label Content="Listagem de Profissional" HorizontalAlignment="Center" Margin="583,10,200,389" VerticalAlignment="Center" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" Width="231" Height="32"/>
+
+                    <!-- ID -->
+                    <TextBlock HorizontalAlignment="Left" Margin="35,71,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Height="16" Width="12" RenderTransformOrigin="0.583,0.479"/>
+                    <TextBox x:Name="TxtProfissionalID" HorizontalAlignment="Left" Height="20" Margin="59,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" IsEnabled="False" RenderTransformOrigin="0.333,0.5"/>
+
+                    <!-- Nome -->
+                    <TextBlock x:Name="LabelNomeProfissional" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Height="23" RenderTransformOrigin="0.55,0.48" Margin="6,92,0,0" FontFamily="Arial" TextAlignment="Right"><Run Text=" "/><Run Text="Nome"/></TextBlock>
+                    <TextBox  x:Name="BoxNomeProfissional"  Height="24" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="54,0,569,316" TextAlignment="Justify"/>
+
+                    <!-- Cpf -->
+                    <TextBlock x:Name="LabelCpfProfissional" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="18" RenderTransformOrigin="0.468,0.867" Margin="10,125,0,0" FontFamily="Arial" TextAlignment="Right" ><Run Text=" "/><Run Text="CPF"/></TextBlock>
+                    <xctk:MaskedTextBox Mask="000,000,000-00" x:Name="BoxCpfProfissional" Height="21" Margin="76,122,862,0" TextWrapping="Wrap" VerticalAlignment="Top" />
+
+                    <!-- Data de nascimento -->
+                    <TextBlock x:Name="LabelDtNascimentoProfissional" HorizontalAlignment="Left" TextWrapping="Wrap" Width="114" RenderTransformOrigin="0.468,0.867" Margin="2,148,0,258" FontFamily="Arial" TextAlignment="Right" ><Run Text=" "/><Run Text="Data de Nascimento"/></TextBlock>
+                    <DatePicker x:Name="DatePickerDtNascimentoProfissional" Height="23" Margin="121,148,676,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.227"  />
+
+                    <!-- Contato -->
+                    <TextBlock x:Name="LabelContatoProfissional" HorizontalAlignment="Left" TextWrapping="Wrap" Width="60" RenderTransformOrigin="0.468,0.867" Margin="157,123,0,288" FontFamily="Arial" TextAlignment="Right" Text="Celular" />
+                    <xctk:MaskedTextBox Mask="(00) 0 0000-0000" x:Name="BoxContatoProfissional" Height="21" Margin="222,120,709,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.793,0.381" />
+
+                    <!-- Email -->
+                    <TextBlock x:Name="LabelEmailProfissional" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" RenderTransformOrigin="0.468,0.867" Margin="2,283,930,0" FontFamily="Arial" TextAlignment="Right" Text="E-mail" />
+                    <TextBox x:Name="BoxEmailProfissional"   Height="25" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="338" Margin="0,283,569,0" RenderTransformOrigin="0.5,0.5">
+                        <TextBox.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleY="-0.124"/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="-0.331"/>
+                            </TransformGroup>
+                        </TextBox.RenderTransform>
+                    </TextBox>
+
+                    <!-- Dias que o profissional trabalha -->
+                    <TextBlock x:Name="labelDiasAtendimento" Text="Dias de atendimento" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" Height="20" RenderTransformOrigin="0.468,0.867" Margin="5,313,0,0" FontFamily="Arial" TextAlignment="Right"/>
+                    <CheckBox x:Name="CheckBoxDomingo" Content="Domingo" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="266,357,0,0" Height="22" Width="78" RenderTransformOrigin="0.35,0.5" IsEnabled="True"/>
+                    <CheckBox x:Name="CheckBoxSegunda" Content="Segunda-Feira"  FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,329,0,0" Height="23" Width="115"/>
+                    <CheckBox x:Name="CheckBoxTerca" Content="Terça-Feira" FontFamily="Arial"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,330,0,0" Height="22" Width="84" RenderTransformOrigin="0.509,0.47"/>
+                    <CheckBox x:Name="CheckBoxQuarta" Content="Quarta-Feira" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="214,330,0,0" Height="22" Width="101" RenderTransformOrigin="0.498,0.682"/>
+                    <CheckBox x:Name="CheckBoxQuinta" Content="Quinta-Feira" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,357,0,0" Height="22" Width="91" RenderTransformOrigin="0.52,0.591"/>
+                    <CheckBox x:Name="CheckBoxSexta" Content="Sexta-Feira" FontFamily="Arial"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="101,357,0,0" Height="22" Width="89"/>
+                    <CheckBox x:Name="CheckBoxSabado" Content="Sábado" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="195,357,0,0" Height="22" Width="66"/>
+
+                    <!-- Hora inicial -->
+                    <TextBlock x:Name="LabelHorario" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,233,777,0" TextAlignment="Right" FontFamily="Arial"><Run Text=" "/><Run Text="Horario de inicio e fim do uso do consultorio"/></TextBlock>
+                    <TextBlock x:Name="LabelHInicioProfissional" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="11,258,0,0" TextAlignment="Right" FontFamily="Arial" HorizontalAlignment="Left" Width="38"><Run Text=" "/><Run Text="Inicio"/></TextBlock>
+                    <materialDesign:TimePicker x:Name="TimePickerHInicioProfissional" Is24Hours="True" SelectedTime="{Binding ActionSelectedTime, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}" SelectedTimeFormat="Long"  Margin="52,253,862,0" Height="25" />
+
+                    <!-- Hora Final -->
+                    <TextBlock x:Name="LabelHFimLocalProfissional" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" RenderTransformOrigin="0.468,0.867" Margin="152,259,824,0" TextAlignment="Right" FontFamily="Arial"><Run Text=" "/><Run Text="Fim"/></TextBlock>
+                    <materialDesign:TimePicker x:Name="TimePickerHFimProfissional" Is24Hours="True" SelectedTime="{Binding ActionSelectedTime, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}" SelectedTimeFormat="Long"  Margin="207,253,709,0" Height="25" />
+
+                    <!-- Especialidade do profissional-->
+                    <TextBlock x:Name="LabelEspecialidadeProfissional" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" Height="24" RenderTransformOrigin="0.468,0.867" Margin="2,204,0,0" FontFamily="Arial" TextAlignment="Right"><Run Text=" "/><Run Text="Especialidade"/></TextBlock>
+                    <TextBox  x:Name="BoxEspecialidadeProfissional"  Height="24" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="91,0,569,201" TextAlignment="Justify"/>
+
+                    <!-- Resgistro Profissional-->
+                    <TextBlock x:Name="LabelResgistroProfissional" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="122" Height="23" RenderTransformOrigin="0.519,0.433" FontFamily="Arial" TextAlignment="Right" Margin="-6,0,0,230"><Run Text=" "/><Run Text="Resgistro Profissional"/></TextBlock>
+                    <TextBox  x:Name="BoxResgistroProfissional"  Height="23" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="121,0,569,230" TextAlignment="Justify" />
+
+                    <!-- Botoes-->
+                    <Button x:Name="Editar_Profissional" Content="Editar" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="5,398,0,0" VerticalAlignment="Top" Width="82" Height="30" Click="Editar_Profissional_Click"/>
+                    <Button x:Name="Excluir_Profissional" Content="Excluir" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="131,399,0,0" VerticalAlignment="Top" Width="83" Height="30" Click="Excluir_Profissional_Click"/>
+                    <Button x:Name="Pesquisar_Profissional" Content="Pesquisar" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="251,398,0,0" VerticalAlignment="Top" Width="93" Height="30" Click="Pesquisar_Profissional_Click"/>
+
+                    <DataGrid x:Name="DgDados" IsReadOnly="true" HorizontalAlignment="Left" Height="359" Margin="494,47,0,0" VerticalAlignment="Top" Width="520" Loaded="DgDados_Loaded"  SelectionMode="Single"/>
+                </Grid>
+            </Border>
+        </Grid>
+
+    </Grid>
+</Window>

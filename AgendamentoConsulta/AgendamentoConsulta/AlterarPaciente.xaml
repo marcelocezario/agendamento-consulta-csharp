@@ -34,7 +34,7 @@
 
                     <!-- Nome -->
                     <TextBlock x:Name="LabelNomePaciente" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="36" Height="20" RenderTransformOrigin="0.468,0.867" Margin="9,121,0,0" FontFamily="Arial" TextAlignment="Right"><Run Text=" "/><Run Text="Nome"/></TextBlock>
-                    <TextBox  x:Name="BoxNomePaciente"  Height="24" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="50,0,633,25" TextAlignment="Justify"/>
+                    <TextBox  x:Name="BoxNomePaciente"  Height="24" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="50,0,613,25" TextAlignment="Justify"/>
 
                     <!-- Cpf -->
                     <TextBlock x:Name="LabelCpfPaciente" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="36" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,152,0,0" FontFamily="Arial" TextAlignment="Right" Grid.RowSpan="2" ><Run Text=" "/><Run Text="CPF"/></TextBlock>
@@ -42,18 +42,18 @@
 
                     <!-- Data de nascimento -->
                     <TextBlock x:Name="LabelDtNascimentoPaciente" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="113" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,6,0,0" FontFamily="Arial" TextAlignment="Right" Grid.Row="1" ><Run Text=" "/><Run Text="Data de Nascimento"/></TextBlock>
-                    <DatePicker x:Name="DatePickerDtNascimentoPaciente"  Height="22" Margin="122,3,682,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.227" Grid.Row="1"  />
+                    <DatePicker x:Name="DatePickerDtNascimentoPaciente"  Height="22" Margin="122,3,681,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.227" Grid.Row="1"  />
 
                     <!-- Email -->
                     <TextBlock x:Name="LabelEmailPaciente" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="36" Height="20" RenderTransformOrigin="0.468,0.867" FontFamily="Arial" TextAlignment="Right" Text="E-mail" Grid.Row="2" Margin="9,2,0,0" />
-                    <TextBox x:Name="BoxEmailPaciente"   Height="22" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="239" Margin="0,0,633,0" Grid.Row="2"/>
+                    <TextBox x:Name="BoxEmailPaciente"   Height="22" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="259" Margin="0,0,613,0" Grid.Row="2"/>
 
                     <!-- Contato -->
                     <TextBlock x:Name="LabelContatoPaciente" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,27,0,0" FontFamily="Arial" TextAlignment="Right" Text="Celular" Grid.Row="2" />
                     <xctk:MaskedTextBox Mask="(00) 0 0000-0000" x:Name="BoxContatoPaciente" Height="21" Margin="50,27,791,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="2" Grid.RowSpan="2" />
 
                     <!-- Botoes-->
-                    <Button x:Name="Editar_Paciente" Content="Editar" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="24,102,0,0" VerticalAlignment="Top" Width="82" Height="30" Grid.Row="5"/>
+                    <Button x:Name="Editar_Paciente" Content="Editar" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="24,102,0,0" VerticalAlignment="Top" Width="82" Height="30" Grid.Row="5" Click="Editar_Paciente_Click"/>
                     <Button x:Name="Excluir_Paciente" Content="Excluir" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="122,102,0,0" VerticalAlignment="Top" Width="83" Height="30" Grid.Row="5"/>
                     <Button x:Name="Pesquisar_Paciente" Content="Pesquisar" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="221,102,0,0" VerticalAlignment="Top" Width="93" Height="30" Grid.Row="5"/>
 
