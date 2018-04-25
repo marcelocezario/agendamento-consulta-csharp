@@ -38,5 +38,10 @@ namespace AgendamentoConsulta
         {
 
         }
+
+        private void DgDados_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
