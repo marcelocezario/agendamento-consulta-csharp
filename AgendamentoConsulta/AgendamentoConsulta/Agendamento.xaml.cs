@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Model;
 
 namespace AgendamentoConsulta
 {
@@ -36,6 +37,19 @@ namespace AgendamentoConsulta
         private void ButtonSalvarAgendamento_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void ButtonBuscarProfissional_Click(object sender, RoutedEventArgs e)
+        {
+            ProfissionalController pc = new ProfissionalController();
+            Profissional profissional;
+
+            profissional = pc.PesquisarPorNome(BoxBuscaNomeProfissional.Text);
+
+            if (MessageBox.Show(profissional.Nome, "Confirma o profissional?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                MessageBox.Show(profissional.Nome + " adicionado com sucesso!");
+            else
+                MessageBox.Show("Nenhum profissional selecionado");
         }
     }
 }
