@@ -14,7 +14,7 @@ namespace Controller
             ContextoSingleton.Instancia.SaveChanges();
         }
 
-        public void EditarLocal(int idLocal, Local localEditado)
+        public bool EditarLocal(int idLocal, Local localEditado)
         {
             Local localEditar = PesquisarPorID(idLocal);
 
@@ -39,6 +39,8 @@ namespace Controller
 
                 ContextoSingleton.Instancia.SaveChanges();
             }
+            return true;
+
         }
 
         public Local PesquisarPorNome(string nome)
@@ -53,7 +55,7 @@ namespace Controller
                 return null;
         }
 
-        public void ExcluirLocal(int idLocal)
+        public bool ExcluirLocal(int idLocal)
         {
             Local l = ContextoSingleton.Instancia.Locais.Find(idLocal);
 
@@ -61,6 +63,7 @@ namespace Controller
                 System.Data.Entity.EntityState.Deleted;
 
             ContextoSingleton.Instancia.SaveChanges();
+            return true;
         }
 
         public Local PesquisarPorID(int idLocal)
