@@ -216,7 +216,7 @@ namespace AgendamentoConsulta_Console
             agendamento.ProfissionalID = 1;
             agendamento._Profissional = profissionalController.PesquisarPorID(agendamento.ProfissionalID);
 
-            agendamento.DataHoraConsulta = new DateTime(2018, 04, 23, 13, 00, 00);
+            agendamento.DataHoraConsulta = new DateTime(2018, 04, 23, 06, 30, 00);
 
             if (ac.IncluirAgendamento(agendamento))
                 Console.WriteLine("Agendamento efetuado com sucesso");
@@ -334,35 +334,61 @@ namespace AgendamentoConsulta_Console
 
         private static void ListarAgendamentoTeste()
         {
-            AgendamentoController ac = new AgendamentoController();
 
-            LocalController lc = new LocalController();
-            PacienteController pacienteController = new PacienteController();
-            ProfissionalController profissionalController = new ProfissionalController();
 
-            Agendamento agendamento = new Agendamento();
+            DateTime agora = DateTime.Now;
+            
+            DateTime daquiUmaHora = DateTime.Now.AddMinutes(-30);
 
-            agendamento.LocalID = 1;
-            agendamento._Local = lc.PesquisarPorID(agendamento.LocalID);
-            agendamento.PacienteID = 1;
-            agendamento._Paciente = pacienteController.PesquisarPorID(agendamento.PacienteID);
-            agendamento.ProfissionalID = 1;
-            agendamento._Profissional = profissionalController.PesquisarPorID(agendamento.ProfissionalID);
 
-            agendamento.DataHoraConsulta = new DateTime(2018, 04, 23, 16, 00, 00);
+            Console.WriteLine(agora.CompareTo(daquiUmaHora));
 
-            foreach (Agendamento ag in ac.ListarAgendamentoProfissional(agendamento))
-            {
-                Console.WriteLine("Id agendamento.:" + ag.AgendamentoID);
-                Console.WriteLine("Paciente.......:" + ag._Paciente.Nome);
-                Console.WriteLine("Profissional...:" + ag._Profissional.Nome);
-                Console.WriteLine("Especialidade..:" + ag._Profissional.Especialidade);
-                Console.WriteLine("Local..........:" + ag._Local.NomeLocal);
-                Console.WriteLine("Data e hora....:" + ag.DataHoraConsulta.ToString("dd/MM/yyyy HH:mm"));
-                Console.WriteLine("");
-                Console.WriteLine(ag);
+            Console.WriteLine(daquiUmaHora.CompareTo(agora));
 
-            }
+            Console.WriteLine(daquiUmaHora);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //AgendamentoController ac = new AgendamentoController();
+
+            //LocalController lc = new LocalController();
+            //PacienteController pacienteController = new PacienteController();
+            //ProfissionalController profissionalController = new ProfissionalController();
+
+            //Agendamento agendamento = new Agendamento();
+
+            //agendamento.LocalID = 1;
+            //agendamento._Local = lc.PesquisarPorID(agendamento.LocalID);
+            //agendamento.PacienteID = 1;
+            //agendamento._Paciente = pacienteController.PesquisarPorID(agendamento.PacienteID);
+            //agendamento.ProfissionalID = 1;
+            //agendamento._Profissional = profissionalController.PesquisarPorID(agendamento.ProfissionalID);
+
+            //agendamento.DataHoraConsulta = new DateTime(2018, 04, 23, 10, 00, 00);
+
+            //foreach (Agendamento ag in ac.ListarAgendamentosHorarioProfissional(agendamento))
+            //{
+            //    Console.WriteLine("Id agendamento.:" + ag.AgendamentoID);
+            //    Console.WriteLine("Paciente.......:" + ag._Paciente.Nome);
+            //    Console.WriteLine("Profissional...:" + ag._Profissional.Nome);
+            //    Console.WriteLine("Especialidade..:" + ag._Profissional.Especialidade);
+            //    Console.WriteLine("Local..........:" + ag._Local.NomeLocal);
+            //    Console.WriteLine("Data e hora....:" + ag.DataHoraConsulta.ToString("dd/MM/yyyy HH:mm"));
+            //    Console.WriteLine("");
+            //    Console.WriteLine(ag);
+            //
+            //}
         }
 
 

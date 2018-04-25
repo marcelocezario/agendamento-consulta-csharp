@@ -42,9 +42,6 @@ namespace Controller
                 return null;
         }
 
-
-
-
         public Agendamento PesquisarAgendamentoPorId(int idAgendamento)
         {
             var a = from x in ContextoSingleton.Instancia.Agendamentos
@@ -72,13 +69,13 @@ namespace Controller
             {
                 if (ValidaDiaDaSemanaAtendimento(agendamento))
                 {
-                       if (ListarAgendamentoHorarioProfissional(agendamento).Equals(null))
-                       {
-                           if (ValidaHorarioLivreLocal(agendamento))
-                           {
-                    return true;
-                           }
-                       }
+                    if (ValidaHorarioLivreProfissional(agendamento))
+                    {
+                        if (ValidaHorarioLivreLocal(agendamento))
+                        {
+                            return true;
+                        }
+                    }
                 }
             }
             return false;
@@ -162,15 +159,13 @@ namespace Controller
 
         public bool ValidaHorarioLivreProfissional(Agendamento agendamento)
         {
-            DateTime inicioConsulta = agendamento.DataHoraConsulta;
+            DateTime inicioConsulta = agendamento.DataHoraConsulta.AddMinutes(-agendamento.TempoEmMinutosConsulta);
             DateTime terminoConsulta = agendamento.DataHoraConsulta.AddMinutes(agendamento.TempoEmMinutosConsulta);
 
-            var a = (from x in ContextoSingleton.Instancia.Agendamentos.ToList()
-                    where x.ProfissionalID.Equals(agendamento.ProfissionalID) &&
-                    (x.DataHoraConsulta >= inicioConsulta && x.DataHoraConsulta < terminoConsulta) ||
-                    (x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) > inicioConsulta &&
-                    x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) <= terminoConsulta)
-                    select x).ToList();
+            var a = (from x in ContextoSingleton.Instancia.Agendamentos
+                     where x.ProfissionalID.Equals(agendamento.ProfissionalID) &&
+                     (x.DataHoraConsulta > inicioConsulta && x.DataHoraConsulta < terminoConsulta)
+                     select x).ToList();
 
             if (a.Any())
                 return false;
@@ -180,45 +175,18 @@ namespace Controller
 
         public bool ValidaHorarioLivreLocal(Agendamento agendamento)
         {
-            DateTime inicioConsulta = agendamento.DataHoraConsulta;
+            DateTime inicioConsulta = agendamento.DataHoraConsulta.AddMinutes(-agendamento.TempoEmMinutosConsulta);
             DateTime terminoConsulta = agendamento.DataHoraConsulta.AddMinutes(agendamento.TempoEmMinutosConsulta);
 
-            var a = (from x in ContextoSingleton.Instancia.Agendamentos.ToList()
+            var a = (from x in ContextoSingleton.Instancia.Agendamentos
                     where x.LocalID.Equals(agendamento.LocalID) &&
-                    (x.DataHoraConsulta >= inicioConsulta && x.DataHoraConsulta < terminoConsulta) ||
-                    (x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) > inicioConsulta &&
-                    x.DataHoraConsulta.AddMinutes(x.TempoEmMinutosConsulta) <= terminoConsulta)
-                    select x).ToList();
+                    (x.DataHoraConsulta > inicioConsulta && x.DataHoraConsulta < terminoConsulta)
+                     select x).ToList();
 
             if (a.Any())
                 return false;
             else
                 return true;
-        }
-
-        public List<Agendamento> ListarAgendamentoProfissional (Agendamento agendamento)
-        {
-            var a = from x in ListarAgendamentos()
-                    where x.ProfissionalID == agendamento.ProfissionalID
-                    select x;
-            if (a != null)
-                return a.ToList();
-            else
-                return null;
-        }
-
-        public List<Agendamento> ListarAgendamentoHorarioProfissional (Agendamento agendamento)
-        {
-            DateTime inicioConsulta = agendamento.DataHoraConsulta;
-            DateTime terminoConsulta = agendamento.DataHoraConsulta.AddMinutes(agendamento.TempoEmMinutosConsulta);
-
-            var a = from x in ListarAgendamentoProfissional(agendamento)
-                    where (x.DataHoraConsulta >= inicioConsulta.AddMinutes(-30)) && (x.DataHoraConsulta.AddMinutes(30) < terminoConsulta)
-                    select x;
-            if (a != null)
-                return a.ToList();
-            else
-                return null;
         }
     }
 }
