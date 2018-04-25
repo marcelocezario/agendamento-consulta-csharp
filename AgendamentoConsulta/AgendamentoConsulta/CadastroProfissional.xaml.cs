@@ -16,6 +16,9 @@ namespace AgendamentoConsulta
         {
             InitializeComponent();
         }
+         if (VerificarPreenchimentoCampos())
+                SalvarCadastro();
+
         //Verificacao
         private bool VerificarPreenchimentoCampos()
         {
@@ -47,32 +50,7 @@ namespace AgendamentoConsulta
                                         MessageBox.Show("E-mail inválido");
                                     else
                                     {
-                                        if (BoxCepProfissional.Text.Equals("__.___-___"))
-                                            MessageBox.Show("O campo CEP é obrigatório");
-                                        else
-                                        {
-                                            if (BoxRuaProfissional.Text.Equals(""))
-                                                MessageBox.Show("O campo rua é obrigatório");
-                                            else
-                                            {
-                                                if (BoxNumeroProfissional.Text.Equals(""))
-                                                    MessageBox.Show("O campo número em endereço é obrigatório");
-                                                else
-                                                {
-                                                    if (BoxCidadeProfissional.Text.Equals(""))
-                                                        MessageBox.Show("O campo Cidade é obrigatório");
-                                                    else
-                                                    {
-                                                        if (ComboBoxEstado.Text.Equals(""))
-                                                            MessageBox.Show("O campo UF é obrigatório");
-                                                        else
-                                                        {
-                                                            return true;
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
+                                        return true;               
                                     }
                                 }
                             }
@@ -86,41 +64,10 @@ namespace AgendamentoConsulta
         /// <summary>
         /// Validações não podem ir para a lib de validações pois são excutadas em execução
         /// </summary>
-        private void BoxRgProfissional_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
-        {         
-            try
-            {
-                KeyConverter key = new KeyConverter();
-                if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
-                {
-                    e.Handled = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex);
-            }
-        }
+        
         private void ButtonSalvarProfissional_Click(object sender, RoutedEventArgs e)
         {
 
-        }
-
-        //valida para o textbox aceitar somente numeros
-        private void BoxNumeroProfissional_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
-        {
-            try
-            {
-                KeyConverter key = new KeyConverter();
-                if ((char.IsNumber((string)key.ConvertTo(e.Key, typeof(string)), 0) == false))
-                {
-                    e.Handled = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex);
-            }
         }
 
       
