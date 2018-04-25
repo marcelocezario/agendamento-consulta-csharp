@@ -135,7 +135,6 @@ namespace AgendamentoConsulta_Console
             paciente.Nome = "Teste";
             paciente.Celular = "4199-9999999";
             paciente.Email = "teste@testando.com.br";
-            paciente.Rg = "123456789";
             paciente.Cpf = "123.456.789-09";
             paciente.DtNascimento = new DateTime(1991, 04, 12, 22, 00, 00);
 
@@ -151,7 +150,6 @@ namespace AgendamentoConsulta_Console
             profissional.Nome = "Profissional";
             profissional.Celular = "4199-9999999";
             profissional.Email = "teste@testando.com.br";
-            profissional.Rg = "123456789";
             profissional.Cpf = "123.456.789-09";
             profissional.DtNascimento = new DateTime(1991, 04, 12, 22, 00, 00);
             profissional.ResgistroProfissional = "123456789";
@@ -242,7 +240,6 @@ namespace AgendamentoConsulta_Console
                 Console.WriteLine("Nome...........:" + paciente.Nome);
                 Console.WriteLine("Email..........:" + paciente.Email);
                 Console.WriteLine("CPF............:" + paciente.Cpf);
-                Console.WriteLine("RG.............:" + paciente.Rg);
                 Console.WriteLine("Data Nascimento:" + paciente.DtNascimento);
                 Console.WriteLine("");
             }
@@ -258,7 +255,6 @@ namespace AgendamentoConsulta_Console
                 Console.WriteLine("Nome...........:" + profissional.Nome);
                 Console.WriteLine("Email..........:" + profissional.Email);
                 Console.WriteLine("CPF............:" + profissional.Cpf);
-                Console.WriteLine("RG.............:" + profissional.Rg);
                 Console.WriteLine("Data Nascimento:" + profissional.DtNascimento);
                 Console.WriteLine("CRM............:" + profissional.ResgistroProfissional);
                 Console.WriteLine("Especialidade..:" + profissional.Especialidade);
