@@ -150,7 +150,7 @@ namespace AgendamentoConsulta
         {
             Agendamento ag;
 
-
+            Profissional profissional;
         }
     }
 }
