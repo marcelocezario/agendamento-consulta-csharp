@@ -119,49 +119,49 @@ namespace Controller
             String diaDaSemana = agendamento.DataHoraConsulta.ToString("ddd");
             if (diaDaSemana.Equals("dom"))
             {
-                if (!agendamento._Profissional.Domingo || !agendamento._Local.Domingo)
+                if (agendamento._Profissional.Domingo.Equals(null) || agendamento._Local.Domingo.Equals(null))
                     return false;
             }
             else
             {
                 if (diaDaSemana.Equals("seg"))
                 {
-                    if (!agendamento._Profissional.Segunda || !agendamento._Local.Segunda)
+                    if (agendamento._Profissional.Segunda.Equals(null) || agendamento._Local.Segunda.Equals(null))
                         return false;
                 }
                 else
                 {
                     if (diaDaSemana.Equals("ter"))
                     {
-                        if (!agendamento._Profissional.Terca || !agendamento._Local.Terca)
+                        if (agendamento._Profissional.Terca.Equals(null) || agendamento._Local.Terca.Equals(null))
                             return false;
                     }
                     else
                     {
                         if (diaDaSemana.Equals("qua"))
                         {
-                            if (!agendamento._Profissional.Quarta || !agendamento._Local.Quarta)
+                            if (agendamento._Profissional.Quarta.Equals(null) || agendamento._Local.Quarta.Equals(null))
                                 return false;
                         }
                         else
                         {
                             if (diaDaSemana.Equals("qui"))
                             {
-                                if (!agendamento._Profissional.Quinta || !agendamento._Local.Quinta)
+                                if (agendamento._Profissional.Quinta.Equals(null) || agendamento._Local.Quinta.Equals(null))
                                     return false;
                             }
                             else
                             {
                                 if (diaDaSemana.Equals("sex"))
                                 {
-                                    if (!agendamento._Profissional.Sexta || !agendamento._Local.Sexta)
+                                    if (agendamento._Profissional.Sexta.Equals(null) || agendamento._Local.Sexta.Equals(null))
                                         return false;
                                 }
                                 else
                                 {
                                     if (diaDaSemana.Equals("sab"))
                                     {
-                                        if (!agendamento._Profissional.Sabado || !agendamento._Local.Sabado)
+                                        if (agendamento._Profissional.Sabado.Equals(null) || agendamento._Local.Sabado.Equals(null))
                                             return false;
                                     }
                                 }

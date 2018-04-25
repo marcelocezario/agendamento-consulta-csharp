@@ -66,7 +66,7 @@
 
         <!-- Dias que o profissional trabalha -->
         <TextBlock x:Name="labelDiasAtendimento" Text="Dias de atendimento" HorizontalAlignment="Left" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="20" RenderTransformOrigin="0.468,0.867" Margin="2,6,0,0" FontFamily="Arial" TextAlignment="Right" Grid.ColumnSpan="2"/>
-        <CheckBox x:Name="CheckBoxDomingo" Content="Domingo" FontFamily="Arial" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top" Margin="233,4,0,0" Height="22" Width="78" RenderTransformOrigin="0.35,0.5" Grid.ColumnSpan="2"/>
+        <CheckBox x:Name="CheckBoxDomingo" Content="Domingo" FontFamily="Arial" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top" Margin="233,4,0,0" Height="22" Width="78" RenderTransformOrigin="0.35,0.5" Grid.ColumnSpan="2" IsEnabled="True"/>
         <CheckBox x:Name="CheckBoxSegunda" Content="Segunda-Feira" Grid.Column="1"  FontFamily="Arial" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Margin="37,3,0,0" Height="23" Width="115"/>
         <CheckBox x:Name="CheckBoxTerca" Content="Terça-Feira" Grid.Column="1" FontFamily="Arial"  HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Margin="157,3,0,0" Height="22" Width="93"/>
         <CheckBox x:Name="CheckBoxQuarta" Content="Quarta-Feira" Grid.Column="1" FontFamily="Arial" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Margin="259,3,0,0" Height="22" Width="101" RenderTransformOrigin="0.498,0.682" Grid.ColumnSpan="2"/>

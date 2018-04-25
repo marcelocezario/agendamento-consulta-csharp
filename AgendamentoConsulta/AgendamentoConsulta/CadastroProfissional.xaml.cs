@@ -16,7 +16,7 @@ namespace AgendamentoConsulta
         {
             InitializeComponent();
         }
-       
+
 
         //Verificacao
         private bool VerificarPreenchimentoCampos()
@@ -37,7 +37,7 @@ namespace AgendamentoConsulta
                             MessageBox.Show("O campo nome é obrigatório");
                         else
                         {
-                            if (Verificacao.Verificacao.ValidaCpf(BoxCpfProfissional.Text))
+                            if (BoxCpfProfissional.Text.Equals("___.___.___-__"))
                                 MessageBox.Show("O campo CPF é obrigatório");
                             else
                             {
@@ -49,7 +49,7 @@ namespace AgendamentoConsulta
                                         MessageBox.Show("E-mail inválido");
                                     else
                                     {
-                                        return true;               
+                                        return true;
                                     }
                                 }
                             }
@@ -63,7 +63,7 @@ namespace AgendamentoConsulta
         /// <summary>
         /// Validações não podem ir para a lib de validações pois são excutadas em execução
         /// </summary>
-        
+
         private void ButtonSalvarProfissional_Click(object sender, RoutedEventArgs e)
         {
             if (VerificarPreenchimentoCampos())
@@ -82,13 +82,13 @@ namespace AgendamentoConsulta
                 Email = BoxEmailProfissional.Text,
                 ResgistroProfissional = BoxResgistroProfissional.Text,
 
-                Domingo = CheckBoxDomingo.IsMeasureValid,
-                Segunda = CheckBoxSegunda.IsMeasureValid,
-                Terca = CheckBoxTerca.IsMeasureValid,
-                Quarta = CheckBoxQuarta.IsMeasureValid,
-                Quinta = CheckBoxQuinta.IsMeasureValid,
-                Sexta = CheckBoxSexta.IsMeasureValid,
-                Sabado = CheckBoxSabado.IsMeasureValid,
+                Domingo = CheckBoxDomingo.IsChecked,
+                Segunda = CheckBoxSegunda.IsChecked,
+                Terca = CheckBoxTerca.IsChecked,
+                Quarta = CheckBoxQuarta.IsChecked,
+                Quinta = CheckBoxQuinta.IsChecked,
+                Sexta = CheckBoxSexta.IsChecked,
+                Sabado = CheckBoxSabado.IsChecked,
 
                 HrInicio = TimePickerHInicioProfissional.SelectedTime.Value,
                 HrFim = TimePickerHFimProfissional.SelectedTime.Value,
