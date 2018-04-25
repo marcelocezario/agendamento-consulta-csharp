@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
+using Model;
+using Controller;
 
 namespace AgendamentoConsulta
 {
@@ -22,6 +25,11 @@ namespace AgendamentoConsulta
         public AlterarPaciente()
         {
             InitializeComponent();
+        }
+
+        private void DgDados_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

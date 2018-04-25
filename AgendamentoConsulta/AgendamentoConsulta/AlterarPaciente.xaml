@@ -2,60 +2,62 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:object="http://schemas.microsoft.com/winfx/2006/xaml/presentation, http://schemas.microsoft.com/netfx/2007/xaml/presentation"
+        x:Name="TelaCadastroCliente"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:AgendamentoConsulta"
         mc:Ignorable="d"
-      Title="Insumo" Height="500" Width="1000" WindowStartupLocation="CenterScreen">
+      Title="Alterar Paciente" Height="500" Width="1000" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button Content="Inicio" Background="#FFFFFF" Foreground="#FFFFFF" BorderThickness="0"  
-    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="97" Height="36" FontFamily="Tahoma" FontWeight="Bold" FontSize="18"  Margin="0,12,0,0" IsEnabled="False"/>
-        <Button Content="Pedidos" Background="#23272A" Foreground="#FFFFFF" BorderThickness="0"  
-    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="77" Height="36" Margin="100,12,0,0" FontFamily="Tahoma" FontWeight="Bold" FontSize="18" IsEnabled="False"/>
-        <Button Content="Produtos" Background="#23272A" Foreground="#FFFFFF" BorderThickness="0"  
-    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="92" Height="36" Margin="194,12,0,0" FontFamily="Tahoma" FontWeight="Bold" FontSize="18" IsEnabled="False" />
-        <Button x:Name="Insumos" Content="Insumos" Background="#23272A" Foreground="#FFFFFF" BorderThickness="0"  
-            Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="92" Height="36" Margin="294,12,0,0" FontFamily="Tahoma" FontWeight="Bold" FontSize="18" >
-            <Button.Effect>
-                <DropShadowEffect Color="#FFF9F9F9" RenderingBias="Quality" Opacity="0.5"/>
-            </Button.Effect>
-        </Button>
-        <Button Content="Financeiro" Background="#23272A" Foreground="#FFFFFF" BorderThickness="0"  
-    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="36" Margin="393,12,0,0" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" IsEnabled="False" />
 
         <Grid Background="white" HorizontalAlignment="Center" Height="459" VerticalAlignment="Center" Width="992" Margin="0,10,0,0" Opacity="0.75" >
             <Border Background="#DFE3EE" BorderBrush="Black" BorderThickness="1,1,1,1" CornerRadius="30,30,30,30" Margin="0,10,28,0">
                 <Grid  Background="#DFE3EE" HorizontalAlignment="Center" Height="429" VerticalAlignment="Center" Width="922" Margin="15,9,25,9">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="166*"/>
+                        <RowDefinition Height="26*"/>
+                        <RowDefinition Height="47*"/>
+                        <RowDefinition Height="24*"/>
+                        <RowDefinition Height="24*"/>
+                        <RowDefinition Height="142*"/>
+                    </Grid.RowDefinitions>
                     <!-- Inicio -->
-                    <Label Content="Editar Paciente" HorizontalAlignment="Center" Margin="139,10,608,387" VerticalAlignment="Center" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" Width="175"/>
-                    <Label Content="Listagem de Paciente" HorizontalAlignment="Center" Margin="511,10,180,387" VerticalAlignment="Center" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" Width="231" Height="32"/>
-                    
+                    <Label Content="Editar Paciente" HorizontalAlignment="Center" Margin="134,10,613,126" VerticalAlignment="Center" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" Width="175" Height="30"/>
+                    <Label Content="Listagem de Paciente" HorizontalAlignment="Center" Margin="511,10,180,124" VerticalAlignment="Center" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" Width="231" Height="32"/>
+
                     <!-- ID -->
-                    <TextBlock HorizontalAlignment="Left" Margin="21,63,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top"/>
-                    <TextBox x:Name="TxtPacienteID" HorizontalAlignment="Left" Height="20" Margin="98,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" IsEnabled="False"/>
-                        
+                    <TextBlock HorizontalAlignment="Left" Margin="24,89,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Height="16" Width="12"/>
+                    <TextBox x:Name="TxtPacienteID" HorizontalAlignment="Left" Height="20" Margin="48,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" IsEnabled="False" RenderTransformOrigin="0.36,0.45"/>
+
                     <!-- Nome -->
-                    <TextBlock x:Name="Nome" HorizontalAlignment="Left" Margin="21,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.175,0.439" Height="20" Width="63" LineStackingStrategy="BlockLineHeight" TextOptions.TextFormattingMode="Display" FontSize="13"><Run Text="Nome"/><Run Text=":"/></TextBlock>
-                    <TextBox x:Name="TxtNome" HorizontalAlignment="Left" Height="20" Margin="98,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292"/>
-                    
-                    <!-- -->
-                    <TextBlock x:Name="Categoria" HorizontalAlignment="Left" Margin="21,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.175,0.439" Height="20" Width="63" LineStackingStrategy="BlockLineHeight" TextOptions.TextFormattingMode="Display" FontSize="13" Text="Categoria:"/>
-                    <TextBlock x:Name="PrecoCusto" HorizontalAlignment="Left" Margin="21,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.175,0.439" Height="20" Width="54" LineStackingStrategy="BlockLineHeight" TextOptions.TextFormattingMode="Display" FontSize="13"><Run Text="Custo"/><Run Text=":"/></TextBlock>
-                    
-                    <TextBlock x:Name="Medida" HorizontalAlignment="Left" Margin="21,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.175,0.439" Height="20" Width="63" LineStackingStrategy="BlockLineHeight" TextOptions.TextFormattingMode="Display" FontSize="13" Text="Medida:"/>
-                    <TextBlock x:Name="Estoque" HorizontalAlignment="Left" Margin="21,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.175,0.439" Height="20" Width="63" LineStackingStrategy="BlockLineHeight" TextOptions.TextFormattingMode="Display" FontSize="13" Text="Estoque:"/>
-                    <TextBox x:Name="txtCategoria" HorizontalAlignment="Left" Height="20" Margin="98,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292"/>
-                    <TextBox x:Name="txtPrecoCusto" HorizontalAlignment="Left" Height="20" Margin="98,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292"/>
-                    <TextBox x:Name="txtMedida" HorizontalAlignment="Left" Height="20" Margin="98,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292"/>
-                    <TextBox x:Name="txtEstoque" HorizontalAlignment="Left" Height="20" Margin="98,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292"/>
+                    <TextBlock x:Name="LabelNomePaciente" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="36" Height="20" RenderTransformOrigin="0.468,0.867" Margin="9,121,0,0" FontFamily="Arial" TextAlignment="Right"><Run Text=" "/><Run Text="Nome"/></TextBlock>
+                    <TextBox  x:Name="BoxNomePaciente"  Height="24" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="50,0,633,25" TextAlignment="Justify"/>
+
+                    <!-- Cpf -->
+                    <TextBlock x:Name="LabelCpfPaciente" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="36" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,152,0,0" FontFamily="Arial" TextAlignment="Right" Grid.RowSpan="2" ><Run Text=" "/><Run Text="CPF"/></TextBlock>
+                    <xctk:MaskedTextBox Mask="000,000,000-00" x:Name="BoxCpfPaciente" Height="21" Margin="48,145,803,0" TextWrapping="Wrap" VerticalAlignment="Top" />
+
+                    <!-- Data de nascimento -->
+                    <TextBlock x:Name="LabelDtNascimentoPaciente" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="113" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,6,0,0" FontFamily="Arial" TextAlignment="Right" Grid.Row="1" ><Run Text=" "/><Run Text="Data de Nascimento"/></TextBlock>
+                    <DatePicker x:Name="DatePickerDtNascimentoPaciente"  Height="22" Margin="122,3,682,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.227" Grid.Row="1"  />
+
+                    <!-- Email -->
+                    <TextBlock x:Name="LabelEmailPaciente" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="36" Height="20" RenderTransformOrigin="0.468,0.867" FontFamily="Arial" TextAlignment="Right" Text="E-mail" Grid.Row="2" Margin="9,2,0,0" />
+                    <TextBox x:Name="BoxEmailPaciente"   Height="22" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="239" Margin="0,0,633,0" Grid.Row="2"/>
+
+                    <!-- Contato -->
+                    <TextBlock x:Name="LabelContatoPaciente" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" Height="20" RenderTransformOrigin="0.468,0.867" Margin="0,27,0,0" FontFamily="Arial" TextAlignment="Right" Text="Celular" Grid.Row="2" />
+                    <xctk:MaskedTextBox Mask="(00) 0 0000-0000" x:Name="BoxContatoPaciente" Height="21" Margin="50,27,791,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="2" Grid.RowSpan="2" />
 
                     <!-- Botoes-->
-                    <Button x:Name="Editar_Paciente" Content="Editar" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="24,389,0,0" VerticalAlignment="Top" Width="82" Click="btnEditarInsumo" Height="30"/>
-                    <Button x:Name="Excluir_Paciente" Content="Excluir" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="122,389,0,0" VerticalAlignment="Top" Width="83" Click="btnExcluirInsumo" Height="30"/>
-                    <Button x:Name="Pesquisar_Paciente" Content="Pesquisar" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="221,389,0,0" VerticalAlignment="Top" Width="93" Click="btnPesquisarInsumo" Height="30"/>
+                    <Button x:Name="Editar_Paciente" Content="Editar" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="24,102,0,0" VerticalAlignment="Top" Width="82" Height="30" Grid.Row="5"/>
+                    <Button x:Name="Excluir_Paciente" Content="Excluir" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="122,102,0,0" VerticalAlignment="Top" Width="83" Height="30" Grid.Row="5"/>
+                    <Button x:Name="Pesquisar_Paciente" Content="Pesquisar" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="221,102,0,0" VerticalAlignment="Top" Width="93" Height="30" Grid.Row="5"/>
 
-                    <DataGrid x:Name="dgDados" IsReadOnly="true" HorizontalAlignment="Left" Height="224" Margin="464,63,0,0" VerticalAlignment="Top" Width="422" Loaded="ListagemInsumos_Loaded" MouseDoubleClick="dgDados_MouseDoubleClick" SelectionMode="Single">
-
-                    </DataGrid>
+                    <DataGrid x:Name="DgDados" IsReadOnly="true" HorizontalAlignment="Left" Height="302" Margin="392,63,0,0" VerticalAlignment="Top" Width="520" Loaded="DgDados_Loaded"  SelectionMode="Single" Grid.RowSpan="6"/>
                 </Grid>
             </Border>
         </Grid>

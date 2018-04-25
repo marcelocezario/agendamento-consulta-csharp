@@ -42,33 +42,8 @@ namespace AgendamentoConsulta
                         if (!Verificacao.Verificacao.ValidarEmail(BoxEmailPaciente.Text))
                             MessageBox.Show("E-mail inválido");
                         else
-                        {
-                            if (BoxCepPaciente.Text.Equals("__.___-___"))
-                                MessageBox.Show("O campo CEP é obrigatório");
-                            else
-                            {
-                                if (BoxRuaPaciente.Text.Equals(""))
-                                    MessageBox.Show("O campo rua é obrigatório");
-                                else
-                                {
-                                    if (BoxNumeroPaciente.Text.Equals(""))
-                                        MessageBox.Show("O campo número em endereço é obrigatório");
-                                    else
-                                    {
-                                        if (BoxCidadePaciente.Text.Equals(""))
-                                            MessageBox.Show("O campo Cidade é obrigatório");
-                                        else
-                                        {
-                                            if (BoxUFPaciente.Text.Equals(""))
-                                                MessageBox.Show("O campo UF é obrigatório");
-                                            else
-                                            {
-                                                return true;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
+                        {                          
+                               return true;        
                         }
                     }
                 }
@@ -90,11 +65,11 @@ namespace AgendamentoConsulta
                 Celular = BoxContatoPaciente.Text,
                 DtNascimento = DatePickerDtNascimentoPaciente.SelectedDate.Value
             };
+            PacienteController pa = new PacienteController();
 
-            ContextoSingleton.Instancia.Pacientes.Add(p);
+            pa.SalvarPaciente(p);
 
             this.Close();
-
         }     
     }
 }

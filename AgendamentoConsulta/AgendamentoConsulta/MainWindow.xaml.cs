@@ -32,14 +32,13 @@ namespace AgendamentoConsulta
 
         private void BtnAlteracoes_Click(object sender, RoutedEventArgs e)
         {
-            BuscarDados nAlt = new BuscarDados();
+            AlterarPaciente nAlt = new AlterarPaciente();
             nAlt.ShowDialog();
         }
 
         private void BtnPesquisa_Click(object sender, RoutedEventArgs e)
         {
-            BuscarDados nAlt = new BuscarDados();
-            nAlt.ShowDialog();
+           
         }
 
         private void BtnAgendamento_Click(object sender, RoutedEventArgs e)

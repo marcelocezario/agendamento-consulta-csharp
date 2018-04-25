@@ -123,7 +123,7 @@
 
         <!-- Numero -->
         <TextBlock x:Name="LabelNumeroLocal" HorizontalAlignment="Left" Grid.Row="12" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" Height="20" RenderTransformOrigin="0.468,0.867" Margin="175,9,0,0" Grid.Column="1"  FontFamily="Arial" TextAlignment="Right"><Run Text=" "/><Run Text="Número"/></TextBlock>
-        <TextBox x:Name="BoxNumeroLocal"  KeyDown="BoxNumeroLocal_KeyDown"  Height="23" Grid.Row="12" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Margin="236,6,134,0" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox x:Name="BoxNumeroLocal"    Height="23" Grid.Row="12" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Margin="236,6,134,0" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5"/>
 
         <!-- Botão Salvar -->
         <Button x:Name="ButtonSalvarLocal" Content="Salvar" Grid.Column="2" Margin="94,104,0,-1" Grid.Row="15" Height="Auto" />

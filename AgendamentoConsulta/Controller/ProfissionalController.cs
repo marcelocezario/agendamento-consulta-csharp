@@ -22,7 +22,6 @@ namespace Controller
                 profissionalEditar.Nome = profissionalEditado.Nome;
                 profissionalEditar.Celular = profissionalEditado.Celular;
                 profissionalEditar.Email = profissionalEditado.Email;
-                profissionalEditar.Rg = profissionalEditado.Rg;
                 profissionalEditar.Cpf = profissionalEditado.Cpf;
                 profissionalEditar.DtNascimento = profissionalEditado.DtNascimento;
                 profissionalEditar.ResgistroProfissional = profissionalEditado.ResgistroProfissional;

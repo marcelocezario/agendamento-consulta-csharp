@@ -22,7 +22,6 @@ namespace Controller
                 pacienteEditar.Nome = pacienteEditado.Nome;
                 pacienteEditar.Celular = pacienteEditado.Celular;
                 pacienteEditar.Email = pacienteEditado.Email;
-                pacienteEditar.Rg = pacienteEditado.Rg;
                 pacienteEditar.Cpf = pacienteEditado.Cpf;
                 pacienteEditar.DtNascimento = pacienteEditado.DtNascimento;
 

@@ -16,8 +16,7 @@ namespace AgendamentoConsulta
         {
             InitializeComponent();
         }
-         if (VerificarPreenchimentoCampos())
-                SalvarCadastro();
+       
 
         //Verificacao
         private bool VerificarPreenchimentoCampos()
@@ -67,9 +66,36 @@ namespace AgendamentoConsulta
         
         private void ButtonSalvarProfissional_Click(object sender, RoutedEventArgs e)
         {
-
+            if (VerificarPreenchimentoCampos())
+                SalvarCadastro();
         }
 
-      
+        private void SalvarCadastro()
+        {
+            Profissional pr = new Profissional
+            {
+                Nome = BoxNomeProfissional.Text,
+                Cpf = BoxCpfProfissional.Text,
+                Celular = BoxContatoProfissional.Text,
+                DtNascimento = DatePickerDtNascimentoProfissional.SelectedDate.Value,
+                Especialidade = BoxEspecialidadeProfissional.Text,
+                Email = BoxEmailProfissional.Text,
+                ResgistroProfissional = BoxResgistroProfissional.Text,
+
+                Domingo = CheckBoxDomingo.IsMeasureValid,
+                Segunda = CheckBoxSegunda.IsMeasureValid,
+                Terca = CheckBoxTerca.IsMeasureValid,
+                Quarta = CheckBoxQuarta.IsMeasureValid,
+                Quinta = CheckBoxQuinta.IsMeasureValid,
+                Sexta = CheckBoxSexta.IsMeasureValid,
+                Sabado = CheckBoxSabado.IsMeasureValid,
+
+                HrInicio = TimePickerHInicioProfissional.SelectedTime.Value,
+                HrFim = TimePickerHFimProfissional.SelectedTime.Value,
+            };
+            ProfissionalController prControl = new ProfissionalController();
+
+            prControl.SalvarProfissional(pr);
+        }
     }
 }
