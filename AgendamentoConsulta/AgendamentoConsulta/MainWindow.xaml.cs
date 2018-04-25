@@ -43,7 +43,7 @@ namespace AgendamentoConsulta
 
         private void BtnAgendamento_Click(object sender, RoutedEventArgs e)
         {
-            Agendamento ag = new Agendamento();
+            TelaAgendamento ag = new TelaAgendamento();
             ag.ShowDialog();
         }
     }

@@ -8,11 +8,11 @@ using System;
 namespace AgendamentoConsulta
 {
     /// <summary>
-    /// Interação lógica para CadastroAgendamento.xam
+    /// Lógica interna para TelaAgendamento.xaml
     /// </summary>
-    public partial class Agendamento : MetroWindow
+    public partial class TelaAgendamento : MetroWindow
     {
-        public Agendamento()
+        public TelaAgendamento()
         {
             InitializeComponent();
         }
@@ -57,14 +57,14 @@ namespace AgendamentoConsulta
 
 
                 if (MessageBox.Show(profissionalBusca, "Confirma o profissional?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-                    {
-                        BoxBuscarProfissional.Text = profissional.Nome;
-                        BoxBuscarProfissional.IsEnabled = false;
-                        ButtonBuscarProfissional.IsEnabled = false;
-                        MessageBox.Show(profissional.Nome + " adicionado com sucesso!");
-                    }
-                    else
-                        MessageBox.Show("Nenhum profissional selecionado");
+                {
+                    BoxBuscarProfissional.Text = profissional.Nome;
+                    BoxBuscarProfissional.IsEnabled = false;
+                    ButtonBuscarProfissional.IsEnabled = false;
+                    MessageBox.Show(profissional.Nome + " adicionado com sucesso!");
+                }
+                else
+                    MessageBox.Show("Nenhum profissional selecionado");
             }
             else
                 MessageBox.Show("Nenhum profissional encontrado");
@@ -148,7 +148,33 @@ namespace AgendamentoConsulta
 
         private void SalvarAgendamento()
         {
-            
+            ProfissionalController prc = new ProfissionalController();
+            PacienteController pac = new PacienteController();
+            LocalController lc = new LocalController();
+            AgendamentoController ac = new AgendamentoController();
+
+            Local local = lc.PesquisarPorNome(BoxBuscarLocal.Text);
+            Paciente paciente = pac.PesquisarPorNome(BoxBuscarPaciente.Text);
+            Profissional profissional = prc.PesquisarPorNome(BoxBuscarProfissional.Text);
+
+            Agendamento a = new Agendamento()
+            {
+                LocalID = local.LocalID,
+                _Local = local,
+                PacienteID = paciente.ID,
+                _Paciente = paciente,
+                ProfissionalID = profissional.ID,
+                _Profissional = profissional,
+                DataHoraConsulta = TimePickerHorarioAgendamento.SelectedTime.Value,
+            };
+
+            if (ac.IncluirAgendamento(a))
+            {
+                MessageBox.Show("Agendamento efetuado com sucesso");
+                this.Close();
+            }
+            else
+                MessageBox.Show("Agendamento não efetuado por indiponibilidade de horários");
         }
     }
 }
