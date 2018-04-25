@@ -15,8 +15,22 @@ namespace Controller
 
         public void EditarPaciente(int idPaciente, Paciente pacienteEditado)
         {
+            Paciente pacienteEditar = PesquisarPorID(idPaciente);
 
-        }
+            if (pacienteEditar != null)
+            {
+                pacienteEditar.Nome = pacienteEditado.Nome;
+                pacienteEditar.Celular = pacienteEditado.Celular;
+                pacienteEditar.Email = pacienteEditado.Email;
+                pacienteEditar.Rg = pacienteEditado.Rg;
+                pacienteEditar.Cpf = pacienteEditado.Cpf;
+                pacienteEditar.DtNascimento = pacienteEditado.DtNascimento;
+
+                ContextoSingleton.Instancia.Entry(pacienteEditar).State =
+                    System.Data.Entity.EntityState.Modified;
+
+                ContextoSingleton.Instancia.SaveChanges();
+            }
 
         public Paciente PesquisarPorNome(string nome)
         {
