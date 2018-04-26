@@ -89,9 +89,9 @@ namespace AgendamentoConsulta
         private void ListagemLocal()
         {
             //Metodo para listar os Paciente no DataGrid
-            PacienteController prControl = new PacienteController();
+            LocalController lcControl = new LocalController();
 
-            DgDados.ItemsSource = prControl.ListarPacientes();
+            DgDados.ItemsSource = lcControl.ListarLocais();
 
         }
 
