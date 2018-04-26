@@ -33,27 +33,49 @@ namespace AgendamentoConsulta
         //
         private void EditarLocal()
         {
-            EnderecoController endControl = new EnderecoController();            
-            Endereco end = ContextoSingleton.Instancia.Enderecos.Find(Convert.ToInt32(TxtEnderecoID.Text));
             LocalController lcControl = new LocalController();
-            Local lc = ContextoSingleton.Instancia.Locais.Find(Convert.ToInt32(TxtLocalID.Text));
+            EnderecoController endControl = new EnderecoController();            
+           
 
+            
+                Endereco end = new Endereco
+                {
+                    Cep = BoxCepLocal.Text,
+                    Rua = BoxRuaLocal.Text,
+                    Numero = int.Parse(BoxNumeroLocal.Text),
+                    Complemento = BoxComplementoLocal.Text,
+                    Cidade = BoxCidadeLocal.Text,
+                    Uf = ComboBoxEstado.Text,
+                };
+                EnderecoController ec = new EnderecoController();
+                ec.SalvarEndereco(end);
 
-            int idlocal = Convert.ToInt32(TxtLocalID.Text);
-            int idEndereco = Convert.ToInt32(TxtEnderecoID.Text);
+                //criando novo objeto de Local
+                Local lc = new Local
+                {
+                    NomeLocal = BoxNomeLocal.Text,
 
+                    Domingo = CheckBoxDomingo.IsChecked,
+                    Segunda = CheckBoxSegunda.IsChecked,
+                    Terca = CheckBoxTerca.IsChecked,
+                    Quarta = CheckBoxQuarta.IsChecked,
+                    Quinta = CheckBoxQuinta.IsChecked,
+                    Sexta = CheckBoxSexta.IsChecked,
+                    Sabado = CheckBoxSabado.IsChecked,
 
-            if (end != null)
-            {
+                    HrInicio = TimePickerHInicioLocal.SelectedTime.Value,
+                    HrFim = TimePickerHFimLocal.SelectedTime.Value,
+
+                    EnderecoID = end.EnderecoID,
+                    _Endereco = end,
+                };
 
                 if (lc != null)
                 {
-                    if (lcControl.EditarLocal(idlocal, lc))
+                    if (lcControl.EditarLocal(int.Parse(TxtLocalID.Text), lc))
                     {
-                        endControl.EditarEndereco(idEndereco, end);
-
-                        ContextoSingleton.Instancia.SaveChanges();
-                        this.ListagemLocal();
+                        endControl.EditarEndereco(int.Parse(TxtEnderecoID.Text), end);
+                        ListagemLocal();
                     }
 
                 }
@@ -63,33 +85,35 @@ namespace AgendamentoConsulta
 
                 }
             }
-            else
-            {
-                MessageBox.Show("Endereço vazio");
 
-            }
+        private void ListagemLocal()
+        {
+            //Metodo para listar os Paciente no DataGrid
+            PacienteController prControl = new PacienteController();
+
+            DgDados.ItemsSource = prControl.ListarPacientes();
 
         }
+
 
         private void ExcluirLocal()
         {
             // Metódo para excluir o insumo no banco
             
             LocalController lcControl = new LocalController();
-            Local lc = ContextoSingleton.Instancia.Locais.Find(Convert.ToInt32(TxtLocalID.Text));
+            Local lc = lcControl.PesquisarPorID(Convert.ToInt32(TxtLocalID.Text));
             EnderecoController endControl = new EnderecoController();
-            Endereco end = ContextoSingleton.Instancia.Enderecos.Find(lc.EnderecoID);
+            Endereco end = endControl.PesquisarPorID(lc.EnderecoID);
 
-            int idlocal = Convert.ToInt32(TxtLocalID.Text);
-            
+            int idlocal = Convert.ToInt32(TxtLocalID.Text);            
 
             if (lc != null)
             {
                 if (lcControl.ExcluirLocal(idlocal))
                 {
                     endControl.ExcluirEndereco(end.EnderecoID);
-                    this.ListagemLocal(); // Lista os Local atualizados
-                    this.LimpaCampos(); //  Limpa campos antigos
+                    ListagemLocal(); // Lista os Local atualizados
+                    LimpaCampos(); //  Limpa campos antigos
                 }
             }
             else
@@ -119,14 +143,7 @@ namespace AgendamentoConsulta
 
         }
 
-        private void ListagemLocal()
-        {
-            //Metodo para listar os Local no DataGrid
-            LocalController lcControl = new LocalController();
-
-            DgDados.ItemsSource = lcControl.ListarLocais();
-
-        }
+       
         //limpar campos 
         private void LimpaCampos()
         {
@@ -163,11 +180,13 @@ namespace AgendamentoConsulta
         //carrega objeto selecionado para os textbox
         private void DgDados_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            EnderecoController endControl = new EnderecoController();
             if (DgDados.SelectedIndex >= 0)
             {
                 Local lc = (Local)DgDados.SelectedItem;
-                Endereco end = ContextoSingleton.Instancia.Enderecos.Find(lc.EnderecoID);
+                Endereco end = endControl.PesquisarPorID(lc.EnderecoID);
 
+                TxtLocalID.Text = lc.LocalID.ToString();
                 BoxNomeLocal.Text = lc.NomeLocal;               
                 CheckBoxDomingo.IsChecked = lc.Domingo;
                 CheckBoxSegunda.IsChecked = lc.Segunda;
@@ -177,6 +196,7 @@ namespace AgendamentoConsulta
                 CheckBoxSexta.IsChecked = lc.Sexta;
                 CheckBoxSabado.IsChecked = lc.Sabado;
 
+                TxtEnderecoID.Text = end.EnderecoID.ToString();
                 BoxCepLocal.Text = end.Cep;
                 BoxRuaLocal.Text = end.Rua;
                 BoxNumeroLocal.Text = end.Numero.ToString();
@@ -195,4 +215,4 @@ namespace AgendamentoConsulta
         }
     }
 }
-}
+

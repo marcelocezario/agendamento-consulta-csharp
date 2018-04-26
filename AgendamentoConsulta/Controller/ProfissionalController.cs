@@ -39,8 +39,9 @@ namespace Controller
                     System.Data.Entity.EntityState.Modified;
 
                 ContextoSingleton.Instancia.SaveChanges();
+                return true;
             }
-            return true;
+            return false;
         }
 
         public Profissional PesquisarPorNome(string nome)

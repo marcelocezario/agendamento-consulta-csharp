@@ -161,12 +161,12 @@ namespace AgendamentoConsulta
                         MessageBox.Show("Pro favor escolha um local para consulta antes de prosseguir");
                     else
                     {
-                        if (!DatePickerDataConsulta.Equals(null) || !TimePickerHorarioAgendamento.Equals(null))
-                            MessageBox.Show("Por favor escolha uma data e um horário para consulta");
-                        else
-                        {
+                     //   if (!DatePickerDataConsulta.Equals(null) || !TimePickerHorarioAgendamento.Equals(null))
+                     //       MessageBox.Show("Por favor escolha uma data e um horário para consulta");
+                     //   else
+                     //   {
                             return true;
-                        }
+                     //   }
                     }
                 }
             }
@@ -186,7 +186,7 @@ namespace AgendamentoConsulta
 
             int diaConsulta = 0, mesConsulta = 0, anoConsulta = 0, horaConsulta = 0, minutoConsulta = 0;
 
-            if (!DatePickerDataConsulta.Equals(null) || !TimePickerHorarioAgendamento.Equals(null))
+            if (DatePickerDataConsulta.SelectedDate.Value != null || TimePickerHorarioAgendamento.SelectedTime.Value != null)
             {
                 diaConsulta = int.Parse(DatePickerDataConsulta.SelectedDate.Value.ToString("dd"));
                 mesConsulta = int.Parse(DatePickerDataConsulta.SelectedDate.Value.ToString("MM"));

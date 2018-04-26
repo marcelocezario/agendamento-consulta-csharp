@@ -56,7 +56,7 @@
                     <Button x:Name="Excluir_Paciente" Content="Excluir" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="122,102,0,0" VerticalAlignment="Top" Width="83" Height="30" Grid.Row="5"/>
                     <Button x:Name="Pesquisar_Paciente" Content="Pesquisar" Foreground="#FFFFFF" Background="#005B96" HorizontalAlignment="Left" Margin="221,102,0,0" VerticalAlignment="Top" Width="93" Height="30" Grid.Row="5"/>
 
-                    <DataGrid x:Name="DgDados" IsReadOnly="true" HorizontalAlignment="Left" Height="302" Margin="392,63,0,0" VerticalAlignment="Top" Width="520" Loaded="DgDados_Loaded"  SelectionMode="Single" Grid.RowSpan="6"/>
+                    <DataGrid x:Name="DgDados" IsReadOnly="true" HorizontalAlignment="Left" Height="302" Margin="392,63,0,0" VerticalAlignment="Top" Width="520"  SelectionMode="Single" Grid.RowSpan="6" SelectionChanged="DgDados_SelectionChanged"/>
                 </Grid>
             </Border>
         </Grid>

@@ -37,17 +37,36 @@ namespace AgendamentoConsulta
         private void EditarProfissional()
         {
             ProfissionalController prControl = new ProfissionalController();
-            Profissional pr = ContextoSingleton.Instancia.Profissionais.Find(Convert.ToInt32(TxtProfissionalID.Text));
+           
 
-            if (pr != null)
+            Profissional pr = new Profissional
             {
-                if (prControl.EditarProfissional(Convert.ToInt32(TxtProfissionalID.Text), pr))
-                {
-                    ContextoSingleton.Instancia.SaveChanges();
-                    this.ListagemProfissional();
-                }
+                Nome = BoxNomeProfissional.Text,
+                Cpf = BoxCpfProfissional.Text,
+                Celular = BoxContatoProfissional.Text,
+                DtNascimento = DatePickerDtNascimentoProfissional.SelectedDate.Value,
+                Especialidade = BoxEspecialidadeProfissional.Text,
+                Email = BoxEmailProfissional.Text,
+                ResgistroProfissional = BoxResgistroProfissional.Text,
 
-            }
+                Domingo = CheckBoxDomingo.IsChecked,
+                Segunda = CheckBoxSegunda.IsChecked,
+                Terca = CheckBoxTerca.IsChecked,
+                Quarta = CheckBoxQuarta.IsChecked,
+                Quinta = CheckBoxQuinta.IsChecked,
+                Sexta = CheckBoxSexta.IsChecked,
+                Sabado = CheckBoxSabado.IsChecked,
+
+                HrInicio = TimePickerHInicioProfissional.SelectedTime.Value,
+                HrFim = TimePickerHFimProfissional.SelectedTime.Value,
+            };
+
+
+            if (prControl.EditarProfissional(int.Parse(TxtProfissionalID.Text), pr))
+                {                   
+                    ListagemProfissional();
+                    MessageBox.Show("Profissional omf");
+            }            
             else
             {
                 MessageBox.Show("Profissional vazio");
@@ -60,14 +79,15 @@ namespace AgendamentoConsulta
             // Metódo para excluir o insumo no banco
             ProfissionalController prControl = new ProfissionalController();
 
-            Profissional pr = ContextoSingleton.Instancia.Profissionais.Find(Convert.ToInt32(TxtProfissionalID.Text));
+            Profissional pr = prControl.PesquisarPorID(Convert.ToInt32(TxtProfissionalID.Text));
 
             if (pr != null)
             {
                 if (prControl.ExcluirProfissional(pr.ID))
                 {
-                    this.ListagemProfissional(); // Lista os Profissional atualizados
-                    this.LimpaCampos(); //  Limpa campos antigos
+                    ListagemProfissional(); // Lista os Profissional atualizados
+                    LimpaCampos(); //  Limpa campos antigos
+                    MessageBox.Show("ox");
                 }
             }
             else
@@ -128,7 +148,7 @@ namespace AgendamentoConsulta
 
         private void Excluir_Profissional_Click(object sender, RoutedEventArgs e)
         {
-            EditarProfissional();
+            ExcluirProfissional();
         }
 
         private void Pesquisar_Profissional_Click(object sender, RoutedEventArgs e)
@@ -148,6 +168,7 @@ namespace AgendamentoConsulta
             {
                 Profissional pr = (Profissional)DgDados.SelectedItem;
 
+                TxtProfissionalID.Text = pr.ID.ToString();
                 BoxNomeProfissional.Text = pr.Nome;
                 BoxCpfProfissional.Text = pr.Cpf;
                 BoxContatoProfissional.Text = pr.Celular;

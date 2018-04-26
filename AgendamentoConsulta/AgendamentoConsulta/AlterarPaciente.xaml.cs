@@ -34,17 +34,24 @@ namespace AgendamentoConsulta
         private void  EditarPaciente()
         {
             PacienteController prControl = new PacienteController();
-            Paciente pc = ContextoSingleton.Instancia.Pacientes.Find(Convert.ToInt32(TxtPacienteID.Text));
 
-            if (pc != null)
+            Paciente pc = new Paciente
             {
-                if (prControl.EditarPaciente(Convert.ToInt32(TxtPacienteID.Text), pc))
+                Nome = BoxNomePaciente.Text,
+                Cpf = BoxCpfPaciente.Text,
+
+                Email = BoxEmailPaciente.Text,
+                Celular = BoxContatoPaciente.Text,
+                DtNascimento = DatePickerDtNascimentoPaciente.SelectedDate.Value
+            };
+            if (prControl.EditarPaciente(int.Parse(TxtPacienteID.Text), pc))
                 {
-                    ContextoSingleton.Instancia.SaveChanges();
-                    this.ListagemPaciente();
+                MessageBox.Show("Paciente editado ");
+                ListagemPaciente();
+                    LimpaCampos();
                 }
 
-            }
+            
             else
             {
                 MessageBox.Show("Paciente vazio");
@@ -57,14 +64,14 @@ namespace AgendamentoConsulta
             // Metódo para excluir o insumo no banco
             PacienteController prControl = new PacienteController();
 
-            Paciente pc = ContextoSingleton.Instancia.Pacientes.Find(Convert.ToInt32(TxtPacienteID.Text));
+            Paciente pc = prControl.PesquisarPorID(Convert.ToInt32(TxtPacienteID.Text));
 
             if (pc != null)
             {
                 if (prControl.ExcluirPaciente(pc.ID))
                 {
-                    this.ListagemPaciente(); // Lista os Paciente atualizados
-                    this.LimpaCampos(); //  Limpa campos antigos
+                    ListagemPaciente(); // Lista os Paciente atualizados
+                    LimpaCampos(); //  Limpa campos antigos
                 }
             }
             else
@@ -117,7 +124,7 @@ namespace AgendamentoConsulta
 
         private void Excluir_Paciente_Click(object sender, RoutedEventArgs e)
         {
-            EditarPaciente();
+            ExcluirPaciente();
         }
 
         private void Pesquisar_Paciente_Click(object sender, RoutedEventArgs e)
@@ -130,12 +137,13 @@ namespace AgendamentoConsulta
             this.ListagemPaciente();
         }
 
-        private void DgDados_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void DgDados_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (DgDados.SelectedIndex >= 0)
             {
                 Paciente pc = (Paciente)DgDados.SelectedItem;
 
+                TxtPacienteID.Text = pc.ID.ToString();
                 BoxNomePaciente.Text = pc.Nome;
                 BoxCpfPaciente.Text = pc.Cpf;
                 BoxContatoPaciente.Text = pc.Celular;
@@ -146,6 +154,10 @@ namespace AgendamentoConsulta
             {
                 MessageBox.Show("Paciente vazio");
             }
+        
+
+        
+
         }
     }
 }

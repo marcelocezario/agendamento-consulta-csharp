@@ -20,6 +20,7 @@ namespace Controller
 
             if (localEditar != null)
             {
+
                 localEditar.NomeLocal = localEditado.NomeLocal;
                 localEditar.Domingo = localEditado.Domingo;
                 localEditar.Segunda = localEditado.Segunda;
@@ -38,6 +39,7 @@ namespace Controller
                     System.Data.Entity.EntityState.Modified;
 
                 ContextoSingleton.Instancia.SaveChanges();
+                return true;
             }
             return true;
 
