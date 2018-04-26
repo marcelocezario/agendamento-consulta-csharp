@@ -19,8 +19,7 @@ namespace AgendamentoConsulta
 
         private void ButtonSalvarAgendamento_Click(object sender, RoutedEventArgs e)
         {
-            if (VerificarPreenchimentoCampos())
-                SalvarAgendamento();
+            SalvarAgendamento();
         }
 
         private void ButtonBuscarProfissional_Click(object sender, RoutedEventArgs e)
@@ -147,31 +146,31 @@ namespace AgendamentoConsulta
                 MessageBox.Show("Nenhum local encontrado");
         }
 
-        private bool VerificarPreenchimentoCampos()
-        {
-            if (!BoxBuscarProfissional.IsEnabled)
-                MessageBox.Show("Por favor escolha um profissional antes de prosseguir");
-            else
-            {
-                if (!BoxBuscarPaciente.IsEnabled)
-                    MessageBox.Show("Por favor escolha um paciente antes de prosseguir");
-                else
-                {
-                    if (!BoxBuscarLocal.IsEnabled)
-                        MessageBox.Show("Pro favor escolha um local para consulta antes de prosseguir");
-                    else
-                    {
-                     //   if (!DatePickerDataConsulta.Equals(null) || !TimePickerHorarioAgendamento.Equals(null))
-                     //       MessageBox.Show("Por favor escolha uma data e um horário para consulta");
-                     //   else
-                     //   {
-                            return true;
-                     //   }
-                    }
-                }
-            }
-            return false;
-        }
+        //private bool VerificarPreenchimentoCampos()
+        //{
+        //    if (!BoxBuscarProfissional.IsEnabled)
+        //        MessageBox.Show("Por favor escolha um profissional antes de prosseguir");
+        //    else
+        //    {
+        //        if (!BoxBuscarPaciente.IsEnabled)
+        //            MessageBox.Show("Por favor escolha um paciente antes de prosseguir");
+        //        else
+        //        {
+        //            if (!BoxBuscarLocal.IsEnabled)
+        //                MessageBox.Show("Pro favor escolha um local para consulta antes de prosseguir");
+        //            else
+        //            {
+        //                //   if (!DatePickerDataConsulta.Equals(null) || !TimePickerHorarioAgendamento.Equals(null))
+        //                //       MessageBox.Show("Por favor escolha uma data e um horário para consulta");
+        //                //   else
+        //                //   {
+        //                return true;
+        //                //   }
+        //            }
+        //        }
+        //    }
+        //    return false;
+        //}
 
         private void SalvarAgendamento()
         {
@@ -186,46 +185,56 @@ namespace AgendamentoConsulta
 
             int diaConsulta = 0, mesConsulta = 0, anoConsulta = 0, horaConsulta = 0, minutoConsulta = 0;
 
-            if (DatePickerDataConsulta.SelectedDate.Value != null || TimePickerHorarioAgendamento.SelectedTime.Value != null)
+            try
             {
-                diaConsulta = int.Parse(DatePickerDataConsulta.SelectedDate.Value.ToString("dd"));
-                mesConsulta = int.Parse(DatePickerDataConsulta.SelectedDate.Value.ToString("MM"));
-                anoConsulta = int.Parse(DatePickerDataConsulta.SelectedDate.Value.ToString("yyyy"));
-                horaConsulta = int.Parse(TimePickerHorarioAgendamento.SelectedTime.Value.ToString("HH"));
-                minutoConsulta = int.Parse(TimePickerHorarioAgendamento.SelectedTime.Value.ToString("mm"));
+
+                if (DatePickerDataConsulta.SelectedDate.Value != null || TimePickerHorarioAgendamento.SelectedTime.Value != null)
+                {
+                    diaConsulta = int.Parse(DatePickerDataConsulta.SelectedDate.Value.ToString("dd"));
+                    mesConsulta = int.Parse(DatePickerDataConsulta.SelectedDate.Value.ToString("MM"));
+                    anoConsulta = int.Parse(DatePickerDataConsulta.SelectedDate.Value.ToString("yyyy"));
+                    horaConsulta = int.Parse(TimePickerHorarioAgendamento.SelectedTime.Value.ToString("HH"));
+                    minutoConsulta = int.Parse(TimePickerHorarioAgendamento.SelectedTime.Value.ToString("mm"));
+                }
+
+
+
+
+
+                Agendamento a = new Agendamento()
+                {
+                    LocalID = local.LocalID,
+                    _Local = local,
+                    PacienteID = paciente.ID,
+                    _Paciente = paciente,
+                    ProfissionalID = profissional.ID,
+                    _Profissional = profissional,
+                    DataHoraConsulta = new DateTime(anoConsulta, mesConsulta, diaConsulta, horaConsulta, minutoConsulta, 0),
+                };
+
+                if (ac.IncluirAgendamento(a))
+                {
+                    string infAgendamento = "Paciente: " + a._Paciente.Nome +
+                        "\nCpf: " + a._Paciente.Cpf +
+                        "\n\nProfissional: " + a._Profissional.Nome +
+                        "\nEspecialidade: " + a._Profissional.Especialidade +
+                        "\n\nLocal: " + a._Local.NomeLocal +
+                        "\nEndereço: " + a._Local._Endereco.Rua + " " + a._Local._Endereco.Numero + " " + a._Local._Endereco.Complemento +
+                        "\nCidade: " + a._Local._Endereco.Cidade + a._Local._Endereco.Uf +
+                        "\n\nData e horário agendado: " + a.DataHoraConsulta;
+
+                    MessageBox.Show("Agendamento efetuado com sucesso\n\n" + infAgendamento);
+
+                    this.Close();
+                }
+                else
+                    MessageBox.Show("Agendamento não efetuado por indiponibilidade de horários");
             }
-                
-
-
-
-            Agendamento a = new Agendamento()
+            catch (Exception ex)
             {
-                LocalID = local.LocalID,
-                _Local = local,
-                PacienteID = paciente.ID,
-                _Paciente = paciente,
-                ProfissionalID = profissional.ID,
-                _Profissional = profissional,
-                DataHoraConsulta = new DateTime(anoConsulta, mesConsulta, diaConsulta, horaConsulta, minutoConsulta, 0),
-            };
-
-            if (ac.IncluirAgendamento(a))
-            {
-                string infAgendamento = "Paciente: " + a._Paciente.Nome +
-                    "\nCpf: " + a._Paciente.Cpf +
-                    "\n\nProfissional: " + a._Profissional.Nome +
-                    "\nEspecialidade: " + a._Profissional.Especialidade +
-                    "\n\nLocal: " + a._Local.NomeLocal +
-                    "\nEndereço: " + a._Local._Endereco.Rua + " " + a._Local._Endereco.Numero + " " + a._Local._Endereco.Complemento +
-                    "\nCidade: " + a._Local._Endereco.Cidade + a._Local._Endereco.Uf +
-                    "\n\nData e horário agendado: " + a.DataHoraConsulta;
-
-                MessageBox.Show("Agendamento efetuado com sucesso\n\n" + infAgendamento);
-
-                this.Close();
+                MessageBox.Show("Preencher todos os campos e selecionar cadastros necessários");
             }
-            else
-                MessageBox.Show("Agendamento não efetuado por indiponibilidade de horários");
         }
+
     }
 }
