@@ -6,6 +6,7 @@ namespace Model
     {
         public string ResgistroProfissional { get; set; }
         public string Especialidade { get; set; }
+        
         //Dias da semana
         public bool? Domingo { get; set; }
         public bool? Segunda { get; set; }
@@ -14,6 +15,7 @@ namespace Model
         public bool? Quinta { get; set; }
         public bool? Sexta { get; set; }
         public bool? Sabado { get; set; }
+        //horario de trabalho
         public DateTime HrInicio { get; set; }
         public DateTime HrFim { get; set; }
         
